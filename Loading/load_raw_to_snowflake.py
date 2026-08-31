@@ -21,7 +21,7 @@ conn = snowflake.connector.connect(
 )
 cursor = conn.cursor()
 
-file_path = os.path.join("data", "raw", "tanqeeb_saudi_jobs_tech.json")
+file_path = os.path.join("data", "raw", "tanqeeb_saudi_jobs_tech2.json")
 if not os.path.exists(file_path):
     file_path = "tanqeeb_saudi_jobs_tech.json"
 
