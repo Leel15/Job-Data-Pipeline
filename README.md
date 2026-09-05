@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Job Data Pipeline (Saudi Arabia Tech Market Analytics)
 
 A modular, scalable, and collaborative data pipeline designed to collect, aggregate, and structure tech job market data across Saudi Arabia.
@@ -83,3 +84,6 @@ The `.gitignore` file protects:
 - **Pull before pushing** to avoid merge conflicts
 - **Keep scrapers modular** for easy maintenance and scaling
 
+=======
+# Job Data Pipeline
+>>>>>>> a6e8688746c66d79f9095b4cf28a67dc257ac6cc
