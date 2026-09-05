@@ -10,7 +10,7 @@ Job-Data-Pipeline/
 ├── Ingestion/                      <-- Scraper scripts for various job sources
 │   ├── Tanqeeb.py                  <-- Tanqeeb job board scraper
 │   ├── freehire.py                 <-- FreeHire API data ingestion
-│   └── jsearch.py              <--  JSearch API scraper
+│   └── jsearch.py                  <--  JSearch API scraper
 ├── utils/                          <-- Shared utilities and helper scripts
 │   └── skills_extractor.py         <-- Regex-based technical skills taxonomy extractor
 ├── data/                           
