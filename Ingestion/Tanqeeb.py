@@ -2,746 +2,489 @@ import json
 import os
 import re
 import random
+import time
 from urllib.parse import urlencode, urljoin
 from bs4 import BeautifulSoup
 import requests
+from dotenv import load_dotenv
 
-
-SCRAPEOPS_API_KEY = "9277d0e7-b4e7-433a-b782-4864aa7a7a1b"
-
+load_dotenv()
+SCRAPEOPS_API_KEY = os.getenv("SCRAPEOPS_API_KEY")
 BASE_URL = "https://saudi.tanqeeb.com"
-TARGET_URL = "https://saudi.tanqeeb.com/ar"
 
-NUMBER_OF_JOBS = 50
+NUMBER_OF_JOBS = 5 
+MAX_PAGES = 100  
 
-# البحث عن تخصصات تقنية متعددة
-TECH_KEYWORDS = [
-    "python developer",
-    "backend developer",
-    "frontend developer",
-    "full stack developer",
-    "devops engineer",
-    "machine learning",
-    "data scientist",
-    "cloud engineer",
-    "database administrator",
-    "systems engineer",
-    "software engineer",
-]
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)             
+DATA_DIR = os.path.join(PROJECT_ROOT, "raw")            
 
-SEARCH_PARAMS = {
-    "country": "54",          
-    "state": "0",
-    "category": "-1",
-    "workplace": "0",
-    "search_period": "0",
-    "lang": "all"
-}
+JOBS_FILE = os.path.join(DATA_DIR, "tanqeeb_saudi_jobs_tech.json")
+LINKS_CACHE_FILE = os.path.join(DATA_DIR, "extracted_links_cache.json")
 
 
-def get_scrapeops_url(url):
+def get_scrapeops_url(url, render_js=False):
     payload = {
         "api_key": SCRAPEOPS_API_KEY,
         "url": url,
     }
-
+    if render_js:
+        payload["render_js"] = "true"
+        
     return "https://proxy.scrapeops.io/v1/?" + urlencode(payload)
 
 
-def get_page(url):
+def get_page(url, render_js=False):
     try:
         response = requests.get(
-            get_scrapeops_url(url),
-            timeout=60
+            get_scrapeops_url(url, render_js=render_js),
+            timeout=90
         )
+
+        print("STATUS:", response.status_code)
 
         if response.status_code == 200:
+            print("✅ تم تحميل الصفحة بنجاح")
             return response.text
 
-        print(
-            f"❌ فشل تحميل الصفحة: "
-            f"{response.status_code}"
-        )
+        print(f"❌ فشل تحميل الصفحة: {response.status_code}")
+        return None
 
-    except Exception as e:
+    except requests.RequestException as e:
         print(f"❌ خطأ أثناء تحميل الصفحة: {e}")
+        return None
 
-    return None
 
+def load_extracted_links():
 
-def get_job_links(keyword=None, search_params=None, page=1):
-    """البحث عن روابط الوظائف في صفحة واحدة فقط"""
-    if search_params is None:
-        search_params = SEARCH_PARAMS
+    extracted_links = set()
     
-    if keyword:
-        print(f"  🔍 {keyword}", end=" - ")
-    else:
-        print(f"  🔍 جاري البحث عن وظائف السعودية", end=" - ")
-
-    job_links = set()
-
-    # بناء رابط الصفحة مع المعاملات
-    if page == 1:
-        if keyword:
-            query_string = urlencode({**search_params, "keywords": keyword})
-            page_url = f"https://saudi.tanqeeb.com/ar/jobs/search?{query_string}"
-        else:
-            page_url = TARGET_URL
-    else:
-        if keyword:
-            query_string = urlencode({**search_params, "keywords": keyword})
-            page_url = f"https://saudi.tanqeeb.com/ar/jobs/search/page/{page}/?{query_string}"
-        else:
-            page_url = f"https://saudi.tanqeeb.com/ar/jobs/search/page/{page}/"
-
-    html = get_page(page_url)
-
-    if not html:
-        print(f"❌ فشل التحميل")
-        return job_links
-
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
-
-    # البحث عن الروابط في الصفحة الحالية
-    page_job_links = 0
-
-    for a in soup.find_all("a", href=True):
-
-        href = a.get("href", "").strip()
-
-        if not href:
-            continue
-
-        full_url = urljoin(
-            BASE_URL,
-            href
-        )
-
-        if not full_url.startswith(
-            "https://saudi.tanqeeb.com/"
-        ):
-            continue
-
-        if re.search(
-            r"/jobs-in-saudi/.*/jobs/\d+\.html",
-            full_url
-        ):
-
-            if full_url not in job_links:
-                job_links.add(full_url)
-                page_job_links += 1
-
-    print(f"✅ {page_job_links} وظيفة")
-
-    job_links = list(job_links)
-
-    return job_links
-
-
-def scrape_job(job_url):
-
-    print("\n" + "-" * 70)
-    print("جاري استخراج الوظيفة:")
-    print(job_url)
-
-    html = get_page(job_url)
-
-    if not html:
-        return None
-
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
-
-    # التحقق من أن الصفحة تم تحميلها بشكل صحيح
-    if "JavaScript is disabled" in html or not soup.find("h3", class_="job-title-text"):
-        print(f"⚠️ الصفحة لم يتم تحميلها بشكل صحيح (JavaScript)")
-        return None
-
-    json_ld = soup.find(
-        "script",
-        type="application/ld+json"
-    )
-
-    ld_data = {}
-
-    if json_ld:
-
+    if os.path.exists(LINKS_CACHE_FILE):
         try:
-
-            raw_json = json.loads(
-                json_ld.string
-            )
-
-            if isinstance(
-                raw_json,
-                list
-            ):
-
-                for item in raw_json:
-
-                    if isinstance(
-                        item,
-                        dict
-                    ):
-
-                        if item.get(
-                            "@type"
-                        ) == "JobPosting":
-
-                            ld_data = item
-                            break
-
-            elif isinstance(
-                raw_json,
-                dict
-            ):
-
-                if raw_json.get(
-                    "@type"
-                ) == "JobPosting":
-
-                    ld_data = raw_json
-
+            with open(LINKS_CACHE_FILE, "r", encoding="utf-8") as f:
+                extracted_links.update(json.load(f))
         except Exception:
             pass
 
-    title_elem = (
-        soup.find(
-            "h3",
-            class_="job-title-text"
-        )
-        or soup.find("h1")
-    )
+    if os.path.exists(JOBS_FILE):
+        try:
+            with open(JOBS_FILE, "r", encoding="utf-8") as f:
+                existing_jobs = json.load(f)
+                for job in existing_jobs:
+                    url = job.get("job_url") or job.get("source_url")
+                    if url:
+                        extracted_links.add(url)
+        except Exception:
+            pass
 
+    return extracted_links
+def save_extracted_links(links):
+    try:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(LINKS_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(list(links), f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"   ❌ خطأ في حفظ الروابط: {e}")
+
+
+def load_existing_jobs():
+    if os.path.exists(JOBS_FILE):
+        try:
+            with open(JOBS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️ خطأ في قراءة الوظائف الموجودة: {e}")
+    return []
+
+
+def save_jobs(jobs):
+    """حفظ الوظائف (إضافة للموجود وليس استبدال)"""
+    try:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(JOBS_FILE, "w", encoding="utf-8") as f:
+            json.dump(jobs, f, ensure_ascii=False, indent=2)
+        print(f"\n   💾 تم حفظ {len(jobs)} وظيفة في:")
+        print(f"      {JOBS_FILE}")
+        print(f"   ✅ الملف محفوظ بنجاح!")
+    except Exception as e:
+        print(f"   ❌ خطأ في حفظ الملف: {e}")
+
+
+def job_exists(jobs_list, job_url):
+    """التحقق من أن الوظيفة موجودة بالفعل"""
+    return any(job.get("job_url") == job_url for job in jobs_list)
+
+
+def get_job_links():
+    print("\n🔍 جاري تصفح قسم تقنية المعلومات واستخراج الوظائف...")
+
+    extracted_links = load_extracted_links()
+    print(f"📚 عدد الروابط المستخرجة سابقاً: {len(extracted_links)}")
+
+    job_links = set()
+    page = 1
+
+    search_params = {
+        "keywords": "",
+        "country": "54",
+        "state": "0",
+        "category": "1002",
+        "workplace": "0",
+        "search_period": "0",
+        "lang": "all"
+    }
+
+    while page <= MAX_PAGES:
+        query_string = urlencode(search_params)
+
+        if page == 1:
+            page_url = f"{BASE_URL}/ar/jobs/search?{query_string}"
+        else:
+            page_url = f"{BASE_URL}/ar/jobs/search/page/{page}?{query_string}"
+
+        print(f"\n📄 جاري البحث في الصفحة {page}:")
+        print(page_url)
+
+        html = get_page(page_url, render_js=False)
+
+        if not html:
+            print(f"⚠️ تعذر تحميل الصفحة {page} - سيتم تجربة الصفحة التالية")
+            page += 1
+            time.sleep(2)
+            continue
+
+        soup = BeautifulSoup(html, "html.parser")
+        page_links = set()
+
+        for a in soup.find_all("a", href=True):
+            href = a.get("href", "").strip()
+
+            if not href:
+                continue
+
+            if href.startswith("#") or href.startswith("javascript:"):
+                continue
+
+            full_url = urljoin(BASE_URL, href)
+
+            if "saudi.tanqeeb.com" not in full_url:
+                continue
+
+            ignored_parts = [
+                "/search", "/privacy", "/terms", "/contact",
+                "/about", "/login", "/register", "/companies",
+                "/categories", "/sites/"
+            ]
+
+            if any(part in full_url for part in ignored_parts):
+                continue
+
+            if any(domain in full_url for domain in [
+                "facebook.com", "twitter.com", "linkedin.com",
+                "whatsapp.com", "sharer"
+            ]):
+                continue
+
+            if re.search(r"/jobs/\d+\.html(?:\?.*)?$", full_url):
+                page_links.add(full_url)
+
+        print(f"📌 عدد روابط الوظائف المكتشفة في الصفحة {page}: {len(page_links)}")
+
+        if page_links:
+            new_links_in_page = (
+                page_links
+                - extracted_links
+                - job_links
+            )
+
+            print(f"🆕 وظائف جديدة في هذه الصفحة: {len(new_links_in_page)}")
+            job_links.update(new_links_in_page)
+            extracted_links.update(page_links)
+
+            print(f"📊 إجمالي الوظائف الجديدة التي سيتم تحميلها: {len(job_links)}")
+        else:
+            print(f"⚠️ لم يتم العثور على روابط وظائف في الصفحة {page} - لكن لن نوقف البحث")
+
+        if len(job_links) >= NUMBER_OF_JOBS:
+            print(f"\n🎯 تم الوصول إلى العدد المطلوب ({NUMBER_OF_JOBS}) من الوظائف الجديدة.")
+            break
+
+        print(f"⏭️ الانتقال للصفحة التالية...")
+        page += 1
+        time.sleep(2)
+
+    print(f"\n🎯 إجمالي الروابط الجديدة المستخرجة: {len(job_links)}")
+    save_extracted_links(extracted_links)
+
+    return list(job_links), extracted_links
+
+
+def scrape_job(job_url):
+    print("\n" + "-" * 70)
+    print(f"جاري استخراج: {job_url}")
+
+    html = get_page(job_url, render_js=True)
+    if not html:
+        print("❌ فشل تحميل الصفحة")
+        return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    json_ld = soup.find("script", type="application/ld+json")
+    ld_data = {}
+
+    if json_ld:
+        try:
+            raw_json = json.loads(json_ld.string)
+            if isinstance(raw_json, list):
+                for item in raw_json:
+                    if isinstance(item, dict) and item.get("@type") == "JobPosting":
+                        ld_data = item
+                        break
+            elif isinstance(raw_json, dict) and raw_json.get("@type") == "JobPosting":
+                ld_data = raw_json
+        except Exception:
+            pass
+
+    title_elem = soup.find("h3", class_="job-title-text") or soup.find("h1")
     job_title = (
         ld_data.get("title")
-        or (
-            title_elem.get_text(
-                strip=True
-            )
-            if title_elem
-            else None
-        )
+        or (title_elem.get_text(strip=True) if title_elem else None)
         or "غير محدد"
     )
 
-    comp_elem = soup.find(
-        "a",
-        class_="job-meta-company"
-    )
+    print(f"   📋 العنوان المستخرج: {job_title[:60] if len(job_title) > 60 else job_title}")
 
-    hiring_org = ld_data.get(
-        "hiringOrganization",
-        {}
-    )
+    if job_title == "غير محدد" or len(job_title) < 3:
+        print("⚠️ تم تجاهل الصفحة: لم يتم استخراج عنوان صحيح")
+        return None
 
-    if isinstance(
-        hiring_org,
-        dict
-    ):
-
-        ld_company = hiring_org.get(
-            "name"
-        )
-
-    else:
-
-        ld_company = None
+    comp_elem = soup.find("a", class_="job-meta-company")
+    hiring_org = ld_data.get("hiringOrganization", {})
+    ld_company = hiring_org.get("name") if isinstance(hiring_org, dict) else None
 
     company_name = (
         ld_company
-        or (
-            comp_elem.get_text(
-                strip=True
-            )
-            if comp_elem
-            else None
-        )
+        or (comp_elem.get_text(strip=True) if comp_elem else None)
         or "غير محدد"
     )
 
     location = "السعودية"
-
-    loc_elem = soup.find(
-        "div",
-        class_="job-meta-item"
-    )
-
+    loc_elem = soup.find("div", class_="job-meta-item")
     if loc_elem:
-
-        extracted_location = (
-            loc_elem.get_text(
-                " ",
-                strip=True
-            )
-        )
-
+        extracted_location = loc_elem.get_text(" ", strip=True)
         if extracted_location:
-
             location = extracted_location
 
-    location_lower = location.lower()
+    location = re.sub(r"\s+", " ", location).strip()
 
-    saudi_keywords = [
-        "السعودية",
-        "السعوديه",
-        "saudi",
-        "riyadh",
-        "الرياض",
-        "jeddah",
-        "جدة",
-        "dammam",
-        "الدمام",
-        "khobar",
-        "الخبر",
-        "qassim",
-        "Al Qasim",
-        "القصيم",
-        "mecca",
-        "مكة",
-        "medina",
-        "المدينة",
-        "tabuk",
-        "تبوك",
-        "abha",
-        "أبها",
-    ]
-
-    is_saudi = any(
-        keyword.lower()
-        in location_lower
-        for keyword in saudi_keywords
-    )
-
-    if not is_saudi:
-
-        print(
-            f"⚠️ تم تجاهل الوظيفة لأن الموقع "
-            f"غير سعودي: {location}"
-        )
-
-        return None
-
-    posted_date = ld_data.get(
-        "datePosted",
-        "غير محدد"
-    )
-
+    posted_date = ld_data.get("datePosted", "غير محدد")
     if posted_date and "T" in posted_date:
-        posted_date = (
-            posted_date.split("T")[0]
-        )
-    
-    # البحث عن التاريخ في HTML إذا لم يتم العثور عليه
+        posted_date = posted_date.split("T")[0]
+
     if posted_date == "غير محدد" or posted_date == "--":
         date_elem = soup.find("div", class_="job-date")
         if date_elem and date_elem.get("data-datetime"):
             datetime_str = date_elem.get("data-datetime")
-            if "T" in datetime_str:
-                posted_date = datetime_str.split("T")[0]
-            else:
-                posted_date = datetime_str
+            posted_date = datetime_str.split("T")[0] if "T" in datetime_str else datetime_str
         else:
             for elem in soup.find_all(["span", "div", "p"]):
                 text = elem.get_text(strip=True)
                 if text and len(text) < 50:
-                    if any(keyword in text for keyword in ["2026", "2025", "2024", "-0", "/"]):
+                    if any(k in text for k in ["2026", "2025", "2024", "-0", "/"]):
                         posted_date = text
                         break
 
-    desc_body = (
-        soup.find(
-            "div",
-            id="jobDescriptionBody"
-        )
-        or soup.find(
-            "div",
-            {
-                "data-jb-field":
-                "description"
-            }
-        )
-    )
-
+    desc_body = soup.find("div", id="jobDescriptionBody") or soup.find("div", {"data-jb-field": "description"})
     if desc_body:
-
-        full_description = (
-            desc_body.get_text(
-                separator="\n",
-                strip=True
-            )
-        )
-
+        full_description = desc_body.get_text(separator="\n", strip=True)
     else:
+        raw_desc = ld_data.get("description", "")
+        full_description = BeautifulSoup(raw_desc, "html.parser").get_text(separator="\n", strip=True) if raw_desc else ""
 
-        raw_desc = ld_data.get(
-            "description",
-            ""
-        )
+    full_description = re.sub(r"\n\s*\n", "\n", full_description).strip()
 
-        full_description = (
-            BeautifulSoup(
-                raw_desc,
-                "html.parser"
-            ).get_text(
-                separator="\n",
-                strip=True
-            )
-        )
+    if not full_description:
+        print("⚠️ تم تجاهل الصفحة: الوصف فارغ")
+        return None
 
-    full_description = re.sub(
-        r"\n\s*\n",
-        "\n",
-        full_description
-    )
-
-    employment_type = ld_data.get(
-        "employmentType",
-        "غير محدد"
-    )
-
+    employment_type = ld_data.get("employmentType", "غير محدد")
     employment_type_map = {
-        "FULL_TIME": "دوام كامل",
-        "PART_TIME": "دوام جزئي",
-        "CONTRACTOR": "عقد",
-        "TEMPORARY": "مؤقت",
-        "INTERN": "تدريب",
-        "VOLUNTEER": "تطوعي",
-        "PER_DIEM": "حسب اليوم",
-        "OTHER": "أخرى"
+        "FULL_TIME": "دوام كامل", "PART_TIME": "دوام جزئي", "CONTRACTOR": "عقد",
+        "TEMPORARY": "مؤقت", "INTERN": "تدريب", "VOLUNTEER": "تطوعي",
+        "PER_DIEM": "حسب اليوم", "OTHER": "أخرى"
     }
+    employment_type = employment_type_map.get(employment_type, employment_type)
 
-    employment_type = employment_type_map.get(
-        employment_type,
-        employment_type
-    )
-
-    salary_data = ld_data.get(
-        "baseSalary",
-        {}
-    )
-
+    salary_data = ld_data.get("baseSalary", {})
     salary = "غير محدد"
-
     if isinstance(salary_data, dict):
-
-        salary_value = salary_data.get(
-            "value",
-            {}
-        )
-
+        salary_value = salary_data.get("value", {})
         if isinstance(salary_value, dict):
-
-            salary = salary_value.get(
-                "value",
-                "غير محدد"
-            )
-
-            salary_unit = salary_value.get(
-                "unitText",
-                ""
-            )
-
+            salary = salary_value.get("value", "غير محدد")
+            salary_unit = salary_value.get("unitText", "")
             if salary_unit:
                 salary = f"{salary} ({salary_unit})"
-
         elif salary_value:
             salary = salary_value
-    
-    # تعريف meta_divs هنا لاستخدامه لاحقاً
+
     meta_divs = soup.find_all("div", class_="meta")
-    
-    # البحث عن الراتب في HTML باستخدام meta-data
     if salary == "غير محدد":
         for meta_div in meta_divs:
             label_span = meta_div.find("span", class_="text-secondary")
             value_span = meta_div.find("span", class_="text-dark")
-            
             if label_span and value_span:
                 label = label_span.get_text(strip=True)
                 value = value_span.get_text(strip=True)
-                
-                if any(keyword in label for keyword in ["الراتب", "الراتب الشهري", "salary"]):
+                if any(k in label for k in ["الراتب", "الراتب الشهري", "salary"]):
                     if value and value != "Not Mentioned":
                         salary = value
 
     education = "غير محدد"
-
     description_lower = full_description.lower()
-
-    if (
-        "bachelor" in description_lower
-        or "bachelor's" in description_lower
-        or "بكالوريوس" in full_description
-    ):
+    if any(k in description_lower for k in ["bachelor", "bachelor's"]) or "بكالوريوس" in full_description:
         education = "بكالوريوس"
-
-    elif (
-        "master" in description_lower
-        or "master's" in description_lower
-        or "ماجستير" in full_description
-    ):
+    elif any(k in description_lower for k in ["master", "master's"]) or "ماجستير" in full_description:
         education = "ماجستير"
-
-    elif (
-        "phd" in description_lower
-        or "doctorate" in description_lower
-        or "دكتوراه" in full_description
-    ):
+    elif any(k in description_lower for k in ["phd", "doctorate"]) or "دكتوراه" in full_description:
         education = "دكتوراه"
-
-    elif (
-        "high school" in description_lower
-        or "secondary school" in description_lower
-        or "secondary education" in description_lower
-        or "ثانوي" in full_description
-        or "الثانوية" in full_description
-        or "شهادة الثانوية" in full_description
-    ):
+    elif any(k in description_lower for k in ["high school", "secondary school"]) or "ثانوي" in full_description:
         education = "ثانوي"
 
     experience = "غير محدد"
-
-    experience_match = re.search(
-        r"(?:minimum|min|at least|خبرة لا تقل عن|خبرة)\s*"
-        r"(\d+(?:-\d+)?)\s*(?:years?|سنوات?|سنة)",
-        full_description,
-        re.IGNORECASE
-    )
-
-    if experience_match:
-        experience = experience_match.group(0)
-
-    # ===== استخراج التصنيف والمجال من HTML =====
-    category = "غير محدد"
-    field = "غير محدد"
-
-    # الطريقة 1: البحث عن عناصر meta-data بـ class="meta" (meta_divs تم تعريفه مسبقاً)
-    
     for meta_div in meta_divs:
         label_span = meta_div.find("span", class_="text-secondary")
         value_span = meta_div.find("span", class_="text-dark")
-        
+
+        if label_span and value_span:
+            label = label_span.get_text(strip=True)
+            value = value_span.get_text(" ", strip=True)
+
+            if label.lower() == "experience" or "الخبرة" in label:
+                if value and value != "Not Mentioned":
+                    experience = value
+                    break
+
+    category = "غير محدد"
+    field = "غير محدد"
+
+    for meta_div in meta_divs:
+        label_span = meta_div.find("span", class_="text-secondary")
+        value_span = meta_div.find("span", class_="text-dark")
         if label_span and value_span:
             label = label_span.get_text(strip=True)
             value = value_span.get_text(strip=True)
-            
             if "التصنيف" in label or "النوع" in label:
                 if value and value != "Not Mentioned":
                     category = value
             elif "المجال" in label:
                 if value and value != "Not Mentioned":
                     field = value
-    
-    # الطريقة 2: البحث عن dl/dt/dd elements
+
     if category == "غير محدد" or field == "غير محدد":
         dl_elements = soup.find_all("dl")
         for dl in dl_elements:
             dts = dl.find_all("dt")
             dds = dl.find_all("dd")
-            
             for dt, dd in zip(dts, dds):
                 dt_text = dt.get_text(strip=True)
                 dd_text = dd.get_text(strip=True)
-                
                 if "التصنيف" in dt_text or "النوع" in dt_text:
                     if dd_text and dd_text != "Not Mentioned":
                         category = dd_text
                 elif "المجال" in dt_text:
                     if dd_text and dd_text != "Not Mentioned":
                         field = dd_text
-    
-    # الطريقة 3: البحث عن meta-data-title و meta-data-value
-    if category == "غير محدد" or field == "غير محدد":
-        metadata_items = soup.find_all("div", class_="meta-data-item")
-        for item in metadata_items:
-            title = item.find(class_="meta-data-title")
-            value = item.find(class_="meta-data-value")
-            
-            if title and value:
-                title_text = title.get_text(strip=True)
-                value_text = value.get_text(strip=True)
-                
-                if "التصنيف" in title_text:
-                    if value_text and value_text != "Not Mentioned":
-                        category = value_text
-                elif "المجال" in title_text:
-                    if value_text and value_text != "Not Mentioned":
-                        field = value_text
 
-    # التحقق من أن الوظيفة لم تكن صفحة "JavaScript is disabled"
-    if job_title == "JavaScript is disabled" or not full_description:
-        print(f"⚠️ تم تجاهل الوظيفة - الصفحة لم يتم تحميلها بشكل صحيح")
-        return None
- 
     job_record = {
         "job_title": job_title,
         "company_name": company_name,
         "location": location,
         "posted_date": posted_date,
-
         "employment_type": employment_type,
         "salary": salary,
         "experience": experience,
         "education": education,
         "category": category,
         "field": field,
-
         "job_description": full_description,
         "job_url": job_url,
     }
 
-    print("✅ تم استخراج الوظيفة")
-    print(f"المسمى: {job_title}")
-    print(f"الشركة: {company_name}")
-    print(f"الموقع: {location}")
-    print(f"التاريخ: {posted_date}")
-    print(f"الراتب: {salary}")
-    print(f"التصنيف: {category}")
-    print(f"المجال: {field}")
-
+    print(f"✅ تم بنجاح: {job_title} | {company_name}")
     return job_record
 
 
 def scrape_tanqeeb_random_jobs():
-
     print("=" * 70)
-    print("Tanqeeb Saudi - Tech Jobs - Multiple Pages & Keywords (تنويع الوظائف)")
+    print("Tanqeeb Saudi - Tech Jobs Extractor (محسّن v3)")
     print("=" * 70)
+    print(f"\n📁 مسارات الحفظ:")
+    print(f"   📂 مجلد البيانات: {DATA_DIR}")
+    print(f"   📄 ملف الوظائف: {JOBS_FILE}")
+    print(f"   📋 ملف الروابط: {LINKS_CACHE_FILE}")
 
-    all_job_links = set()
-    page = 1
-    max_pages = 5  # حد أقصى للصفحات للبحث
+    existing_jobs = load_existing_jobs()
+    print(f"\n📊 عدد الوظائف الموجودة بالفعل: {len(existing_jobs)}")
     
-    # حلقة على الصفحات
-    while len(all_job_links) < NUMBER_OF_JOBS and page <= max_pages:
-        print(f"\n📄 الصفحة {page}")
-        print("-" * 70)
-        
-        # حلقة على كل تخصص في الصفحة الحالية
-        for keyword in TECH_KEYWORDS:
-            links = get_job_links(keyword=keyword, search_params=SEARCH_PARAMS, page=page)
-            all_job_links.update(links)
-            
-            # إذا وصلنا للعدد المطلوب، توقف
-            if len(all_job_links) >= NUMBER_OF_JOBS:
-                break
-        
-        print(f"📊 الإجمالي حتى الآن: {len(all_job_links)} وظيفة")
-        page += 1
-    
-    all_job_links = list(all_job_links)
+    if existing_jobs:
+        print(f"   • أول وظيفة: {existing_jobs[0].get('job_title', 'غير محدد')}")
+        print(f"   • من: {existing_jobs[0].get('company_name', 'غير محدد')}")
 
-    if not all_job_links:
+    new_job_links, all_extracted_links = get_job_links()
 
-        print(
-            "❌ لم يتم العثور على أي وظائف."
-        )
-
+    if not new_job_links:
+        print("❌ لم يتم العثور على روابط جديدة.")
         return
 
-   
-    random.shuffle(all_job_links)
+    random.shuffle(new_job_links)
+    selected_links = new_job_links[:NUMBER_OF_JOBS]
 
-    selected_links = all_job_links[
-        :NUMBER_OF_JOBS
-    ]
+    print(f"\n🎲 تم اختيار {len(selected_links)} وظيفة جديدة للتحميل...")
 
-    print(
-        f"\n🎲 تم اختيار "
-        f"{len(selected_links)} وظائف عشوائية."
-    )
-
-  
-    jobs = []
-
-    for index, job_url in enumerate(
-        selected_links,
-        start=1
-    ):
-
-        print(
-            f"\n[{index}/{len(selected_links)}]"
-        )
-
+    new_jobs = []
+    successfully_scraped = 0
+    
+    for index, job_url in enumerate(selected_links, start=1):
+        print(f"\n[{index}/{len(selected_links)}]")
+        
+        if job_exists(existing_jobs, job_url):
+            print(f"⏭️ هذه الوظيفة موجودة بالفعل، تجاهل...")
+            continue
+        
         job = scrape_job(job_url)
-
         if job:
+            new_jobs.append(job)
+            successfully_scraped += 1
+        time.sleep(1.5)
 
-            jobs.append(job)
+    print(f"\n📊 إحصائيات الجمع:")
+    print(f"   • الوظائف الموجودة: {len(existing_jobs)}")
+    print(f"   • الوظائف الجديدة المستخرجة: {len(new_jobs)}")
+    
+    combined_jobs = existing_jobs + new_jobs
+    
+    unique_jobs = []
+    seen_urls = set()
+    for job in combined_jobs:
+        if job.get("job_url") not in seen_urls:
+            unique_jobs.append(job)
+            seen_urls.add(job.get("job_url"))
+    
+    print(f"   • الإجمالي (بعد إزالة التكرارات): {len(unique_jobs)}")
+    
+    all_extracted_links.update(new_job_links)
+    save_extracted_links(all_extracted_links)
+    
+    print(f"\n💾 جاري حفظ الوظائف...")
+    save_jobs(unique_jobs)
 
- 
-    if len(jobs) < NUMBER_OF_JOBS:
-
-        print(
-            f"\n⚠️ تم استخراج "
-            f"{len(jobs)} فقط من أصل "
-            f"{NUMBER_OF_JOBS}."
-        )
-
-  
-    os.makedirs(
-        "data/raw",
-        exist_ok=True
-    )
-
-    output_path = (
-        "data/raw/tanqeeb_saudi_jobs_tech2.json"
-    )
-
-    with open(
-        output_path,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            jobs,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
-
-  
-    print("\n")
+    print("\n" + "=" * 70)
+    print(f"✅ تم الانتهاء بنجاح!")
+    print(f"   • وظائف مستخرجة جديدة: {successfully_scraped}")
+    print(f"   • إجمالي الوظائف المحفوظة: {len(unique_jobs)}")
+    print(f"   • المسار: {JOBS_FILE}")
     print("=" * 70)
-    print("✅ تم الانتهاء بنجاح")
-    print("=" * 70)
-
-    print(
-        f"عدد الوظائف المستخرجة: {len(jobs)} من {NUMBER_OF_JOBS}"
-    )
-
-    print(
-        f"📁 تم الحفظ في:"
-        f" {output_path}"
-    )
-
-    print("\n🔍 التخصصات المبحوث عنها:")
-    for i, keyword in enumerate(TECH_KEYWORDS[:len(TECH_KEYWORDS)], 1):
-        print(f"  {i}. {keyword}")
-
-    print("\n📋 الوظائف المستخرجة:")
-
-    for index, job in enumerate(
-        jobs,
-        start=1
-    ):
-
-        print(
-            f"{index}. "
-            f"{job['job_title']} "
-            f"- {job['company_name']} "
-            f"- {job['location']}"
-        )
 
 
 if __name__ == "__main__":
-
     scrape_tanqeeb_random_jobs()
