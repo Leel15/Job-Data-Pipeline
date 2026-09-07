@@ -1,141 +1,245 @@
 import re
+from typing import List, Set
 
-# (Technical Hard Skills Only)
-TECH_TAXONOMY = {
-    "python": [r"\bpython\b", r"\bبايثون\b"],
-    "java": [r"\bjava\b"],
-    "c#": [r"\bc#\b", r"\bcsharp\b", r"\bc\s*#\b"],
-    "c++": [r"\bc\+\+\b"],
-    "c": [r"\b(?<!\w)c(?!\w|\+|\#)"],  # C language boundary
-    "javascript": [r"\bjavascript\b", r"\bjs\b"],
-    "typescript": [r"\btypescript\b", r"\bts\b"],
-    "sql": [r"\bsql\b"],
-    "php": [r"\bphp\b"],
-    "kotlin": [r"\bkotlin\b"],
-    "swift": [r"\bswift\b"],
-    "go": [r"\bgolang\b", r"\bgo\s+language\b"],
-    "rust": [r"\brust\b"],
-    "r": [r"\br\s+language\b", r"\bprogramming\s+in\s+r\b"],
-    "bash": [r"\bbash\b", r"\bshell\s*script(ing)?\b"],
-    "powershell": [r"\bpowershell\b"],
-    "html": [r"\bhtml5?\b"],
-    "css": [r"\bcss3?\b"],
-    "xml": [r"\bxml\b"],
-    "json": [r"\bjson\b"],
-
-
-    "react": [r"\breact(\.js)?\b"],
-    "react native": [r"\breact\s*native\b"],
-    "angular": [r"\bangular(\.js)?\b"],
-    "vue": [r"\bvue(\.js)?\b"],
-    "next.js": [r"\bnext(\.js)?\b"],
-    "node.js": [r"\bnode(\.js)?\b"],
-    ".net": [r"\b\.net\b", r"\basp\.net\b", r"\bdotnet\b", r"\b\.net\s*core\b"],
-    "django": [r"\bdjango\b"],
-    "fastapi": [r"\bfastapi\b"],
-    "flask": [r"\bflask\b"],
-    "spring boot": [r"\bspring\s*boot\b", r"\bspring\s*framework\b"],
-    "laravel": [r"\blaravel\b"],
-    "flutter": [r"\bflutter\b"],
-    "android": [r"\bandroid\b", r"\bأندرويد\b"],
-    "ios": [r"\bios\b"],
-    "bootstrap": [r"\bbootstrap\b"],
-    "tailwind": [r"\btailwind(\s*css)?\b"],
-    "graphql": [r"\bgraphql\b"],
-    "rest api": [r"\brest(ful)?\s*apis?\b", r"\bapi\s*integration\b", r"\brest\b"],
-    "microservices": [r"\bmicroservices?\b"],
-    "outsystems": [r"\boutsystems\b"],
-    "sharepoint": [r"\bsharepoint\b"],
-
-
-    "postgresql": [r"\bpostgres(ql)?\b"],
-    "mysql": [r"\bmysql\b"],
-    "sql server": [r"\bsql\s*server\b", r"\bmssql\b"],
-    "oracle": [r"\boracle(\s*database)?\b", r"\boracle\s*adf\b"],
-    "mongodb": [r"\bmongodb\b", r"\bmongo\b"],
-    "redis": [r"\bredis\b"],
-    "snowflake": [r"\bsnowflake\b"],
-    "databricks": [r"\bdatabricks\b"],
-    "bigquery": [r"\bbigquery\b"],
-    "redshift": [r"\bredshift\b"],
-    "microsoft fabric": [r"\b(microsoft\s*)?fabric\b"],
-    "hadoop": [r"\bhadoop\b"],
-    "spark": [r"\b(apache\s*)?spark\b", r"\bpyspark\b"],
-    "kafka": [r"\b(apache\s*)?kafka\b"],
-    "airflow": [r"\b(apache\s*)?airflow\b"],
-    "dbt": [r"\bdbt\b"],
-    "etl": [r"\betl\b", r"\belt\b"],
-    "power bi": [r"\bpower\s*bi\b", r"\bpowerbi\b"],
-    "tableau": [r"\btableau\b"],
-    "data warehouse": [r"\bdata\s*warehous(e|ing)\b", r"\bdwh\b"],
-    "data lake": [r"\bdata\s*lake\b"],
-    "data governance": [r"\bdata\s*governance\b", r"\bحوكمة\s*البيانات\b"],
-
-    "aws": [r"\baws\b", r"\bamazon\s*web\s*services\b"],
-    "azure": [r"\bazure\b", r"\bأزور\b"],
-    "gcp": [r"\bgcp\b", r"\bgoogle\s*cloud(\s*platform)?\b"],
-    "docker": [r"\bdocker\b", r"\bدوكر\b"],
-    "kubernetes": [r"\bkubernetes\b", r"\bk8s\b"],
-    "terraform": [r"\bterraform\b"],
-    "ansible": [r"\bansible\b"],
-    "ci/cd": [r"\bci[/-]?cd\b"],
-    "jenkins": [r"\bjenkins\b"],
-    "github actions": [r"\bgithub\s*actions\b"],
-    "gitlab": [r"\bgitlab(\s*ci)?\b"],
-    "argocd": [r"\bargo\s*cd\b"],
-    "linux": [r"\blinux\b", r"\bلينكس\b", r"\bubuntu\b", r"\bredhat\b"],
-    "git": [r"\bgit\b", r"\bgithub\b"],
-    "grafana": [r"\bgrafana\b"],
-    "prometheus": [r"\bprometheus\b"],
-    "datadog": [r"\bdatadog\b"],
-    "splunk": [r"\bsplunk\b"],
-    "elk": [r"\belk(\s*stack)?\b", r"\belasticsearch\b"],
-    "vault": [r"\bhashicorp\s*vault\b", r"\bvault\b"],
-
-    "machine learning": [r"\bmachine\s*learning\b", r"\bتعلم\s*الآلة\b", r"\bml\b"],
-    "deep learning": [r"\bdeep\s*learning\b", r"\bالتعلم\s*العميق\b"],
-    "ai": [r"\bai\b", r"\bartificial\s*intelligence\b", r"\bذكاء\s*اصطناعي\b"],
-    "nlp": [r"\bnlp\b", r"\bnatural\s*language\s*processing\b"],
-    "computer vision": [r"\bcomputer\s*vision\b", r"\bopencv\b"],
-    "pytorch": [r"\bpytorch\b"],
-    "tensorflow": [r"\btensorflow\b"],
-    "llm": [r"\bllms?\b", r"\blarge\s*language\s*models?\b"],
-    "chatgpt": [r"\bchatgpt\b"],
-    "langchain": [r"\blangchain\b"],
-
-    "cybersecurity": [r"\bcybersecurity\b", r"\bأمن\s*سيبراني\b", r"\bأمن\s*المعلومات\b", r"\binformation\s*security\b"],
-    "networking": [r"\bnetworking\b", r"\bشبكات\b"],
-    "firewall": [r"\bfirewalls?\b", r"\bجدار\s*ناري\b", r"\bpalo\s*alto\b", r"\bfortigate\b"],
-    "ccna": [r"\bccna\b"],
-    "ccnp": [r"\bccnp\b"],
-    "siem": [r"\bsiem\b"],
-    "iam": [r"\biam\b", r"\bidentity\s*(and\s*)?access\s*management\b"],
-    "vpn": [r"\bvpn\b"],
-
-    "sap": [r"\bsap\b", r"\bsap\s*ariba\b"],
-    "microsoft dynamics": [r"\b(microsoft\s*)?dynamics(\s*365)?\b", r"\bd365\b"],
-    "power apps": [r"\bpower\s*apps\b"],
-    "power automate": [r"\bpower\s*automate\b"],
-    "dataverse": [r"\bdataverse\b"],
-    "servicenow": [r"\bservicenow\b"],
-    "salesforce": [r"\bsalesforce\b"],
-    "jira": [r"\bjira\b"],
-    "selenium": [r"\bselenium\b"],
-    "appium": [r"\bappium\b"]
+TECHNICAL_SKILLS = {
+    'python', 'java', 'c#', '.net', 'c++', 'javascript', 'typescript', 'sql',
+    'html', 'css', 'php', 'ruby', 'golang', 'go', 'rust', 'swift', 'kotlin',
+    'scala', 'r', 'matlab', 'perl', 'groovy', 'bash', 'shell', 'powershell',
+    
+    'react', 'vue', 'angular', 'angularjs', 'next.js', 'nuxt', 'svelte',
+    'ember', 'backbone', 'jquery', 'bootstrap', 'tailwind', 'webpack',
+    'babel', 'gulp', 'grunt', 'npm', 'yarn', 'pnpm', 'rest api', 'graphql',
+    'websocket', 'http', 'ajax', 'json', 'xml', 'soap', 'wsdl',
+    
+    'node.js', 'express', 'django', 'flask', 'fastapi', 'spring', 'spring boot',
+    'hibernate', 'sqlalchemy', 'mongodb', 'mysql', 'postgresql', 'oracle',
+    'redis', 'elasticsearch', 'dynamodb', 'cassandra', 'couchdb', 'firestore',
+    'aws', 'azure', 'gcp', 'google cloud', 'docker', 'kubernetes', 'ci/cd',
+    
+    'sql server', 'mariadb', 'sqlite', 'neo4j', 'memcached', 'rabbitmq',
+    'kafka', 'activemq', 'apachespark', 'hadoop', 'hive', 'pig',
+    
+    'git', 'svn', 'jenkins', 'gitlab', 'github', 'bitbucket', 'terraform',
+    'ansible', 'puppet', 'chef', 'vagrant', 'docker-compose', 'helm',
+    'prometheus', 'grafana', 'elasticsearch', 'logstash', 'kibana', 'elk',
+    
+    'machine learning', 'deep learning', 'tensorflow', 'pytorch', 'keras',
+    'scikit-learn', 'sklearn', 'pandas', 'numpy', 'scipy', 'matplotlib',
+    'seaborn', 'nlp', 'natural language processing', 'computer vision',
+    'opencv', 'cv', 'cvat', 'yolo', 'rcnn', 'lstm', 'rnn', 'cnn',
+    'xgboost', 'lightgbm', 'catboost', 'reinforcement learning', 'rl',
+    'llm', 'large language model', 'gpt', 'bert', 'transformer',
+    
+    'cybersecurity', 'information security', 'network security', 'firewall',
+    'ccna', 'ccnp', 'ccna collaboration', 'networking', 'vpn', 'ssl', 'tls',
+    'ssh', 'https', 'dns', 'dhcp', 'ldap', 'kerberos', 'oauth', 'saml',
+    'encryption', 'cryptography', 'penetration testing', 'vulnerability',
+    
+    'aws', 'amazon web services', 's3', 'ec2', 'lambda', 'rds', 'dynamodb',
+    'sqs', 'sns', 'cloudformation', 'azure', 'microsoft azure', 'app service',
+    'sql database', 'cosmos db', 'gcp', 'google cloud platform', 'app engine',
+    'cloud functions', 'cloud storage', 'bigquery', 'dataflow',
+    
+    'android', 'ios', 'swift', 'kotlin', 'flutter', 'react native', 'ionic',
+    'xamarin', 'native development', 'mobile development', 'appium',
+    
+    'scrum', 'kanban', 'agile', 'safe', 'prince2', 'pmp', 'jira', 'confluence',
+    'trello', 'asana', 'monday.com', 'notion', 'slack', 'teams',
+    
+    'sap', 'sap ariba', 'sap s/4hana', 'sap successfactors', 'sap analytics',
+    'oracle fusion', 'oracle erp', 'salesforce', 'crm', 'odoo', 'primavera',
+    'erp', 'enterprise resource planning', 'business intelligence', 'bi',
+    'data warehouse', 'dwh', 'etl', 'elt',
+    
+    'power bi', 'tableau', 'looker', 'qlik', 'microstrategy', 'cognos',
+    'sisense', 'google analytics', 'ga4', 'google tag manager', 'gtm',
+    'adobe analytics', 'mixpanel', 'amplitude', 'segment', 'analytics',
+    
+    'autocad', 'bim', 'gis', 'arcgis', 'revit', 'sketchup', 'cad',
+    'unreal engine', 'unity', 'blender', '3ds max', 'maya',
+    
+    'microsoft dynamics', 'power apps', 'power automate', 'power query',
+    'dataverse', 'fhir', 'hl7', 'health information exchange',
+    
+    'articulate 360', 'adobe captivate', 'addie', 'instructional design',
+    'e-learning', 'lms', 'learning management system',
+    
+    'wordpress', 'drupal', 'joomla', 'shopify', 'magento', 'woocommerce',
+    'adobe commerce', 'cms', 'content management system', 'headless cms',
+    
+    'microservices', 'serverless', 'iam', 'identity access management',
+    'saml', 'oauth2', 'jwt', 'api gateway', 'service mesh', 'istio',
+    'envoy', 'circuit breaker', 'load balancing', 'cdn', 'content delivery',
+    'message queue', 'event streaming', 'event-driven', 'cqrs', 'saga',
+    'outsystems', 'low-code', 'no-code', 'rpa', 'robotic process automation',
+    'ai', 'artificial intelligence', 'machine learning', 'deep learning',
+    'llm', 'gen ai', 'generative ai', 'prompt engineering',
+    'algolia', 'elasticsearch', 'solr', 'search engine', 'full-text search',
 }
 
-def extract_tech_skills(text):
+STOP_WORDS = {
+    'and', 'or', 'the', 'a', 'an', 'with', 'without', 'for', 'to', 'of', 'in',
+    'experience', 'knowledge', 'skill', 'skills', 'required', 'preferred',
+    'ability', 'strong', 'expertise', 'proficiency', 'advanced', 'basic',
+    'understanding', 'hands-on', 'proven', 'excellent', 'good', 'very',
+    'must', 'should', 'can', 'will', 'would', 'could', 'have', 'has',
+    'working', 'work', 'project', 'projects', 'team', 'teams', 'management',
+    'key', 'main', 'primary', 'secondary', 'support', 'supporting',
+}
 
+def normalize_skill(skill: str) -> str:
+    if not skill:
+        return ""
+    
+    skill = skill.lower().strip()
+    
+    skill = re.sub(r'[\(\)\[\]\{\}<>]', '', skill)
+    
+    skill = re.sub(r'\.+', '', skill)
+    
+    skill = re.sub(r'\s+', ' ', skill).strip()
+    
+    corrections = {
+        'c # ': 'c#',
+        '.net core': '.net',
+        'node .js': 'node.js',
+        'asp .net': 'asp.net',
+        'machine_learning': 'machine learning',
+        'deep_learning': 'deep learning',
+        'natural_language_processing': 'nlp',
+        'computer_vision': 'computer vision',
+    }
+    
+    for wrong, correct in corrections.items():
+        if wrong in skill:
+            skill = skill.replace(wrong, correct)
+    
+    return skill
+
+
+def extract_tech_skills(text: str) -> List[str]:
+   
     if not text:
         return []
+    
+    text = text.lower()
+    
+    text = re.sub(r'[^\w\s\-\.\/\+#]', ' ', text)
+    
+    text = re.sub(r'\s+', ' ', text)
+    
+    found_skills: Set[str] = set()
+    
+    for skill in sorted(TECHNICAL_SKILLS, key=len, reverse=True):
+        pattern = r'\b' + re.escape(skill) + r'\b'
+        
+        if re.search(pattern, text):
+            found_skills.add(normalize_skill(skill))
+    
+    compound_skills = [
+        r'machine\s+learning',
+        r'deep\s+learning',
+        r'natural\s+language\s+processing',
+        r'computer\s+vision',
+        r'reinforcement\s+learning',
+        r'feature\s+engineering',
+        r'data\s+science',
+        r'data\s+analysis',
+        r'api\s+gateway',
+        r'service\s+mesh',
+        r'api\s+integration',
+        r'cloud\s+computing',
+        r'edge\s+computing',
+        r'quantum\s+computing',
+        r'blockchain\s+technology',
+        r'iot\s+development',
+        r'web\s+development',
+        r'mobile\s+development',
+        r'full[\s\-]?stack',
+        r'front[\s\-]?end',
+        r'back[\s\-]?end',
+        r'devops',
+        r'dev\s+ops',
+        r'mlops',
+        r'ml\s+ops',
+        r'enterprise\s+resource\s+planning',
+        r'business\s+intelligence',
+        r'content\s+management',
+        r'learning\s+management',
+        r'relationship\s+management',
+        r'identity\s+and\s+access',
+        r'risk\s+management',
+        r'project\s+management',
+        r'information\s+security',
+        r'network\s+security',
+        r'cyber\s+security',
+        r'penetration\s+testing',
+        r'vulnerability\s+assessment',
+        r'incident\s+response',
+        r'disaster\s+recovery',
+        r'business\s+continuity',
+    ]
+    
+    for pattern in compound_skills:
+        if re.search(pattern, text):
+            match = re.search(pattern, text)
+            if match:
+                skill_text = normalize_skill(match.group())
+                if skill_text and skill_text not in STOP_WORDS:
+                    found_skills.add(skill_text)
+    
+    version_patterns = [
+        r'(python|java|node|javascript)\s*\d+(?:\.\d+)*',
+        r'(spring|spring\s+boot)\s+\d+(?:\.\d+)*',
+        r'(django|flask)\s+\d+(?:\.\d+)*',
+        r'(react|vue|angular)\s+\d+(?:\.\d+)*',
+        r'(.net|\.net)\s+core\s+\d+(?:\.\d+)*',
+        r'(elasticsearch|kibana|logstash)\s+\d+(?:\.\d+)*',
+    ]
+    
+    for pattern in version_patterns:
+        matches = re.findall(pattern, text)
+        for match in matches:
+            if isinstance(match, tuple):
+                skill_text = normalize_skill(match[0])
+            else:
+                skill_text = normalize_skill(match)
+            
+            if skill_text and len(skill_text) > 1:
+                found_skills.add(skill_text)
+    
+   
+    final_skills = []
+    for skill in found_skills:
+        if (skill and 
+            len(skill) > 1 and 
+            skill not in STOP_WORDS and
+            not skill.isdigit()):
+            final_skills.append(skill)
+    
+    return sorted(list(set(final_skills)))
 
-    text_lower = str(text).lower()
-    found_skills = set()
 
-    for skill, patterns in TECH_TAXONOMY.items():
-        for pattern in patterns:
-            if re.search(pattern, text_lower, flags=re.IGNORECASE):
-                found_skills.add(skill)
-                break
+def extract_skills_with_context(text: str, context_window: int = 50) -> dict:
+   
+    skills = extract_tech_skills(text)
+    skills_with_context = {}
+    
+    text_lower = text.lower()
+    
+    for skill in skills:
+        pattern = r'\b' + re.escape(skill) + r'\b'
+        matches = list(re.finditer(pattern, text_lower))
+        
+        contexts = []
+        for match in matches:
+            start = max(0, match.start() - context_window)
+            end = min(len(text), match.end() + context_window)
+            context = text[start:end].strip()
+            contexts.append(context)
+        
+        if contexts:
+            skills_with_context[skill] = contexts
+    
+    return skills_with_context
 
-    return sorted(list(found_skills))
