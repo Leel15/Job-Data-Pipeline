@@ -10,6 +10,7 @@ from utils.skills_extractor import extract_tech_skills
 from azure.storage.filedatalake import DataLakeServiceClient
 from dotenv import load_dotenv
 
+
 def fetch_data_from_bronze():
     load_dotenv()
     CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
@@ -37,14 +38,12 @@ def fetch_data_from_bronze():
     print(f"Successfully loaded {len(all_data)} records from Azure Excel file.")
     return all_data
 
+
 def clean_company_name(company_str):
     if pd.isna(company_str) or not str(company_str).strip():
         return "Not Specified"
     cleaned = re.sub(r'^(client of\s+)', '', str(company_str).strip(), flags=re.IGNORECASE)
     return cleaned.strip()
-
-import pandas as pd
-import re
 
 def clean_job_title(job_description="", company_name=""):
     if pd.isna(job_description) or not str(job_description).strip():
@@ -533,9 +532,12 @@ def process_azure_jobs(output_json_path):
     with open(output_json_path, 'w', encoding='utf-8') as f:
         f.write(file_content)
 
+    parquet_local_path = "data/Silver/silver_linkedin_jobs.parquet"
+    os.makedirs(os.path.dirname(parquet_local_path), exist_ok=True)
+    df_temp.to_parquet(parquet_local_path, index=False)
+
     print(f"Successfully processed and saved local verification file to {output_json_path}")
 
 if __name__ == "__main__":
     OUTPUT_FILE = "data/Silver/standardized_linkedin_jobs.json"
-    
     process_azure_jobs(OUTPUT_FILE)
