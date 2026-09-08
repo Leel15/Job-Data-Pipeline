@@ -4,9 +4,38 @@ from datetime import datetime
 import pandas as pd
 import sys
 import os
-
+import io
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.skills_extractor import extract_tech_skills
+from azure.storage.filedatalake import DataLakeServiceClient
+from dotenv import load_dotenv
+
+def fetch_data_from_bronze():
+    load_dotenv()
+    CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+    
+    if not CONNECTION_STRING:
+        raise ValueError("AZURE_STORAGE_CONNECTION_STRING is missing from environment variables!")
+        
+    service_client = DataLakeServiceClient.from_connection_string(CONNECTION_STRING)
+    bronze_client = service_client.get_file_system_client(file_system="bronze")
+    
+    paths = bronze_client.get_paths()
+    all_data = []
+    
+    for path in paths:
+        if not path.is_directory and "linkedin-saudi-jobs.xlsx" in path.name.lower():
+            print(f"Fetching Excel file from Azure: {path.name}")
+            file_client = bronze_client.get_file_client(path.name)
+            download = file_client.download_file()
+            file_content = download.readall()
+            
+            df_excel = pd.read_excel(io.BytesIO(file_content))
+            all_data = df_excel.to_dict(orient='records')
+            break
+            
+    print(f"Successfully loaded {len(all_data)} records from Azure Excel file.")
+    return all_data
 
 def clean_company_name(company_str):
     if pd.isna(company_str) or not str(company_str).strip():
@@ -330,11 +359,9 @@ def clean_city(location_str):
         if key in loc_lower:
             return val
 
-    # Known regions — don't store them as cities
     if "eastern province" in loc_lower or "eastern" == loc_lower:
         return None
 
-    # If the location is only Saudi Arabia / KSA
     if loc_lower in {
         "saudi arabia",
         "ksa",
@@ -430,27 +457,23 @@ def format_date(date_val):
     except Exception:
         return None
     
-def process_linkedin_excel(excel_path, output_json_path):
-    try:
-        xls = pd.ExcelFile(excel_path)
-        sheet_name = xls.sheet_names[0]
-        df = pd.read_excel(excel_path, sheet_name=sheet_name)
-    except Exception as e:
-        print(f"Error reading Excel file: {e}")
+def process_azure_jobs(output_json_path):
+    raw_data = fetch_data_from_bronze()
+    if not raw_data:
+        print("No data found to process.")
         return
 
     standardized_jobs = []
-    print(f"Processing {len(df)} rows from LinkedIn Excel...")
+    print(f"Processing {len(raw_data)} records from Azure Bronze...")
 
-    for index, row in df.iterrows():
-        company_raw = row.get('CompanyName', '') or row.get('company_name', '')
+    for item in raw_data:
+        company_raw = item.get('CompanyName', '') or item.get('company_name', '')
         company_name = clean_company_name(company_raw)
         
-        raw_desc_content = row.get('JobDescription', '') or row.get('job_description', '')
-
+        raw_desc_content = item.get('JobDescription', '') or item.get('job_description', '')
         job_description = clean_description(raw_desc_content)
         
-        job_title = clean_job_title(raw_desc_content,company_name)
+        job_title = clean_job_title(raw_desc_content, company_name)
         if job_title == "Technical Professional":
             continue
 
@@ -458,15 +481,15 @@ def process_linkedin_excel(excel_path, output_json_path):
             if company_name == "AtkinsR":
                 continue
 
-
-        city = clean_city(row.get('city') or row.get('Location'))
+        city = clean_city(item.get('city') or item.get('Location'))
         country = "Saudi Arabia"
-        posted_date = format_date(row.get('posted_date') or row.get('PostedAt'))
-        employment_type = clean_employment_type(row.get('employment_type') or row.get('EmploymentType'), raw_desc_content)        
+        posted_date = format_date(item.get('posted_date') or item.get('PostedAt'))
+        employment_type = clean_employment_type(item.get('employment_type') or item.get('EmploymentType'), raw_desc_content)        
         skills = extract_tech_skills(job_description)
         education = extract_education(raw_desc_content)
         
-        job_url = None
+        job_url = item.get('source_url') or item.get('job_url')
+        
         common_schema_item = {
             "job_title": job_title,
             "company_name": company_name,
@@ -482,7 +505,6 @@ def process_linkedin_excel(excel_path, output_json_path):
 
         standardized_jobs.append(common_schema_item)
 
-
     print(f"Total jobs before removing duplicates: {len(standardized_jobs)}")
     df_temp = pd.DataFrame(standardized_jobs)
     df_temp.drop_duplicates(subset=['company_name', 'job_title', 'job_description'], keep='first', inplace=True)
@@ -492,6 +514,7 @@ def process_linkedin_excel(excel_path, output_json_path):
     standardized_jobs = df_temp.to_dict(orient='records')
 
     print(f"Total unique jobs remaining after removing duplicates: {len(standardized_jobs)}")
+    
     os.makedirs(os.path.dirname(output_json_path), exist_ok=True)
     
     with open(output_json_path, 'w', encoding='utf-8') as f:
@@ -510,10 +533,9 @@ def process_linkedin_excel(excel_path, output_json_path):
     with open(output_json_path, 'w', encoding='utf-8') as f:
         f.write(file_content)
 
-    print(f"Successfully processed {len(standardized_jobs)} LinkedIn jobs and saved to {output_json_path}")
+    print(f"Successfully processed and saved local verification file to {output_json_path}")
 
 if __name__ == "__main__":
-    EXCEL_FILE = "raw/linkedin-saudi-jobs.xlsx" 
-    OUTPUT_FILE = "data/raw/standardized_linkedin_jobs.json"
+    OUTPUT_FILE = "data/Silver/standardized_linkedin_jobs.json"
     
-    process_linkedin_excel(EXCEL_FILE, OUTPUT_FILE)
+    process_azure_jobs(OUTPUT_FILE)
