@@ -10,6 +10,24 @@ from utils.skills_extractor import extract_tech_skills
 from azure.storage.filedatalake import DataLakeServiceClient
 from dotenv import load_dotenv
 
+def upload_to_silver_azure(local_file_path, silver_file_name):
+    load_dotenv()
+    CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+    
+    if not CONNECTION_STRING:
+        raise ValueError("AZURE_STORAGE_CONNECTION_STRING is missing from environment variables!")
+        
+    service_client = DataLakeServiceClient.from_connection_string(CONNECTION_STRING)
+    silver_client = service_client.get_file_system_client(file_system="silver")
+    
+    file_client = silver_client.get_file_client(silver_file_name)
+    
+    with open(local_file_path, "rb") as f:
+        file_data = f.read()
+        
+    file_client.upload_data(file_data, overwrite=True)
+    print(f"Successfully uploaded '{local_file_path}' to 'silver' container as '{silver_file_name}'!")
+
 
 def fetch_data_from_bronze():
     load_dotenv()
@@ -540,4 +558,9 @@ def process_azure_jobs(output_json_path):
 
 if __name__ == "__main__":
     OUTPUT_FILE = "data/Silver/standardized_linkedin_jobs.json"
+
     process_azure_jobs(OUTPUT_FILE)
+
+    PARQUET_FILE = "data/Processed/silver_linkedin_jobs.parquet"
+
+    upload_to_silver_azure(PARQUET_FILE, silver_file_name="standardized_linkedin_jobs.parquet")
