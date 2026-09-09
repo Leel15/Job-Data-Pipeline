@@ -38,6 +38,20 @@ def fetch_tanqeeb_data_from_bronze():
     print(f"Successfully loaded {len(all_data)} records from Azure JSON file.")
     return all_data
 
+def upload_to_silver_container(local_file_path, blob_name):
+    load_dotenv()
+    CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+    
+    service_client = DataLakeServiceClient.from_connection_string(CONNECTION_STRING)
+    silver_client = service_client.get_file_system_client(file_system="silver")
+    
+    file_client = silver_client.get_file_client(blob_name)
+    
+    with open(local_file_path, "rb") as data:
+        file_client.upload_data(data, overwrite=True)
+        
+    print(f"Successfully uploaded {blob_name} to Azure Silver container!")
+
 def clean_company_name(company_str):
     if pd.isna(company_str) or not str(company_str).strip():
         return "Not Specified"
@@ -187,40 +201,49 @@ def translate_to_english_if_arabic(text):
     if not text or pd.isna(text):
         return text
     
-    if re.search(r'[\u0600-\u06FF]', str(text)):
-        translator = GoogleTranslator(source='ar', target='en')
-        max_retries = 3
-        
-        text_str = str(text)
-        chunks = [text_str[i:i+2000] for i in range(0, len(text_str), 2000)]
-        translated_chunks = []
-        
-        for chunk in chunks:
-            chunk_translated = False
-            for attempt in range(max_retries):
-                try:
-                    res = translator.translate(chunk)
-                    if res:
-                        translated_chunks.append(res)
-                    else:
-                        translated_chunks.append(chunk)
-                    chunk_translated = True
-                    time.sleep(1)  # مهلة أطول قليلاً بين الأجزاء لضمان استقرار الاتصال
-                    break
-                except Exception as e:
-                    if attempt < max_retries - 1:
-                        time.sleep(3)
-                        continue
-                    else:
-                        translated_chunks.append(chunk)
+    text_str = str(text)
+    
+    max_total_retries = 3
+    for global_attempt in range(max_total_retries):
+        if not re.search(r'[\u0600-\u06FF]', text_str):
+            break 
             
-            if not chunk_translated:
-                translated_chunks.append(chunk)
-                
-        return " ".join(translated_chunks)
-        
-    return text
-
+        try:
+            translator = GoogleTranslator(source='ar', target='en')
+            chunks = [text_str[i:i+1500] for i in range(0, len(text_str), 1500)]
+            translated_chunks = []
+            
+            for chunk in chunks:
+                if re.search(r'[\u0600-\u06FF]', chunk):
+                    success = False
+                    for attempt in range(3):
+                        try:
+                            res = translator.translate(chunk)
+                            if res and not re.search(r'[\u0600-\u06FF]', res):
+                                translated_chunks.append(res)
+                                success = True
+                                time.sleep(1.5) 
+                                break
+                            else:
+                                time.sleep(2)
+                        except:
+                            time.sleep(3)
+                    
+                    if not success:
+                        translated_chunks.append(chunk) 
+                else:
+                    translated_chunks.append(chunk)
+            
+            translated_text = " ".join(translated_chunks)
+            if not re.search(r'[\u0600-\u06FF]', translated_text):
+                return translated_text
+            else:
+                text_str = translated_text 
+                time.sleep(3)
+        except Exception as e:
+            time.sleep(4)
+            
+    return text_str
 def process_tanqeeb_deep_cleaning(output_json_path):
     raw_data = fetch_tanqeeb_data_from_bronze()
 
@@ -312,6 +335,11 @@ def process_tanqeeb_deep_cleaning(output_json_path):
     df_temp.to_parquet(output_parquet_path, index=False, engine='pyarrow')
     print(f"Successfully saved clean standardized Parquet file to: {output_parquet_path}")
 
+    return output_parquet_path
+
 if __name__ == "__main__":
     OUTPUT_JSON = "data/Silver/standardized_tanqeeb_jobs.json"
-    process_tanqeeb_deep_cleaning(OUTPUT_JSON)
+    
+    parquet_path = process_tanqeeb_deep_cleaning(OUTPUT_JSON)
+    
+    upload_to_silver_container(parquet_path, "standardized_tanqeeb_jobs.parquet")
