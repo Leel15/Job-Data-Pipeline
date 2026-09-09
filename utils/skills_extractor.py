@@ -43,26 +43,21 @@ TECHNICAL_SKILLS = {
     'android', 'ios', 'swift', 'kotlin', 'flutter', 'react native', 'ionic',
     'xamarin', 'native development', 'mobile development', 'appium',
     
-    'scrum', 'kanban', 'agile', 'safe', 'prince2', 'pmp', 'jira', 'confluence',
-    'trello', 'asana', 'monday.com', 'notion', 'slack', 'teams',
+    'agile',
     
-    'sap', 'sap ariba', 'sap s/4hana', 'sap successfactors', 'sap analytics',
-    'oracle fusion', 'oracle erp', 'salesforce', 'crm', 'odoo', 'primavera',
-    'erp', 'enterprise resource planning', 'business intelligence', 'bi',
+    'oracle fusion', 'oracle erp', 'odoo', 
+    'enterprise resource planning', 'business intelligence', 'bi',
     'data warehouse', 'dwh', 'etl', 'elt',
     
     'power bi', 'tableau', 'looker', 'qlik', 'microstrategy', 'cognos',
     'sisense', 'google analytics', 'ga4', 'google tag manager', 'gtm',
     'adobe analytics', 'mixpanel', 'amplitude', 'segment', 'analytics',
     
-    'autocad', 'bim', 'gis', 'arcgis', 'revit', 'sketchup', 'cad',
     'unreal engine', 'unity', 'blender', '3ds max', 'maya',
     
     'microsoft dynamics', 'power apps', 'power automate', 'power query',
     'dataverse', 'fhir', 'hl7', 'health information exchange',
     
-    'articulate 360', 'adobe captivate', 'addie', 'instructional design',
-    'e-learning', 'lms', 'learning management system',
     
     'wordpress', 'drupal', 'joomla', 'shopify', 'magento', 'woocommerce',
     'adobe commerce', 'cms', 'content management system', 'headless cms',
