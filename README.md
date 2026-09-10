@@ -7,18 +7,23 @@ A modular, scalable, and collaborative data pipeline designed to collect, aggreg
 
 ```
 Job-Data-Pipeline/
-├── Ingestion/                      <-- Scraper scripts for various job sources
-│   ├── Tanqeeb.py                  <-- Tanqeeb job board scraper
-│   ├── freehire.py                 <-- FreeHire API data ingestion
-│   └── jsearch.py                  <--  JSearch API scraper
-├── utils/                          <-- Shared utilities and helper scripts
-│   └── skills_extractor.py         <-- Regex-based technical skills taxonomy extractor
-├── data/                           
-│   └── raw/                        <-- Storage layer for raw JSON and spreadsheet files
-├── .env                            <-- Secret API keys (local only, never committed)
-├── .env.example                    <-- Template file for required environment variables
-├── .gitignore                      <-- Config to protect sensitive files and local caches
-└── requirements.txt                <-- Python package dependencies       
+├── Ingestion/                          <-- Scraper scripts and API fetchers for raw job boards
+│   ├── Tanqeeb.py                      <-- Tanqeeb job board scraper
+│   ├── freehire.py                     <-- FreeHire API data ingestion script
+│   ├── jooble_api.py                   <-- Jooble API integration script
+│   └── jsearch.py                      <-- JSearch API job scraper
+├── Transformation/                     <-- Standardization and cleaning pipelines for each source
+│   ├── standardizer_jsearch.py         <-- Cleans and formats JSearch raw records
+│   ├── standardizer_linkedin.py        <-- Cleans and formats LinkedIn data
+│   └── standardizer_tanqeeb.py         <-- Cleans and formats Tanqeeb raw records
+├── data/                               <-- Data storage layers (Bronze, Silver, and local staging)
+│   ├── Processed/                      <-- Silver/Processed layer for cleaned JSON and Parquet files
+│   └── raw/                            <-- Bronze layer for raw, untransformed JSON and Excel files
+├── utils/                              <-- Shared helper modules and libraries
+│   └── skills_extractor.py             <-- Regex-based technical skills taxonomy and extraction engine
+├── .env.example                        <-- Template file outlining required environment variables
+├── .gitignore                          <-- Configuration to exclude sensitive data, caches, and secrets
+└── README.md                           <-- Project documentation and setup guide     
 ```
 
 ---
