@@ -12,18 +12,15 @@ Job-Data-Pipeline/
 │   ├── freehire.py                   
 │   ├── jooble_api.py                   
 │   └── jsearch.py                     
-├── Transformation/                     <-- Standardization and cleaning pipelines for each source
-│   ├── standardizer_jsearch.py         
-│   ├── standardizer_linkedin.py        
-│   └── standardizer_tanqeeb.py         
-├── data/                               <-- Data storage layers (Bronze, Silver, and local staging)
-│   ├── Processed/                      <-- Silver/Processed layer for cleaned JSON and Parquet files
-│   └── raw/                            <-- Bronze layer for raw, untransformed JSON and Excel files
-├── utils/                              
-│   └── skills_extractor.py             <-- Regex-based technical skills taxonomy and extraction engine
+├── Transformation/                     <-- Standardization, cleaning, and transformation pipelines
+├── data/                               <-- Medallion architecture storage layers (Bronze, Silver, Gold)
+│   ├── Curated/                        <-- Gold layer for analytics-ready datasets, aggregates & metrics
+│   ├── Processed/                      <-- Silver layer for cleaned, deduplicated & standardized files
+│   └── raw/                            <-- Bronze layer for raw, untransformed scraper and API dumps
+├── utils/                              <-- Shared utility modules and helper functions
 ├── .env.example                        <-- Template file outlining required environment variables
 ├── .gitignore                         
-└── README.md                             
+└── README.md                           <-- Project documentation and setup guide                            
 ```
 
 ---
