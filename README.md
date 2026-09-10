@@ -8,22 +8,22 @@ A modular, scalable, and collaborative data pipeline designed to collect, aggreg
 ```
 Job-Data-Pipeline/
 ├── Ingestion/                          <-- Scraper scripts and API fetchers for raw job boards
-│   ├── Tanqeeb.py                      <-- Tanqeeb job board scraper
-│   ├── freehire.py                     <-- FreeHire API data ingestion script
-│   ├── jooble_api.py                   <-- Jooble API integration script
-│   └── jsearch.py                      <-- JSearch API job scraper
+│   ├── Tanqeeb.py                     
+│   ├── freehire.py                   
+│   ├── jooble_api.py                   
+│   └── jsearch.py                     
 ├── Transformation/                     <-- Standardization and cleaning pipelines for each source
-│   ├── standardizer_jsearch.py         <-- Cleans and formats JSearch raw records
-│   ├── standardizer_linkedin.py        <-- Cleans and formats LinkedIn data
-│   └── standardizer_tanqeeb.py         <-- Cleans and formats Tanqeeb raw records
+│   ├── standardizer_jsearch.py         
+│   ├── standardizer_linkedin.py        
+│   └── standardizer_tanqeeb.py         
 ├── data/                               <-- Data storage layers (Bronze, Silver, and local staging)
 │   ├── Processed/                      <-- Silver/Processed layer for cleaned JSON and Parquet files
 │   └── raw/                            <-- Bronze layer for raw, untransformed JSON and Excel files
-├── utils/                              <-- Shared helper modules and libraries
+├── utils/                              
 │   └── skills_extractor.py             <-- Regex-based technical skills taxonomy and extraction engine
 ├── .env.example                        <-- Template file outlining required environment variables
-├── .gitignore                          <-- Configuration to exclude sensitive data, caches, and secrets
-└── README.md                           <-- Project documentation and setup guide     
+├── .gitignore                         
+└── README.md                             
 ```
 
 ---
