@@ -1,9 +1,12 @@
 import os
 import json
+import time
 import requests
 import pandas as pd
 from datetime import datetime, timezone
 from dotenv import load_dotenv
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 load_dotenv()
 
@@ -77,7 +80,28 @@ US_STATE_INDICATORS = [
 ]
 
 
-def fetch_all_pages(api_key: str, keyword: str, location: str):
+def create_resilient_session() -> requests.Session:
+    """
+    ينشئ session واحدة تُعاد استخدامها لكل الطلبات، مع إعادة محاولة تلقائية
+    عند فشل الاتصال أو أخطاء السيرفر المؤقتة (5xx).
+    """
+    session = requests.Session()
+
+    retry_strategy = Retry(
+        total=3,                                   # 3 محاولات إضافية قبل الاستسلام
+        backoff_factor=2,                           # ينتظر 2، 4، 8 ثوانٍ بين كل محاولة
+        status_forcelist=[429, 500, 502, 503, 504], # أخطاء يُعاد المحاولة عندها
+        allowed_methods=["POST"],
+    )
+
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+
+    return session
+
+
+def fetch_all_pages(session: requests.Session, api_key: str, keyword: str, location: str):
     url = f"https://jooble.org/api/{api_key}"
     all_jobs = []
     page = 1
@@ -85,7 +109,17 @@ def fetch_all_pages(api_key: str, keyword: str, location: str):
 
     while True:
         payload = {"keywords": keyword, "location": location, "page": page}
-        response = requests.post(url, json=payload)
+
+        try:
+            response = session.post(url, json=payload, timeout=30)
+        except requests.exceptions.ConnectionError as e:
+            print(f"⚠️ فشل الاتصال ({keyword} | {location} - صفحة {page}): {e}")
+            print("⏳ الانتظار 5 ثوانٍ قبل الانتقال للتقاطع التالي...")
+            time.sleep(5)
+            break
+        except requests.exceptions.Timeout:
+            print(f"⏱️ انتهت مهلة الاتصال ({keyword} | {location} - صفحة {page})")
+            break
 
         if response.status_code != 200:
             print(f"⚠️ خطأ ({keyword} | {location} - صفحة {page}): {response.status_code}")
@@ -105,6 +139,8 @@ def fetch_all_pages(api_key: str, keyword: str, location: str):
 
         if page > 50:
             break
+
+        time.sleep(0.5)  # تأخير بسيط بين الصفحات لتقليل الضغط على السيرفر
 
     print(f"✅ {keyword} | {location}: استلمنا {len(all_jobs)} من إجمالي معلن {total_count_reported}")
     return all_jobs
@@ -140,9 +176,16 @@ def is_tech_title(title: str) -> bool:
 
 
 def get_jooble_jobs() -> pd.DataFrame:
+    """
+    يسحب الوظائف من Jooble ويطبّق فلترة أساسية فقط (تقني + سعودي).
+    لا يوجد هنا أي تنظيف عميق (لا استخراج مهارات، لا خبرة، لا راتب من النص)
+    — هذي العمليات تُطبَّق لاحقًا عبر Transformation/cleaning.py.
+    """
     api_key = os.getenv("JOOBLE_API_KEY")
     if not api_key:
         raise ValueError("لم يتم العثور على JOOBLE_API_KEY في ملف .env")
+
+    session = create_resilient_session()
 
     raw_jobs = []
     total_calls = len(TECH_KEYWORDS) * len(LOCATIONS)
@@ -150,10 +193,11 @@ def get_jooble_jobs() -> pd.DataFrame:
 
     for location in LOCATIONS:
         for keyword in TECH_KEYWORDS:
-            jobs = fetch_all_pages(api_key, keyword, location)
+            jobs = fetch_all_pages(session, api_key, keyword, location)
             for job in jobs:
                 job["_search_location"] = location
             raw_jobs.extend(jobs)
+            time.sleep(1)  # تأخير إضافي بين كل تقاطع كلمة+موقع
 
     structured = []
     for job in raw_jobs:
@@ -164,7 +208,7 @@ def get_jooble_jobs() -> pd.DataFrame:
             "location": job.get("location"),
             "date": job.get("updated"),
             "salary": job.get("salary"),
-            "snippet": job.get("snippet"),
+            "snippet": job.get("snippet"),  # خام كما هو (فيه HTML)، التنظيف لاحقًا في cleaning.py
             "url": job.get("link"),
             "source": "jooble",
             "search_location": job.get("_search_location"),
@@ -188,9 +232,10 @@ def get_jooble_jobs() -> pd.DataFrame:
 
     before_dedup = len(df)
     df.drop_duplicates(subset=["title", "company", "url"], inplace=True)
+    df = df.reset_index(drop=True)
     print(f"🧹 بعد إزالة التكرار: {len(df)} (أُزيل {before_dedup - len(df)})")
 
-    print(f"📊 إجمالي الوظائف التقنية النهائية: {len(df)}")
+    print(f"📊 إجمالي الوظائف التقنية بعد الفلترة الأساسية: {len(df)}")
 
     return df
 
@@ -254,5 +299,7 @@ if __name__ == "__main__":
     df = get_jooble_jobs()
     print(df[["title", "company", "location"]].head(20))
 
-    json_path = os.path.join(os.path.dirname(__file__), "..", "output", "jooble_tech_jobs.json")
+    json_path = os.path.join(
+        os.path.dirname(__file__), "..", "data", "raw", "jooble_tech_jobs.json"
+    )
     merge_and_save_jobs(df, json_path)
