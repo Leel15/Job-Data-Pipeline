@@ -1,236 +1,296 @@
+import json
 import os
 import time
 import requests
-import pandas as pd
 from dotenv import load_dotenv
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import snowflake.connector
 
 load_dotenv()
 
-BASE_URL = "https://jsearch.p.rapidapi.com/search-v2"
-API_HOST = "jsearch.p.rapidapi.com"
+URL = "https://jsearch.p.rapidapi.com/search-v2"
+RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
+
+TARGET_JOBS = 5
+NUM_PAGES = 2
+TIMEOUT = 60
+
+# ============ المسارات المحددة حسب طلبك ============
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+DATA_DIR = os.path.join(PROJECT_ROOT, "data", "raw")
+
+RAW_FILE = os.path.join(DATA_DIR, "jsearch_tech_jobs.json")
+SEEN_URLS_FILE = os.path.join(DATA_DIR, "Extracted links", "Jsearch_links_cache.json")
+
+os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(os.path.dirname(SEEN_URLS_FILE), exist_ok=True)
+
+HEADERS = {
+    "x-rapidapi-key": RAPIDAPI_KEY,
+    "x-rapidapi-host": "jsearch.p.rapidapi.com",
+}
 
 TECH_KEYWORDS = [
-    "software engineer", "software developer", "backend developer",
-    "frontend developer", "full stack developer", "mobile developer",
-    "data scientist", "data analyst", "data engineer",
-    "machine learning engineer", "AI engineer", "cyber security",
-    "devops engineer", "cloud engineer", "network engineer",
-    "database administrator", "QA engineer", "IT support",
-    "UI UX designer", "business intelligence"
+    "software",
+    "developer",
+    "programmer",
+    "IT",
+    "technology",
+    "digital",
+    
+    "data",
+    "analyst",
+    "scientist",
+    "AI",
+    "machine learning",
+    "business intelligence",
+    
+    "devops",
+    "cloud",
+    "network",
+    "systems",
+    "database",
+    "IT support",
+    "technical support",
+    "administrator",
+    
+    "cybersecurity",
+    "security",
+    "information security",
+    
+    "full stack",
+    "frontend",
+    "backend",
+    "web",
+    "mobile",
+    "QA",
+    "tester"
 ]
 
-LOCATIONS = ["Saudi Arabia"]
 
-# كلمات تقنية بسيطة للتحقق من العنوان — نفس منطق jooble للاتساق بين المصادر
-TECH_TITLE_WORDS = [
-    "engineer", "developer", "programmer", "scientist", "analyst",
-    "architect", "administrator", "devops", "security", "cloud",
-    "network", "database", "data", "software", "system", "it ",
-    "machine learning", "ai ", "ux", "ui", "qa", "test", "cyber",
-    "backend", "frontend", "full stack", "mobile", "web", "bi ",
-    "etl", "sre", "sysadmin"
-]
+def load_seen_urls():
+    seen_urls = set()
+    if os.path.exists(SEEN_URLS_FILE):
+        try:
+            with open(SEEN_URLS_FILE, "r", encoding="utf-8") as f:
+                urls = json.load(f)
+                if isinstance(urls, list):
+                    seen_urls.update(urls)
+        except Exception as e:
+            print(f"⚠️ خطأ في قراءة ملف الروابط السابقة: {e}")
 
-CLEAR_EXCLUDE_WORDS = [
-    "sales representative", "sales manager", "account executive",
-    "marketing manager", "financial analyst", "civil engineer",
-    "mechanical engineer", "electrical technician"
-]
+    if os.path.exists(RAW_FILE):
+        try:
+            with open(RAW_FILE, "r", encoding="utf-8") as f:
+                old_jobs = json.load(f)
+                if isinstance(old_jobs, list):
+                    for job in old_jobs:
+                        url = job.get("url")
+                        if url:
+                            seen_urls.add(url)
+        except Exception as e:
+            print(f"⚠️ خطأ في استخراج الروابط القديمة: {e}")
 
-SAUDI_INDICATORS = [
-    "saudi arabia", "riyadh", "jeddah", "dammam", "khobar",
-    "mecca", "medina", "ksa", "dhahran", "jubail", "taif", "abha"
-]
-
-US_STATE_INDICATORS = [
-    ", oh", ", in", ", ca", ", tx", ", ny", ", pa", ", il",
-    ", fl", ", ga", ", mi", ", nc", ", va", ", az", ", wa",
-    "county", "ohio", "indiana", "california", "texas"
-]
+    return seen_urls
 
 
-def create_resilient_session() -> requests.Session:
-    """ينشئ session واحدة مع إعادة محاولة تلقائية عند فشل الاتصال أو أخطاء السيرفر المؤقتة."""
-    session = requests.Session()
-
-    retry_strategy = Retry(
-        total=3,
-        backoff_factor=2,
-        status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["GET"],
-    )
-
-    adapter = HTTPAdapter(max_retries=retry_strategy)
-    session.mount("https://", adapter)
-    session.mount("http://", adapter)
-
-    return session
+def save_seen_urls(seen_urls):
+    with open(SEEN_URLS_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(seen_urls), f, ensure_ascii=False, indent=2)
 
 
-def is_saudi_location(location: str) -> bool:
-    """فلترة خفيفة: تقبل الفاضي (البحث أصلاً بموقع سعودي)، تستبعد فقط إشارة أمريكية واضحة."""
-    if not location:
-        return True
-
-    loc_lower = location.lower()
-    for us_signal in US_STATE_INDICATORS:
-        if us_signal in loc_lower:
-            return False
-
-    return True
-
-
-def is_tech_title(title: str) -> bool:
-    """فلترة بسيطة: كلمة تقنية واحدة كافية، استبعاد فقط للحالات الواضحة جدًا."""
-    if not title:
-        return False
-
-    title_lower = title.lower()
-    for excluded in CLEAR_EXCLUDE_WORDS:
-        if excluded in title_lower:
-            return False
-
-    return any(word in title_lower for word in TECH_TITLE_WORDS)
+def load_old_jobs():
+    if not os.path.exists(RAW_FILE):
+        return []
+    try:
+        with open(RAW_FILE, "r", encoding="utf-8") as f:
+            jobs = json.load(f)
+            if isinstance(jobs, list):
+                return jobs
+    except Exception as e:
+        print(f"⚠️ خطأ في قراءة ملف الوظائف القديمة: {e}")
+    return []
 
 
-def search_jsearch(session: requests.Session, api_key: str, query: str, max_pages: int = 4):
-    """
-    يستدعي search-v2 مع دعم cursor-based pagination.
-    max_pages: عدد "الصفحات" (كل صفحة = طلب واحد) المراد سحبها لكل كلمة بحث.
-    """
-    headers = {
-        "x-rapidapi-key": api_key,
-        "x-rapidapi-host": API_HOST,
-        "Content-Type": "application/json"
+# ============ دالة الرفع إلى Snowflake ============
+def load_jobs_to_snowflake(jobs_list):
+    if not jobs_list:
+        return
+
+    conn = None
+    cursor = None
+    try:
+        conn = snowflake.connector.connect(
+            user=os.getenv("SNOWFLAKE_USER"),
+            password=os.getenv("SNOWFLAKE_PASSWORD"),
+            account=os.getenv("SNOWFLAFE_ACCOUNT"),
+            warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
+            database=os.getenv("SNOWFLAKE_DATABASE"),
+            schema=os.getenv("SNOWFLAKE_SCHEMA")
+        )
+        cursor = conn.cursor()
+
+        print(f"☁️ جاري إرسال {len(jobs_list)} وظيفة جديدة إلى جدول RAW_JSEARCH_JOBS في Snowflake...")
+        insert_query = "INSERT INTO RAW_JSEARCH_JOBS (RAW_PAYLOAD) SELECT PARSE_JSON(%s)"
+
+        for job in jobs_list:
+            json_str = json.dumps(job, ensure_ascii=False)
+            cursor.execute(insert_query, (json_str,))
+
+        conn.commit()
+        print("✅ تم رفع البيانات إلى Snowflake بنجاح!")
+
+    except Exception as e:
+        print(f"❌ خطأ أثناء الرفع لـ Snowflake: {e}")
+        if conn:
+            conn.rollback()
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+
+def search_jobs(keyword):
+    querystring = {
+        "query": f"{keyword} jobs in Saudi Arabia",
+        "num_pages": str(NUM_PAGES),
+        "country": "sa",
+        "date_posted": "all",
     }
 
-    all_jobs = []
-    cursor = None
-    page_num = 1
+    try:
+        response = requests.get(URL, headers=HEADERS, params=querystring, timeout=TIMEOUT)
 
-    while page_num <= max_pages:
-        params = {
-            "query": query,
-            "num_pages": "1",
-            "country": "sa",
-            "date_posted": "all"
-        }
+        if response.status_code == 200:
+            result = response.json()
+            data = result.get("data", {})
+            if isinstance(data, dict):
+                jobs = data.get("jobs", [])
+            elif isinstance(data, list):
+                jobs = data
+            else:
+                jobs = []
 
-        if cursor:
-            params["next_page_cursor"] = cursor
+            return [j for j in jobs if isinstance(j, dict)]
 
-        try:
-            response = session.get(BASE_URL, headers=headers, params=params, timeout=30)
-        except requests.exceptions.ConnectionError as e:
-            print(f"⚠️ فشل الاتصال ({query} - صفحة {page_num}): {e}")
+        elif response.status_code == 429:
+            print("⚠️ تم الوصول إلى حد الطلبات في RapidAPI.")
+            return []
+        elif response.status_code in [401, 403]:
+            print(f"❌ مشكلة في API Key | Status Code: {response.status_code}")
+            return []
+        else:
+            print(f"❌ فشل البحث عن '{keyword}' | Status Code: {response.status_code}")
+            return []
+
+    except Exception as e:
+        print(f"❌ خطأ أثناء البحث عن {keyword}: {e}")
+        return []
+
+
+def get_job_url(job):
+    for field in ["job_apply_link", "job_google_link", "job_link"]:
+        val = job.get(field)
+        if isinstance(val, str) and val.strip():
+            return val.strip()
+    return None
+
+
+def is_saudi_job(job):
+    country = str(job.get("job_country", "")).strip().upper()
+    if country == "SA":
+        return True
+
+    combined_location = (
+        str(job.get("job_location", "")) + " " +
+        str(job.get("job_city", "")) + " " +
+        str(job.get("job_state", ""))
+    ).lower()
+
+    saudi_words = [
+        "saudi arabia", "السعودية", "السعوديه", "riyadh", "jeddah",
+        "dammam", "khobar", "mecca", "makkah", "medina", "madinah",
+        "tabuk", "abha", "buraydah", "qassim", "jazan", "jubail", "yanbu"
+    ]
+    return any(word in combined_location for word in saudi_words)
+
+
+def format_job_record(job):
+    """تنسيق الوظيفة بالشكل المطلوب تماماً"""
+    return {
+        "title": job.get("job_title", "بدون عنوان"),
+        "company": job.get("employer_name", "بدون شركة"),
+        "location": job.get("job_location", "السعودية"),
+        "date": job.get("job_posted_at_datetime_utc"),
+        "salary": job.get("job_min_salary"), # أو حسب حقل الراتب المتاح لديك
+        "snippet": job.get("job_description", "")[:300], # اقتطف جزء أو الوصف كامل حسب الرغبة
+        "url": get_job_url(job),
+        "employment_type": job.get("job_employment_type", "دوام كامل"),
+        "source": "jsearch"
+    }
+
+
+def main():
+    print("=" * 70)
+    print("JSearch - استخراج الوظائف التقنية في السعودية")
+    print("=" * 70)
+
+    seen_urls = load_seen_urls()
+    old_jobs = load_old_jobs()
+
+    print(f"📦 الوظائف الموجودة مسبقًا: {len(old_jobs)}")
+    print(f"🔗 الروابط المحفوظة مسبقًا: {len(seen_urls)}")
+
+    new_jobs = []
+    new_urls = set()
+
+    for keyword in TECH_KEYWORDS:
+        if len(new_jobs) >= TARGET_JOBS:
             break
-        except requests.exceptions.Timeout:
-            print(f"⏱️ انتهت مهلة الاتصال ({query} - صفحة {page_num})")
-            break
 
-        if response.status_code != 200:
-            print(f"⚠️ خطأ HTTP ({query} - صفحة {page_num}): {response.status_code}")
-            break
+        print(f"\n🔎 البحث عن: {keyword}")
+        jobs = search_jobs(keyword)
 
-        body = response.json()
-        data_section = body.get("data", {})
-        jobs = data_section.get("jobs", [])
-        cursor = data_section.get("cursor")
+        for job in jobs:
+            if len(new_jobs) >= TARGET_JOBS:
+                break
 
-        if not jobs:
-            break
+            if not is_saudi_job(job):
+                continue
 
-        all_jobs.extend(jobs)
+            job_url = get_job_url(job)
+            if not job_url or job_url in seen_urls or job_url in new_urls:
+                continue
 
-        if not cursor:
-            break
+            # تنسيق السجل بالشكل المطلوب
+            formatted_record = format_job_record(job)
 
-        page_num += 1
-        time.sleep(0.5)  # تأخير بسيط بين الصفحات
+            new_jobs.append(formatted_record)
+            new_urls.add(job_url)
 
-    return all_jobs
+            print(f"✅ {len(new_jobs)}/{TARGET_JOBS} | {formatted_record['title']} ({formatted_record['company']})")
 
+        time.sleep(1)
 
-def get_jsearch_jobs(max_pages_per_query: int = 2) -> pd.DataFrame:
-    """
-    يسحب الوظائف من JSearch ويطبّق فلترة أساسية فقط (تقني + سعودي).
-    لا يوجد هنا أي تنظيف عميق (لا استخراج مهارات، لا خبرة، لا راتب من النص)
-    — هذي العمليات تُطبَّق لاحقًا عبر Transformation/cleaning.py.
-    """
-    api_key = os.getenv("RAPIDAPI_KEY")
-    if not api_key:
-        raise ValueError("لم يتم العثور على RAPIDAPI_KEY في ملف .env")
+    if not new_jobs:
+        print("\n✨ لا توجد وظائف جديدة لإضافتها.")
+        return
 
-    session = create_resilient_session()
+    seen_urls.update(new_urls)
+    all_jobs = old_jobs + new_jobs
 
-    all_jobs = []
-    total_calls_estimate = len(TECH_KEYWORDS) * len(LOCATIONS)
-    print(f"🔄 بدء السحب عبر {len(TECH_KEYWORDS)} كلمة × {len(LOCATIONS)} موقع (≈{total_calls_estimate} طلب أساسي + صفحات إضافية)\n")
+    # الحفظ محلياً
+    with open(RAW_FILE, "w", encoding="utf-8") as f:
+        json.dump(all_jobs, f, ensure_ascii=False, indent=2)
 
-    for location in LOCATIONS:
-        for keyword in TECH_KEYWORDS:
-            query = f"{keyword} in {location}"
-            jobs = search_jsearch(session, api_key, query, max_pages=max_pages_per_query)
-            print(f"✅ {query}: {len(jobs)} وظيفة")
+    save_seen_urls(seen_urls)
 
-            for job in jobs:
-                job["_search_query"] = query
-                job["_search_location"] = location
-
-            all_jobs.extend(jobs)
-            time.sleep(1)  # تأخير بين كل كلمة بحث
-
-    if not all_jobs:
-        print("⚠️ لم يتم سحب أي بيانات")
-        return pd.DataFrame()
-
-    structured = []
-    for job in all_jobs:
-        structured.append({
-            "title": job.get("job_title"),
-            "company": job.get("employer_name"),
-            "location": job.get("job_location") or job.get("job_city") or job.get("job_country"),
-            "date": job.get("job_posted_at_datetime_utc"),
-            "salary": job.get("job_salary_string") or job.get("job_min_salary"),
-            "snippet": job.get("job_description") or "",  # كامل بدون اقتطاع — التنظيف لاحقًا
-            "url": job.get("job_apply_link"),
-            "employment_type": job.get("job_employment_type"),
-            "source": "jsearch",
-            "search_location": job.get("_search_location"),
-        })
-
-    df = pd.DataFrame(structured)
-    print(f"\n📥 إجمالي الوظائف الخام: {len(df)}")
-
-    before_tech_filter = len(df)
-    df = df[df["title"].apply(is_tech_title)]
-    print(f"💻 بعد فلترة العناوين التقنية: {len(df)} (أُزيل {before_tech_filter - len(df)})")
-
-    before_location_filter = len(df)
-    df = df[df["location"].apply(is_saudi_location)]
-    print(f"🌍 بعد الفلترة الجغرافية: {len(df)} (أُزيل {before_location_filter - len(df)})")
-
-    before_dedup = len(df)
-    df.drop_duplicates(subset=["title", "company", "url"], inplace=True)
-    df.reset_index(drop=True, inplace=True)
-    print(f"🧹 بعد إزالة التكرار: {len(df)} (أُزيل {before_dedup - len(df)})")
-
-    print(f"📊 إجمالي الوظائف بعد الفلترة الأساسية: {len(df)}")
-
-    return df
+    print(f"\n✅ تم الانتهاء! تمت إضافة {len(new_jobs)} وظيفة جديدة.")
+    
+    # 🚀 رفع الوظائف الجديدة فقط إلى Snowflake
+    load_jobs_to_snowflake(new_jobs)
 
 
 if __name__ == "__main__":
-    df = get_jsearch_jobs(max_pages_per_query=2)
-
-    if not df.empty:
-        print(df[["title", "company", "location"]].head(15))
-
-        output_dir = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
-        os.makedirs(output_dir, exist_ok=True)
-
-        json_path = os.path.join(output_dir, "jsearch_tech_jobs.json")
-        df.to_json(json_path, orient="records", force_ascii=False, indent=2)
-        print(f"💾 تم حفظ JSON في: {json_path}")
+    main()

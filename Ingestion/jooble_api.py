@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from dotenv import load_dotenv
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-
+import snowflake.connector
 load_dotenv()
 
 # قائمة شاملة من المسميات التقنية لتغطية أوسع لسوق العمل السعودي
@@ -79,6 +79,42 @@ US_STATE_INDICATORS = [
     "county", "ohio", "indiana", "california", "texas"
 ]
 
+def load_jobs_to_snowflake(jobs_list):
+    if not jobs_list:
+        return
+
+    conn = None
+    cursor = None
+    try:
+        conn = snowflake.connector.connect(
+            user=os.getenv("SNOWFLAKE_USER"),
+            password=os.getenv("SNOWFLAKE_PASSWORD"),
+            account=os.getenv("SNOWFLAKE_ACCOUNT"),
+            warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
+            database=os.getenv("SNOWFLAKE_DATABASE"),
+            schema=os.getenv("SNOWFLAKE_SCHEMA")
+        )
+        cursor = conn.cursor()
+
+        print(f"☁️ جاري إرسال {len(jobs_list)} سجل إلى جدول RAW_JOOBLE_JOBS في Snowflake...")
+        insert_query = "INSERT INTO RAW_JOOBLE_JOBS (RAW_PAYLOAD) SELECT PARSE_JSON(%s)"
+
+        for job in jobs_list:
+            json_str = json.dumps(job, ensure_ascii=False)
+            cursor.execute(insert_query, (json_str,))
+
+        conn.commit()
+        print("✅ تم رفع البيانات إلى Snowflake بنجاح!")
+
+    except Exception as e:
+        print(f"❌ خطأ أثناء الرفع لـ Snowflake: {e}")
+        if conn:
+            conn.rollback()
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
 
 def create_resilient_session() -> requests.Session:
     """
@@ -265,6 +301,7 @@ def merge_and_save_jobs(new_df: pd.DataFrame, json_path: str):
 
     added_count = 0
     updated_count = 0
+    processed_records = []
 
     for job in new_records:
         url = job.get("url")
@@ -276,11 +313,13 @@ def merge_and_save_jobs(new_df: pd.DataFrame, json_path: str):
             job["last_seen"] = now
             existing_jobs[url] = job
             updated_count += 1
+            processed_records.append(job)
         else:
             job["first_seen"] = now
             job["last_seen"] = now
             existing_jobs[url] = job
             added_count += 1
+            processed_records.append(job)
 
     print(f"➕ وظائف جديدة أُضيفت: {added_count}")
     print(f"🔄 وظائف موجودة تم تحديثها: {updated_count}")
@@ -294,6 +333,8 @@ def merge_and_save_jobs(new_df: pd.DataFrame, json_path: str):
 
     print(f"💾 تم حفظ JSON في: {json_path}")
 
+    return processed_records
+
 
 if __name__ == "__main__":
     df = get_jooble_jobs()
@@ -302,4 +343,7 @@ if __name__ == "__main__":
     json_path = os.path.join(
         os.path.dirname(__file__), "..", "data", "raw", "jooble_tech_jobs.json"
     )
-    merge_and_save_jobs(df, json_path)
+    processed_jobs = merge_and_save_jobs(df, json_path)
+
+    if processed_jobs:
+        load_jobs_to_snowflake(processed_jobs)

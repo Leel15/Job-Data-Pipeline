@@ -5,6 +5,9 @@ import requests
 import pandas as pd
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import snowflake.connector
+from dotenv import load_dotenv
+load_dotenv()
 
 API_URL = "https://freehire.me/api/v1/jobs/search"
 
@@ -17,8 +20,62 @@ HEADERS = {
     "Referer": "https://freehire.me/?countries=sa",
 }
 
-TARGET_COUNT = 50
+TARGET_COUNT = 10
 
+# مسار ملف الـ JSON المحلي لفحص الروابط الموجودة مسبقاً
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+RAW_DIR = os.path.join(PROJECT_ROOT, "data", "raw")
+JSON_PATH = os.path.join(RAW_DIR, "freehire_tech_jobs.json")
+
+
+def load_existing_jobs():
+    """قراءة الوظائف الموجودة محلياً مسبقاً لتجنب التكرار."""
+    if os.path.exists(JSON_PATH):
+        try:
+            with open(JSON_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return []
+
+
+def load_jobs_to_snowflake(jobs_list):
+    if not jobs_list:
+        return
+
+    conn = None
+    cursor = None
+    try:
+        conn = snowflake.connector.connect(
+            user=os.getenv("SNOWFLAKE_USER"),
+            password=os.getenv("SNOWFLAKE_PASSWORD"),
+            account=os.getenv("SNOWFLAFE_ACCOUNT"),
+            warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
+            database=os.getenv("SNOWFLAKE_DATABASE"),
+            schema=os.getenv("SNOWFLAKE_SCHEMA")
+                )
+        cursor = conn.cursor()
+
+        print(f"☁️ جاري إرسال {len(jobs_list)} وظيفة جديدة إلى جدول RAW_FREEHIRE_JOBS في Snowflake...")
+        insert_query = "INSERT INTO RAW_FREEHIRE_JOBS (RAW_PAYLOAD) SELECT PARSE_JSON(%s)"
+
+        for job in jobs_list:
+            json_str = json.dumps(job, ensure_ascii=False)
+            cursor.execute(insert_query, (json_str,))
+
+        conn.commit()
+        print("✅ تم رفع البيانات إلى Snowflake بنجاح!")
+
+    except Exception as e:
+        print(f"❌ خطأ أثناء الرفع لـ Snowflake: {e}")
+        if conn:
+            conn.rollback()
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
 
 def create_resilient_session() -> requests.Session:
     """ينشئ session واحدة مع إعادة محاولة تلقائية عند أخطاء السيرفر المؤقتة."""
@@ -47,13 +104,18 @@ def get_tech_jobs_50(target_count=TARGET_COUNT):
     """
     session = create_resilient_session()
 
-    all_jobs = []
+    # 1. تحميل الوظائف القديمة واستخراج روابطها
+    existing_jobs = load_existing_jobs()
+    existing_urls = {job.get("source_url") for job in existing_jobs if job.get("source_url")}
+    print(f"📊 عدد الوظائف الموجودة محلياً مسبقاً: {len(existing_jobs)}")
+
+    new_fetched_jobs = []
     limit = 20
     offset = 0
 
-    print(f"🚀 جاري سحب {target_count} وظيفة تقنية من FreeHire...")
+    print(f"🚀 جاري سحب الوظائف التقنية من FreeHire...")
 
-    while len(all_jobs) < target_count:
+    while len(new_fetched_jobs) < target_count:
         params = {
             "countries": "sa",
             "is_tech": "tech",
@@ -76,6 +138,12 @@ def get_tech_jobs_50(target_count=TARGET_COUNT):
                 break
 
             for item in raw_jobs:
+                job_url = item.get("url", "")
+
+                # 2. التحقق مما إذا كانت الوظيفة موجودة مسبقاً
+                if job_url in existing_urls:
+                    continue
+
                 record = {
                     "job_title": item.get("title", "غير محدد"),
                     "company_name": item.get("company", "غير محدد"),
@@ -85,15 +153,16 @@ def get_tech_jobs_50(target_count=TARGET_COUNT):
                     "category": item.get("enrichment", {}).get("category", "tech"),
                     "skills": item.get("skills", []),
                     "job_description": item.get("description", ""),  # خام كما هو (فيه HTML)، التنظيف لاحقًا
-                    "source_url": item.get("url", ""),
+                    "source_url": job_url,
                     "original_source": item.get("source", "freehire"),
                 }
-                all_jobs.append(record)
+                new_fetched_jobs.append(record)
+                existing_urls.add(job_url)
 
-                if len(all_jobs) >= target_count:
+                if len(new_fetched_jobs) >= target_count:
                     break
 
-            print(f"📦 تم جمع {len(all_jobs)} من أصل {target_count}...")
+            print(f"📦 تم جمع {len(new_fetched_jobs)} وظيفة جديدة حتى الآن...")
             offset += limit
             time.sleep(1)
 
@@ -107,19 +176,23 @@ def get_tech_jobs_50(target_count=TARGET_COUNT):
             print(f"❌ حدث خطأ: {e}")
             break
 
-    output_dir = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
-    os.makedirs(output_dir, exist_ok=True)
+    if not new_fetched_jobs:
+        print("✨ لا توجد وظائف جديدة، جميع الوظائف المسحوبة موجودة مسبقاً!")
+        return
 
-    json_path = os.path.join(output_dir, "freehire_tech_jobs.json")
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(all_jobs, f, ensure_ascii=False, indent=2)
+    # دمج الوظائف القديمة مع الجديدة وحفظ الملف الكامل
+    combined_jobs = existing_jobs + new_fetched_jobs
 
-    csv_path = os.path.join(output_dir, "freehire_tech_jobs.csv")
-    pd.DataFrame(all_jobs).to_csv(csv_path, index=False, encoding="utf-8-sig")
+    os.makedirs(RAW_DIR, exist_ok=True)
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(combined_jobs, f, ensure_ascii=False, indent=2)
 
-    print(f"\n🎯 اكتملت العملية بنجاح! تم حفظ {len(all_jobs)} وظيفة في:")
-    print(f"📁 {json_path}")
-    print(f"📁 {csv_path}")
+    print(f"\n🎯 اكتملت العملية بنجاح! إجمالي الوظائف المحفوظة: {len(combined_jobs)}")
+    print(f"📁 {JSON_PATH}")
+
+    # رفع الوظائف الجديدة فقط إلى Snowflake
+    if new_fetched_jobs:
+        load_jobs_to_snowflake(new_fetched_jobs)
 
 
 if __name__ == "__main__":
