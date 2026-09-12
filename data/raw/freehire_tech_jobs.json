@@ -1,395 +1,58 @@
 [
   {
-    "job_title": "Product Program Manager (Riyadh)",
-    "company_name": "MemryX",
-    "location": "Riyadh, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T21:04:32Z",
-    "category": "project_management",
-    "skills": [
-      "agile",
-      "ai",
-      "embedded-systems",
-      "program-management"
-    ],
-    "job_description": "<div><p><br></p><p><b><strong>About The Role</strong></b></p><p><span>MemryX is seeking a Product Program Manager to help plan and coordinate the development of new AI inference products. Based in our Riyadh office, this role is ideal for a highly organized, technically curious individual who is eager to build a career in semiconductor product development and program management.</span></p><p><br></p><p><span>You will work across engineering, software, operations, supply chain, quality, applications, product, sales, and marketing to translate product objectives into integrated schedules, track milestones and dependencies, and keep teams aligned from initial requirements through official release.</span></p><p><br></p><p><span>The successful candidate will bring structure, follow-through, and clear communication to product programs while learning MemryX technology, development processes, and global ways of working.</span></p><p><br></p><p><b><strong>What You&#39;ll",
-    "source_url": "https://ats.rippling.com/memryx/jobs/74b865c5-e60b-48cc-8981-8c3a1256572f?utm_source=freehire.me",
-    "original_source": "rippling"
-  },
-  {
-    "job_title": "Senior Big Data Engineer",
-    "company_name": "BBI",
-    "location": "Saudi Arabia",
-    "cities": [
-      "Saudi Arabia"
-    ],
-    "posted_date": "2026-09-08T19:00:50Z",
-    "category": "data_engineering",
-    "skills": [
-      "airflow",
-      "api",
-      "automation",
-      "cloud",
-      "data-governance",
-      "data-lake",
-      "data-modeling",
-      "data-pipelines",
-      "data-quality",
-      "data-warehousing",
-      "dimensional-modeling",
-      "distributed-computing",
-      "etl",
-      "hadoop",
-      "hbase",
-      "hive",
-      "mysql",
-      "nifi",
-      "postgresql",
-      "pyspark",
-      "python",
-      "snowflake",
-      "spark",
-      "sql",
-      "sql-server",
-      "workflow-orchestration"
-    ],
-    "job_description": "<p><p><b>Responsibilities:</b></br></p><ul></br><li>Design, implement, and optimize data pipelines for batch and real-time data processing using Cloudera (Hadoop, Hive, Spark, Impala) and Informatica (PowerCenter, Cloud Data Integration)</li></br><li>Build data extraction, transformation, and loading (ETL) workflows using Informatica PowerCenter for large-scale data integration from source systems (e.g., relational databases, flat files, APIs) into Cloudera Data Lake or data warehouse environments.</li></br><li>Implement Spark jobs on Cloudera for distributed data processing and optimization of data workflows.</li></br><li>Leverage Informatica for orchestrating ETL workflows, including data extraction, cleansing, transformation, and loading into data repositories (HDFS, Hive, SQL databases, etc.).</li></br><li>Optimize the Informatica workflows to minimize runtime, ensure smooth data integration, and maintain high data quality.</li></br><li>Utilize Hadoop and Spark on Cloudera to",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10727259__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior Data Engineer: Scalable Pipelines & Real-Time Data",
-    "company_name": "BBI",
+    "job_title": "Senior Sales Engineer (Data Centre Specialist)",
+    "company_name": "johnson controls arabia",
     "location": "Saudi Arabia",
     "cities": [],
-    "posted_date": "2026-09-08T19:00:50Z",
-    "category": "data_engineering",
-    "skills": [
-      "airflow",
-      "cli",
-      "data-engineering",
-      "data-modeling",
-      "data-pipelines",
-      "dbt",
-      "hadoop",
-      "hive",
-      "kafka",
-      "python",
-      "spark",
-      "sql",
-      "unix"
-    ],
-    "job_description": "<p>BBI is seeking a seasoned Data Engineer to design, develop, and maintain scalable data pipelines for large datasets in a Saudi Arabia setting. You will orchestrate batch and near-real-time data flows, evaluate new tools, and optimize data systems for performance and reliability.</p><p>The role requires 5+ years in data engineering, strong Python, UNIX CLI skills, and expertise with Airflow, DBT, Hadoop, Spark, Hive, Kafka, and SQL. Knowledge of data modeling and warehousing is essential.</p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10727450__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior Data Engineer",
-    "company_name": "BBI",
-    "location": "Saudi Arabia",
-    "cities": [],
-    "posted_date": "2026-09-08T19:00:50Z",
-    "category": "data_engineering",
-    "skills": [
-      "airbyte",
-      "airflow",
-      "analytics",
-      "data-engineering",
-      "data-lake",
-      "data-modeling",
-      "data-pipelines",
-      "data-science",
-      "data-warehousing",
-      "dbt",
-      "etl",
-      "hadoop",
-      "hive",
-      "kafka",
-      "postgresql",
-      "python",
-      "spark",
-      "sql",
-      "unix"
-    ],
-    "job_description": "<p><ul>\n<li>Design, develop, and maintain scalable data pipelines for the efficient collection, storage, and processing of large datasets.</li>\n<li>Develops and design best practices around data collection and maintain orchestration of data flows, for batch, near-real time data.</li>\n<li>Participates in evaluation and deployment of big data tools, relevant to the development.</li>\n<li>Ability to identify different platforms, techniques, and methodology used in big data platforms, and demonstrate for various system in the organization.</li>\n<li>Optimize and tune data systems for performance and reliability.</li>\n<li>Develop and implement data models and schemas to support business intelligence and analytics needs.</li>\n<li>Monitor and troubleshoot data pipelines to ensure smooth and efficient operation.</li>\n<li>Stay up-to-date with the latest advancements in data engineering and incorporate them into our data infrastructure.</li>\n<li>Document data engineering architectures and follow",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10727552__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "DevOps / Cloud Engineer",
-    "company_name": "Kenroz Private Limited",
-    "location": "Saudi Arabia",
-    "cities": [],
-    "posted_date": "2026-09-08T19:00:46Z",
-    "category": "devops",
-    "skills": [
-      "automation",
-      "bash",
-      "ci-cd",
-      "cloud",
-      "kubernetes",
-      "observability",
-      "python",
-      "terraform"
-    ],
-    "job_description": "<p>Architect cloud infra, ship reliable CI/CD, and level up observability. Enable teams to deploy confidently with secure, cost-efficient, and scalable platforms.</p><h3>Responsibilities</h3><ul><li>Design and manage cloud infra with Terraform and Kubernetes</li><li>Build CI/CD pipelines for fast, reliable releases</li><li>Implement observability (metrics, tracing, alerting) and SRE practices</li><li>Partner with developers to improve build/release workflows</li><li>Continuously optimize reliability, performance, and costs</li></ul><h3>Requirements</h3><ul><li>Terraform and monitoring/observability stacks</li><li>Scripting with Bash/Python and automation mindset</li></ul>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10726885__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior DevOps Engineer",
-    "company_name": "Mission.dev",
-    "location": "Saudi Arabia",
-    "cities": [
-      "Saudi Arabia"
-    ],
-    "posted_date": "2026-09-08T19:00:46Z",
-    "category": "devops",
-    "skills": [
-      "ai",
-      "ansible",
-      "automation",
-      "ci-cd",
-      "devops",
-      "devsecops",
-      "docker",
-      "dotnet",
-      "gitlab",
-      "helm",
-      "infrastructure-as-code",
-      "kubernetes",
-      "linux",
-      "networking",
-      "nextjs",
-      "observability",
-      "python",
-      "react",
-      "saas",
-      "terraform"
-    ],
-    "job_description": "<p><p>Nice to have skills: Helm, Ansible, Linux, GitLab CI, Docker</p>\n<p>A technology firm based in the Middle East specializes in building and operating national-scale digital products and data services. As a subsidiary of a major social insurance organization, the company provides verification services, business intelligence, and digital platforms for both public and private sectors. The environment is product-led and delivery-focused, managing high-impact systems where security, reliability, and performance are critical for supporting a regional digital economy.</p>\n<p><b>About the Role</b></p>\n<p>As a Senior DevOps Engineer, you will oversee the infrastructure and automation for large-scale digital platforms. You will take ownership of the deployment, scaling, and security of critical systems that provide data services to public and private organizations. Your work ensures the stability and performance of high-availability environments, directly impacting national digital",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10726983__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior DevOps Engineer — Kubernetes, CI/CD & Secure Infra",
-    "company_name": "Mission.dev",
-    "location": "Saudi Arabia",
-    "cities": [],
-    "posted_date": "2026-09-08T19:00:46Z",
-    "category": "devops",
-    "skills": [
-      "automation",
-      "devops",
-      "infrastructure-as-code",
-      "kubernetes",
-      "linux",
-      "observability",
-      "saas"
-    ],
-    "job_description": "<p>Mission.dev in Saudi Arabia is seeking a Senior DevOps Engineer to oversee infrastructure and automation for large-scale digital platforms. You will own deployment, scaling, and security of high-availability systems serving public and private sectors, with attention to performance and compliance within a regional context.</p><p>The role emphasizes modern delivery practices, strong Linux, Kubernetes, and IaC expertise, and a commitment to security, reliability, and observability in a high-traffic SaaS</p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10727578__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Application Developer & Designer",
-    "company_name": "Al-Qadsiah Club Company",
-    "location": "Al Khobar, Saudi Arabia",
-    "cities": [
-      "Khobar"
-    ],
-    "posted_date": "2026-09-08T19:00:45Z",
-    "category": "design",
-    "skills": [
-      "adobe-xd",
-      "agile",
-      "android",
-      "angular",
-      "api",
-      "api-design",
-      "django",
-      "dotnet",
-      "figma",
-      "flutter",
-      "ios",
-      "kotlin",
-      "nodejs",
-      "nosql",
-      "react",
-      "react-native",
-      "sketch",
-      "sql",
-      "swift",
-      "vue"
-    ],
-    "job_description": "<p><ul><li><b>Be Part ofthe Legacy: </b>Join a club that’s redefining the futureof Saudi sports, striving to lead the competition and set new standards ofexcellence.</li><li><b>Experiencethe Culture: </b>Thrive in an environment that values quality,accountability, diversity, synergy, innovation, and ambition, whileembracing harmony—this is the <b>Qadsiah Way</b>.</li></ul><h3>Job Description</h3><p><b>Be Part of a Legacy Bigger Than the Game</b></p><p>At <b>Al-Qadsiah Club </b>we create more than teams! We’re craftinga legacy that goes beyond the game, making an impact both on and off the field.Driven by ambition, synergy, and innovation, we aim to inspire generations.While shaping the future of Saudi sports.</p><p>This is more than just a job! It’s an opportunity to be part ofsomething larger than yourself. At Al-Qadsiah, you’ll play a key role inshaping our legacy, contributing to the nation’s sports vision, and makinghistory every step of the way.</p><h3>Overview</h3><p>The",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10727502__7118?geoID=432&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Sales Engineer",
-    "company_name": "castolin",
-    "location": "Dammam, Eastern Province, Saudi Arabia",
-    "cities": [
-      "Dammam"
-    ],
-    "posted_date": "2026-09-08T18:13:17Z",
+    "posted_date": "2026-09-11T13:31:22Z",
     "category": "solutions_engineering",
-    "skills": [
-      "business-development",
-      "lead-generation"
-    ],
-    "job_description": "<p>·  Manage sales and marketing activities for Maintenance &amp; Repair consumables, welding consumables and equipment, wear protection, repair and coating products within the assigned territory.</p><p>·  Develop new customers and expand business with existing accounts by identifying maintenance problems, wear-related applications and repair opportunities.</p><p>·  Conduct regular customer/site visits to understand applications, maintenance requirements, operational challenges and potential areas for product introduction.</p><p>·  Develop technically and commercially suitable solutions based on customer requirements and prepare technical proposals, quotations and product recommendations.</p><p>·  Generate new applications and conduct product demonstrations, application trials and field evaluations to support business development.</p><p>·  Conduct technical seminars, product presentations, demonstrations and training programs for customers, distributors and sales teams.</p><p>· ",
-    "source_url": "https://castolin.recruitee.com/o/sales-engineer-20?utm_source=freehire.me",
-    "original_source": "recruitee"
-  },
-  {
-    "job_title": "Sales Engineer",
-    "company_name": "Castolin Eutectic",
-    "location": "Dammam, Eastern Province, Saudi Arabia",
-    "cities": [
-      "Dammam"
-    ],
-    "posted_date": "2026-09-08T18:13:17Z",
-    "category": "solutions_engineering",
-    "skills": [
-      "business-development",
-      "lead-generation"
-    ],
-    "job_description": "<p>·  Manage sales and marketing activities for Maintenance &amp; Repair consumables, welding consumables and equipment, wear protection, repair and coating products within the assigned territory.</p><p>·  Develop new customers and expand business with existing accounts by identifying maintenance problems, wear-related applications and repair opportunities.</p><p>·  Conduct regular customer/site visits to understand applications, maintenance requirements, operational challenges and potential areas for product introduction.</p><p>·  Develop technically and commercially suitable solutions based on customer requirements and prepare technical proposals, quotations and product recommendations.</p><p>·  Generate new applications and conduct product demonstrations, application trials and field evaluations to support business development.</p><p>·  Conduct technical seminars, product presentations, demonstrations and training programs for customers, distributors and sales teams.</p><p>· ",
-    "source_url": "https://castolin.recruitee.com/o/sales-engineer-20?utm_source=freehire.me",
-    "original_source": "recruitee"
-  },
-  {
-    "job_title": "Intern QA Engineer",
-    "company_name": "tabby",
-    "location": "Riyadh, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T17:39:37Z",
-    "category": "qa",
-    "skills": [
-      "api",
-      "automation",
-      "ci-cd",
-      "containerization",
-      "docker",
-      "git",
-      "gitlab",
-      "grpc",
-      "junit",
-      "kubernetes",
-      "networking",
-      "pytest",
-      "rest",
-      "sdlc",
-      "sql",
-      "unit-testing",
-      "unix",
-      "version-control"
-    ],
-    "job_description": "<h2>About the company</h2><div>Tabby builds financial products used by millions of users across the GCC. We work on high-load, security-critical systems with strict regulatory requirements.</div><div><br>This internship is not educational by default. It is an engineering role with real responsibility.</div><h2>Context</h2><div>QA engineers at Tabby are responsible for product quality across multiple systems and platforms. This includes testing user-facing applications, backend services, APIs, integrations, and internal tools. QA at Tabby is engineering-driven and focused on reliability, automation, and system-level quality.</div><div><br>The internship is designed for strong early-career engineers who want to grow as quality engineers, not manual testers only. Interns are embedded into real teams, work with production systems, and are expected to think system-wide about quality.</div><div><br>This is not a helper or manual-only role. Interns work on real production tasks under senior",
-    "source_url": "https://tabby.pinpointhq.com/en/postings/968eb553-d237-49e9-8153-92af143c6d80?utm_source=freehire.me",
-    "original_source": "pinpoint"
-  },
-  {
-    "job_title": "QA Lead Engineer",
-    "company_name": "CoorB",
-    "location": "Riyadh, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T15:44:25Z",
-    "category": "qa",
-    "skills": [
-      "analytics",
-      "api",
-      "appium",
-      "automation",
-      "azure",
-      "azure-devops",
-      "ci-cd",
-      "cypress",
-      "data-analytics",
-      "devops",
-      "gatling",
-      "gitlab",
-      "java",
-      "javascript",
-      "jenkins",
-      "jira",
-      "jmeter",
-      "junit",
-      "k6",
-      "playwright",
-      "postman",
-      "process-improvement",
-      "python",
-      "selenium",
-      "test-automation",
-      "testng",
-      "testrail"
-    ],
-    "job_description": "<span><div><p><span><span><span><span>ABOUT <b>CoorB</b></span></span></span><br/></span></p></div><p><span>We\nbuild full-fledged innovative solutions with a focus on process automation,\nuser experience enhancement, and advanced data analytics. With our extensive\nindustry expertise, we help achieve operational excellence, future-proof your\nIT investments, and ensure a competitive edge in the ever-evolving finance\nindustry.</span><br/></p><p><span><span> </span></span><br/></p><div><p><span><span><span><span>OUR\nOPPORTUNITY</span></span></span><br/></span></p></div><p><span>The QA Lead\nEngineer will be responsible for defining and executing the overall quality\nassurance strategy across multiple products and platforms, ensuring the\ndelivery of high-quality, reliable, and scalable software. This role combines\nhands-on automation expertise with strong leadership in process improvement,\nteam management, and quality governance. The QA Lead Engineer will partner\nclosely with Engineering,",
-    "source_url": "https://coorb.zohorecruit.com/jobs/Careers/788027000007088172?utm_source=freehire.me",
-    "original_source": "zohorecruit"
-  },
-  {
-    "job_title": "Intern QA Engineer",
-    "company_name": "tabby",
-    "location": "Riyadh, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T13:44:16Z",
-    "category": "qa",
-    "skills": [
-      "api",
-      "api-documentation",
-      "authentication",
-      "automation",
-      "fintech",
-      "javascript",
-      "jira",
-      "json",
-      "n8n",
-      "oauth",
-      "postman",
-      "power-automate",
-      "python",
-      "test-automation",
-      "webhooks",
-      "zapier"
-    ],
-    "job_description": "<h2>About the company</h2><div>Tabby builds financial products used by millions of users across the GCC. We work on high-load, security-critical systems with strict regulatory requirements.</div><div><br>This is not a course and not a shadowing programme. It is an engineering role with real responsibility.</div><h2>Context</h2><div>The Process Engineering team sits in Risk and Credit, and it builds and runs the automated business workflows Tabby operates on. The team configures those workflows on an internal automation platform and runs them in production.</div><div><br>This role exists to keep that automation reliable: testing changes before they go live, catching failures early and investigating what went wrong when something breaks. Designing the automation belongs to the engineers who build it. This internship is about validating, monitoring, debugging and reporting.</div><div><br>It suits a recent graduate with a sharp eye for detail, stubborn curiosity about why something broke",
-    "source_url": "https://tabby.pinpointhq.com/en/postings/ed6aa69f-3116-4e45-be33-a103be513a79?utm_source=freehire.me",
-    "original_source": "pinpoint"
-  },
-  {
-    "job_title": "Public Sector Sales Engineer - AI Data Security KSA",
-    "company_name": "Madrona Venture Labs",
-    "location": "Saudi Arabia",
-    "cities": [
-      "Saudi Arabia"
-    ],
-    "posted_date": "2026-09-08T12:52:54Z",
-    "category": "security",
     "skills": [],
-    "job_description": "<p>Cohesity, a leader in AI-powered data security, is seeking a Sales Engineer to drive opportunities and integrate our products into customer environments. You will engage with business and technical users, deliver compelling demonstrations, and collaborate with product teams to shape offerings.</p><p>This role requires travel and remote work flexibility. Ideal candidates have enterprise sales experience, excellent communication, and the ability to manage multiple stakeholders across large accounts</p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10726859__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "job_description": "<p><ul><li>Identify, develop, and close new business opportunities within the data center and mission-critical facilities market</li><li>Build and maintain strong relationships with data center owners, operators, consultants, and EPC contractors</li><li>Prepare technical and commercial proposals for precision cooling systems, CRAC/CRAH units, chillers, and related HVAC solutions</li><li>Conduct site assessments and collaborate with engineering teams to design cooling solutions that meet client requirements and capacity needs</li><li>Present technical solutions to clients, addressing energy efficiency (PUE), redundancy, and reliability requirements</li><li>Develop and execute account and territory sales strategies to meet revenue targets</li><li>Prepare accurate cost estimates, quotations, and bid submissions</li><li>Negotiate contracts and close sales in line with company pricing and margin guidelines</li><li>Stay current on data center industry trends, competitor offerings, and",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10733694__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Senior Data Center Cooling Solutions Engineer",
+    "company_name": "johnson controls arabia",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T13:31:22Z",
+    "category": "solutions_engineering",
+    "skills": [],
+    "job_description": "<p>Johnson Controls Arabia is seeking an experienced HVAC sales professional to identify and close opportunities in data centers and mission-critical facilities in Saudi Arabia. You will build strong relationships with owners, operators, consultants, and EPCs while designing cooling solutions with engineering teams and presenting proposals that address energy efficiency, redundancy, and reliability.</p><p>The role requires a bachelor’s degree in mechanical engineering and 7+ years in HVAC sales, with a</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10733267__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Data Engineer Intern — Real Production Data (KSA)",
+    "company_name": "تابي",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-11T13:31:21Z",
+    "category": "data_engineering",
+    "skills": [
+      "airflow",
+      "bigquery",
+      "data-engineering",
+      "dbt",
+      "machine-learning",
+      "python",
+      "sql"
+    ],
+    "job_description": "<p>Tabby invites a high-potential intern to join the Data Platform &amp; ML team in KSA for hands-on data engineering work. You will tackle real production tasks, contributor to data models, pipelines and quality checks, under senior review and mentoring. This is a full-time internship with growth into data engineering roles.</p><p>We value strong SQL and Python foundations, familiarity with dbt, Airflow, BigQuery, and BI tools, plus a proactive, collaborative mindset and English documentation ability.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10733490__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
     "original_source": "whatjobs-sa"
   },
   {
     "job_title": "Intern Data Engineer",
-    "company_name": "tabby",
+    "company_name": "تابي",
     "location": "Riyadh, Saudi Arabia",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-08T12:37:25Z",
+    "posted_date": "2026-09-11T13:31:21Z",
     "category": "data_engineering",
     "skills": [
       "airflow",
@@ -410,323 +73,1023 @@
       "sql",
       "workflow-orchestration"
     ],
-    "job_description": "<h2>About the company</h2><div>Tabby builds financial products used by millions of users across the GCC. Data is a core part of how products, risk, finance and operations are built and scaled. We work with large volumes of data under strict requirements for quality, cost efficiency and regulatory compliance.<br><br></div><div>This is not a course and not a shadowing programme. It is an engineering role with real responsibility.<br><br></div><h2>Context</h2><div>Data engineers at Tabby work on the analytics and data platforms behind business decisions, product development and machine learning use cases. That covers data modelling, data pipelines, data quality and consumption by several internal teams.<br><br></div><div>The internship is designed for strong early-career engineers who want to grow into data engineering roles. Interns join a real data team, work with production datasets and are expected to meet engineering standards from day one.<br><br></div><div><br></div><div>This is",
-    "source_url": "https://tabby.pinpointhq.com/en/postings/853ac796-1370-4449-b8c1-148737a32099?utm_source=freehire.me",
-    "original_source": "pinpoint"
+    "job_description": "<p><h3>Intern Data Engineer</h3>\n<p><b>Department: </b>Data Platform &amp; ML</p>\n<p><b>Employment Type: </b>Internship</p>\n<p><b>Location: </b>KSA</p>\n<p><b>Reporting To: </b>Yahya Aloyoni</p>\n<br/>\n<h3>Description</h3>\n<p>Tabby builds financial products used by millions of users across the GCC. Data is a core part of how products, risk, finance and operations are built and scaled. Data is a core part of how products, risk, finance and operations are built and scaled. We work with large volumes of data under strict requirements for quality, cost efficiency and regulatory compliance.</p>\n<p>This is not a course and not a shadowing programme. It is an engineering role with real responsibility.</p>\n<p>Data engineers at Tabby work on the analytics and data platforms behind business decisions, product development and machine learning use cases. That covers data modelling, data pipelines, data quality and consumption by several internal teams.</p>\n<p>The internship is designed for strong",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10733710__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Solution Engineer ",
-    "company_name": "OPSWAT",
+    "job_title": "Senior Data Engineer: Lakehouse & AI Platform Lead",
+    "company_name": "Intelmatix",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T13:31:21Z",
+    "category": "data_engineering",
+    "skills": [
+      "ai",
+      "analytics",
+      "cloud",
+      "data-governance",
+      "data-pipelines",
+      "data-quality",
+      "lakehouse",
+      "spark"
+    ],
+    "job_description": "<p>Intelmatix seeks a Senior Data Engineer to architect and deliver an enterprise-grade Data Lakehouse for AI-ready analytics. You will design scalable data pipelines, ensure data quality, and build a secure platform compliant with national standards in Saudi Arabia.</p><p>Based in Riyadh, you will lead a co-build effort with client teams, mentor engineers, and create runbooks to enable long-term operational ownership. Strong in Spark, cloud architectures, and data governance is required.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10734456__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Solution Architect DevOps",
+    "company_name": "Client of AIQU",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T13:31:20Z",
+    "category": "devops",
+    "skills": [
+      "agile",
+      "automation",
+      "aws",
+      "azure",
+      "bash",
+      "ci-cd",
+      "cloud",
+      "cloud-native",
+      "containerization",
+      "devops",
+      "docker",
+      "gcp",
+      "infrastructure-as-code",
+      "kubernetes",
+      "prometheus",
+      "python",
+      "scrum"
+    ],
+    "job_description": "<p><h3>About the Role</h3><p>We are seeking an experienced Solution Architect DevOps based in Dammam to lead the design implementation and optimization of cloud-native solutions You will leverage your expertise in solution architecture DevOps practices and Google Cloud Platform to drive automation ensure system reliability and guide cross-functional teams in delivering scalable secure and high-performance applications</p><h3>Responsibilities</h3><p>Design and document end-to-end solution architectures aligned with business requirementsLead the implementation of DevOps practices including CI CD pipelines infrastructure as code and automated testingArchitect and deploy scalable secure and resilient environments on Google Cloud PlatformCollaborate with development QA and operations teams to define requirements and best practicesDevelop and maintain automation scripts for provisioning configuration and monitoringPerform architecture reviews and code reviews to ensure adherence to",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10733797__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "GCP DevOps & Cloud Solutions Architect",
+    "company_name": "Client of AIQU",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T13:31:20Z",
+    "category": "devops",
+    "skills": [
+      "automation",
+      "bash",
+      "ci-cd",
+      "cloud",
+      "cloud-native",
+      "devops",
+      "gcp",
+      "infrastructure-as-code",
+      "python"
+    ],
+    "job_description": "<p>Client of AIQU is seeking an experienced Solution Architect DevOps based in Dammam to lead the design, implementation, and optimization of cloud-native solutions on Google Cloud Platform. You will guide cross-functional teams to deliver scalable, secure, high-performance applications and drive automation across the stack.</p><p>The ideal candidate has 7+ years in architecture or DevOps roles, deep GCP expertise, and strong CI/CD, IaC, and scripting skills (Python/Bash).</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10734346__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Software Engineer - District Cooling Systems",
+    "company_name": "OpenTalent",
     "location": "Riyadh, Saudi Arabia",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-08T08:45:59Z",
-    "category": "solutions_engineering",
+    "posted_date": "2026-09-11T13:31:19Z",
+    "category": "software_engineering",
+    "skills": [
+      "design-patterns"
+    ],
+    "job_description": "<p>Parsons in the Airport Systems unit is seeking a District Cooling Engineer focused on software to design, develop and maintain scalable software systems for critical infrastructure.</p><p>You will write clean, well-tested code, participate in code reviews and contribute to engineering best practices, while collaborating with product and design teams to deliver features using solid design patterns and architectures.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10733726__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Staff Software Engineer: Microservices, Kafka & Data Systems",
+    "company_name": "Client of Michael Page",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-11T13:31:19Z",
+    "category": "software_engineering",
+    "skills": [
+      "erp",
+      "microservices",
+      "saas"
+    ],
+    "job_description": "<p>Client of Michael Page seeks a Staff Software Engineer in Riyadh to lead modernisation efforts, design distributed data solutions, and mentor engineers. You will collaborate with cross-functional teams to align software with business needs and ensure system reliability in a production environment.</p><p>The role emphasizes legacy modernization, microservices migration, and building scalable data architectures within an ERP/SaaS context in a large Tech environment.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10734089__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Software Developer",
+    "company_name": "Modern Mills Company",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-11T13:31:19Z",
+    "category": "software_engineering",
     "skills": [
       "api",
-      "crm",
-      "cybersecurity",
-      "jira",
-      "linux",
-      "networking",
-      "sales-engineering"
+      "dotnet",
+      "javascript",
+      "microservices",
+      "sharepoint",
+      "version-control"
     ],
-    "job_description": "<div><p><span>OPSWAT</span>, a global leader in IT, <span>OT</span>, and <span>ICS</span> critical infrastructure cybersecurity, delivers an end-to-end platform that gives public and private sector organizations and enterprises the critical advantage needed to protect their complex networks, secure their devices, and ensure compliance. Over the last 20 years our commitment to innovative technology has earned the trust of more than 1,700 organizations, governments, and institutions globally, solidifying our role in protecting the world’s critical infrastructure and securing our way of life.</p></div><p><strong>The Position</strong></p>\n<p> </p>\n<p>The Solution Engineer will be the primary technical sales resource for our regional sales team and will assist in identifying customer challenges and driving technical alignment between customer needs and the OPSWAT solutions. You will serve as a product and industry expert, effectively describing and demonstrating our solution as well as",
-    "source_url": "https://www.opswat.com/jobs/4623330005?gh_jid=4623330005&utm_source=freehire.me",
+    "job_description": "<p><p>The role is responsible for developing maintaining and improving all in-house NET applications and services The candidate will manage and enhance the company s intranet portal build and support integrations using NET technologies and contribute to microservices development The role also includes front-end work using JavaScript SharePoint customization and administration and mobile application design The goal is to deliver stable secure and scalable solutions that support daily business operations and future growth</p><h3>Key Accountabilities</h3><ul><li>Develop maintain and enhance all internal NET applications to ensure smooth and reliable operations</li><li>Design and manage the organization s intranet portal including new features UI updates and performance improvements</li><li>Build and support system integrations using NET frameworks APIs and web services</li><li>Develop and maintain microservices to improve scalability performance and modularity of internal",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10734234__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Staff Software Engineer",
+    "company_name": "Client of Michael Page",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-11T13:31:17Z",
+    "category": "software_engineering",
+    "skills": [
+      "erp",
+      "java",
+      "kafka",
+      "microservices",
+      "saas",
+      "spring"
+    ],
+    "job_description": "<p><h3>Job Summary</h3><p>Work with a leading emerging Tech company</p><p>Sector Technology Subsector IT Development Industry Technology amp Telecoms</p><p>Location Riyadh. Contract type Permanent. Consultant name Farhan Khan. Job reference JN-PHONE NUMBER.</p><h3>Benefits</h3><ul><li>Attractive salary with family benefits and relocation allowance if applicable.</li><li>Comprehensive medical coverage.</li><li>Schooling benefits for dependents.</li><li>Attractive Package with Family Benefits and Relocation if applicable.</li></ul><h3>Responsibilities</h3><ul><li>Lead the modernisation of legacy systems to improve performance and scalability.</li><li>Design and implement distributed data solutions.</li><li>Collaborate with cross-functional teams to align software solutions with business needs.</li><li>Ensure the reliability and efficiency of software systems.</li><li>Identify and resolve technical challenges in system architecture.</li><li>Contribute to the development of technical",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10734327__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "QA Specialist",
+    "company_name": "Naphora Games Group",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T11:25:12Z",
+    "category": "qa",
+    "skills": [
+      "analytics",
+      "android",
+      "automation",
+      "game-development",
+      "ios",
+      "jira",
+      "miro",
+      "test-automation",
+      "unity"
+    ],
+    "job_description": "<div><p>At <strong>Naphora Games Group</strong>, we’re building more than games, we’re building a global team of ambitious, driven people who are hungry to learn, experiment, and raise the bar for the next generation of games.</p>\n<p>We collaborate openly, move fast, and challenge ourselves every day to build better, smarter, and faster.</p>\n<p>Our goal is to create world-class games that players around the globe love and remember. If you thrive in a high-performance, ownership-driven environment and want to make a real impact, you’ll fit right in with us.</p></div><h3> </h3>\n<h3>Role Summary</h3>\n<p>We’re looking for a <strong>QA Specialist to join our growing team at Naphora Games Group</strong> and help us deliver high-quality mobile games.</p>\n<p>You’ll work hands-on with game builds, features, prototypes, and releases, helping ensure our games are stable, polished, and ready for players by identifying and documenting issues, validating fixes, and testing the overall player",
+    "source_url": "https://job-boards.eu.greenhouse.io/alemnafora/jobs/4974299101?utm_source=freehire.me",
     "original_source": "greenhouse"
   },
   {
-    "job_title": "Data Governance Lead",
-    "company_name": "Tamara",
+    "job_title": "Podcast Video Editor - SaaS",
+    "company_name": "jobgether",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T08:24:44Z",
+    "category": "creative",
+    "skills": [
+      "ai",
+      "gdpr",
+      "premiere-pro",
+      "saas",
+      "video-editing"
+    ],
+    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Podcast Video Editor - SaaS based in Saudi Arabia.</strong></p>\n<p>This role is an opportunity to shape high-quality, YouTube-first podcast content through polished and engaging video editing. You will transform multi-camera recordings into compelling long-form episodes, typically ranging from 60 to 90 minutes. The position combines precise editing, dynamic pacing, audio quality and visual storytelling to keep audiences engaged throughout each episode. You will also identify strong moments for social media and prepare rough vertical cutdowns for short-form distribution. Working within an established creative workflow, you will receive structured feedback while maintaining organised project files that support efficient final production. Strong performance on the initial project can lead to an ongoing creative partnership as the podcast",
+    "source_url": "https://jobs.lever.co/jobgether/991aa62f-5434-4f13-97b1-590c1a9f248a?utm_source=freehire.me",
+    "original_source": "lever"
+  },
+  {
+    "job_title": "Video Editor VA (Long-Form Content)",
+    "company_name": "jobgether",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T08:09:18Z",
+    "category": "creative",
+    "skills": [
+      "ai",
+      "davinci-resolve",
+      "final-cut-pro",
+      "gdpr",
+      "premiere-pro",
+      "video-editing"
+    ],
+    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Video Editor VA (Long-Form Content) based in Saudi Arabia.</strong></p>\n<p>As a Video Editor Virtual Assistant, you will transform raw footage into polished, engaging long-form video content for clients across international markets. You will manage the editing process from footage organization and trimming through final delivery and revisions. The role is ideal for a detail-oriented video editor who understands pacing, transitions, audio quality, and visual consistency. You will work on formats such as podcasts, interviews, training videos, and other full-length content. You will also add basic graphics, text overlays, and light effects when needed to enhance the final product. This is a flexible, part-time contractor opportunity where quality, reliability, organization, and responsiveness to feedback are highly",
+    "source_url": "https://jobs.lever.co/jobgether/2b16a273-9cce-40c3-a5fe-7c8c4b3ecbce?utm_source=freehire.me",
+    "original_source": "lever"
+  },
+  {
+    "job_title": "BUSINESS ANALYST - PRODUCT SME - CORPORATE BANKING (COMMERCIAL CARDS)",
+    "company_name": "Duncan & Ross",
     "location": "Riyadh, Saudi Arabia",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-08T08:26:07Z",
+    "posted_date": "2026-09-11T06:07:15Z",
+    "category": "business_analysis",
+    "skills": [
+      "acceptance-criteria"
+    ],
+    "job_description": "<p><strong>Job Purpose</strong></p>\n<p><span>Lead the development of business requirements for commercial-card products supporting corporate purchasing, travel and expense-management needs.</span></p>\n<p><strong>Key Responsibilities</strong></p>\n<ul><li>Define commercial-card propositions, customer segments, card types and supported business use cases.</li><li>Document end-to-end journeys for corporate onboarding, card issuance, activation, servicing, replacement, suspension and closure.</li><li>Define company-level and cardholder-level limits, merchant-category controls, geographic controls and transaction restrictions.</li><li>Capture requirements for physical and virtual cards, where applicable.</li><li>Define billing, repayment, settlement, fees, statements and reconciliation requirements.</li><li>Document corporate administrator capabilities, cardholder management, approval workflows and expense visibility.</li><li>Define transaction monitoring, disputed-transaction, chargeback,",
+    "source_url": "https://www.careers-page.com/duncan-ross-management-consultancies/job/5W875V4R?utm_source=freehire.me",
+    "original_source": "manatal"
+  },
+  {
+    "job_title": "BUSINESS ANALYST - PRODUCT SME - CORPORATE BANKING (ESCROW ACCOUNTS)",
+    "company_name": "Duncan & Ross",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-11T06:07:15Z",
+    "category": "business_analysis",
+    "skills": [
+      "acceptance-criteria"
+    ],
+    "job_description": "<p><strong>Job Purpose</strong></p>\n<p>Lead the definition of business requirements for corporate escrow account products aligned with Saudi market demand and AJB&#39;s corporate banking proposition. The scope excludes REGA-related requirements, which have already been addressed.</p>\n<p><strong>Key Responsibilities</strong></p>\n<ul><li>Assess demand for different corporate escrow use cases and define the target product proposition.</li><li>Define target customer segments, eligibility criteria, account structures and permitted transaction types.</li><li>Document end-to-end processes for account opening, funding, transaction authorization, fund release, reconciliation, servicing and closure.</li><li>Define the roles and obligations of the bank, account holder, beneficiary and other involved parties.</li><li>Document approval structures, conditions for releasing funds, exception scenarios and dispute-handling requirements.</li><li>Define operational, legal, compliance, reporting,",
+    "source_url": "https://www.careers-page.com/duncan-ross-management-consultancies/job/X987R53R?utm_source=freehire.me",
+    "original_source": "manatal"
+  },
+  {
+    "job_title": "BUSINESS ANALYST - PRODUCT SME - CORPORATE BANKING (PAYMENTS)",
+    "company_name": "Duncan & Ross",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-11T06:07:15Z",
+    "category": "business_analysis",
+    "skills": [
+      "acceptance-criteria",
+      "api"
+    ],
+    "job_description": "<p><strong>Job Purpose</strong></p>\n<p>Define the business requirements for corporate payable solutions that enable customers to initiate, approve, process and monitor domestic and cross-border payments efficiently.</p>\n<p><strong>Key Responsibilities</strong></p>\n<ul><li>Define payable product features for single, bulk, scheduled and recurring payments.</li><li>Document end-to-end journeys covering beneficiary management, payment initiation, authorization, processing, tracking, rejection and reversal.</li><li>Define corporate approval structures, user entitlements, transaction limits and maker-checker workflows.</li><li>Capture requirements for file upload, host-to-host connectivity, APIs and corporate digital banking channels.</li><li>Define requirements for payment cut-offs, value dating, fees, foreign exchange, notifications and transaction-status reporting.</li><li>Document handling requirements for duplicates, insufficient funds, invalid beneficiaries, sanctions alerts and",
+    "source_url": "https://www.careers-page.com/duncan-ross-management-consultancies/job/3W87X5YW?utm_source=freehire.me",
+    "original_source": "manatal"
+  },
+  {
+    "job_title": "Partner Solutions Architect",
+    "company_name": "Referral Board",
+    "location": "Saudi Arabia",
+    "cities": [
+      "Saudi Arabia"
+    ],
+    "posted_date": "2026-09-11T00:07:24Z",
+    "category": "architecture",
+    "skills": [
+      "accessibility",
+      "ai",
+      "aws",
+      "azure",
+      "cloud",
+      "cloud-security",
+      "elasticsearch",
+      "gcp",
+      "nlp",
+      "observability",
+      "pre-sales",
+      "sas",
+      "semantic-search",
+      "siem",
+      "vector-search"
+    ],
+    "job_description": "<div><p>Elastic, the Search AI Company, enables everyone to find the answers they need in real time, using all their data, at scale — unleashing the potential of businesses and people. The Elastic Search AI Platform, used by more than 50% of the Fortune 500, brings together the precision of search and the intelligence of AI to enable everyone to accelerate the results that matter. By taking advantage of all structured and unstructured data — securing and protecting private information more effectively — Elastic’s complete, cloud-based solutions for search, security, and observability help organizations deliver on the promise of AI.</p></div><h2><strong>What is the role</strong></h2>\n<p>The Partner Solutions Architect (PSA) is the technical force multiplier of Elastic&#39;s partner ecosystem. Where an account Solutions Architect wins one deal at a time, you build the technical capacity of a focused portfolio of partners — system integrators, resellers, MSSPs and cloud providers — so",
+    "source_url": "https://job-boards.greenhouse.io/referralsuseonly/jobs/8121425?utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Partner Solutions Architect",
+    "company_name": "Elastic",
+    "location": "Saudi Arabia",
+    "cities": [
+      "Saudi Arabia"
+    ],
+    "posted_date": "2026-09-11T00:07:01Z",
+    "category": "architecture",
+    "skills": [
+      "accessibility",
+      "ai",
+      "aws",
+      "azure",
+      "cloud",
+      "cloud-security",
+      "elasticsearch",
+      "gcp",
+      "nlp",
+      "observability",
+      "pre-sales",
+      "sas",
+      "semantic-search",
+      "siem",
+      "vector-search"
+    ],
+    "job_description": "<div><p>Elastic, the Search AI Company, enables everyone to find the answers they need in real time, using all their data, at scale — unleashing the potential of businesses and people. The Elastic Search AI Platform, used by more than 50% of the Fortune 500, brings together the precision of search and the intelligence of AI to enable everyone to accelerate the results that matter. By taking advantage of all structured and unstructured data — securing and protecting private information more effectively — Elastic’s complete, cloud-based solutions for search, security, and observability help organizations deliver on the promise of AI.</p></div><h2><strong>What is the role</strong></h2>\n<p>The Partner Solutions Architect (PSA) is the technical force multiplier of Elastic&#39;s partner ecosystem. Where an account Solutions Architect wins one deal at a time, you build the technical capacity of a focused portfolio of partners — system integrators, resellers, MSSPs and cloud providers — so",
+    "source_url": "https://jobs.elastic.co/jobs?gh_jid=8091966&gh_jid=8091966&utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Occupational Violence and Aggression Program Manager",
+    "company_name": "Downer",
+    "location": "Adelaide, SA, Australia",
+    "cities": [
+      "Adelaide"
+    ],
+    "posted_date": "2026-09-11T00:00:00Z",
+    "category": "project_management",
+    "skills": [
+      "stakeholder-management"
+    ],
+    "job_description": "<p><span>We currently have an opportunity for an <strong>Occupational Violence &amp; Aggression (OVA) Program Manager</strong>. Join our H&amp;S hub and play a key role in leading, coordinating and continuously evolving the OVA Program to strengthen workforce safety, preparedness and organisational resilience. Reporting to the General Manager - Zero Harm, you&#39;ll translate strategy into a prioritised portfolio of initiatives and help deliver high-quality outcomes that support our essential services.</span></p><p> </p><h1><span><span>What You&#39;ll Do</span></span></h1><p><span>This role offers a broad scope, with key responsibilities including:</span></p><ul><li><p><span>Own and maintain the Health &amp; Education OVA Program and roadmap, translating strategy into prioritised initiatives, implementation plans and measurable benefits.</span></p></li><li><p><span>Lead OVA governance forums, chair the steering committee, and prepare clear executive papers, recommendations and",
+    "source_url": "https://fa-exfs-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/736701?utm_source=freehire.me",
+    "original_source": "oracle"
+  },
+  {
+    "job_title": "Principal Forward-Deployed Engineer",
+    "company_name": "Thoughtworks",
+    "location": "Riyadh, KSA",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T16:27:21Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "agentic-ai",
+      "ai",
+      "airflow",
+      "analytics",
+      "anthropic",
+      "api",
+      "api-design",
+      "aws",
+      "azure",
+      "bigquery",
+      "ci-cd",
+      "claude-code",
+      "cloud",
+      "containerization",
+      "dagster",
+      "data-engineering",
+      "databricks",
+      "dbt",
+      "devops",
+      "docker",
+      "event-driven-architecture",
+      "figma",
+      "gcp",
+      "gdpr",
+      "hipaa",
+      "infrastructure-as-code",
+      "kafka",
+      "kinesis",
+      "kubernetes",
+      "langchain",
+      "langgraph",
+      "langsmith",
+      "llamaindex",
+      "llm",
+      "microservices",
+      "nextjs",
+      "observability",
+      "openai",
+      "owasp",
+      "pci-dss",
+      "pgvector",
+      "pinecone",
+      "prototyping",
+      "python",
+      "react",
+      "snowflake",
+      "tdd",
+      "terraform",
+      "typescript",
+      "vector-databases"
+    ],
+    "job_description": "<div>\n<p>We&#39;re looking for a Tech Principal to lead technical strategy and execution on our most ambitious product work: lighthouse projects inside Thoughtworks&#39; global Customer Experience, Product and Design team.</p>\n<p>Here&#39;s the shape of it. A client arrives with a big idea and not much time. Within a few days, you&#39;ve helped them turn it into a concept everyone agrees on. Within a few weeks, there&#39;s something real that customers can actually use and react to. Within a quarter, it&#39;s live. Then you do it again, somewhere else in the world, with a different team, and you leave both of them better at it than they were before.</p>\n<p>If you have built a career integrating strategy, architecture, AI engineering, and executive collaboration, this role offers an ideal platform to leverage those skills.</p>\n<p>The approach you&#39;d be leading: We call it <strong>3/3/3</strong><br><strong>3 days: </strong>Product concept. Everyone aligned on scope, objectives and",
+    "source_url": "https://www.thoughtworks.com/careers/jobs/8184778?gh_jid=8184778&utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Lead Information Security Engineer (Defensive)",
+    "company_name": "tabby",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T16:20:24Z",
+    "category": "security",
+    "skills": [
+      "aws",
+      "ci-cd",
+      "cism",
+      "cissp",
+      "cloud",
+      "cloud-security",
+      "container-security",
+      "cybersecurity",
+      "dast",
+      "devsecops",
+      "dlp",
+      "edr",
+      "fintech",
+      "firewall",
+      "gcp",
+      "iam",
+      "iso-27001",
+      "kubernetes",
+      "pci-dss",
+      "penetration-testing",
+      "sast",
+      "sdlc",
+      "siem",
+      "stakeholder-management",
+      "terraform",
+      "xdr"
+    ],
+    "job_description": "<div><strong>Tabby</strong> creates financial freedom in the way people shop, earn and save by reshaping their relationship with money. Over 17 million users choose Tabby to stay in control of their spending and make the most out of their money.<br><br>The company’s flagship offering allows shoppers to split their payments online and in-store with no interest or fees. Over 40,000 global brands and small businesses, including Amazon, Noon, IKEA, and SHEIN use Tabby to accelerate growth and gain loyal customers by offering easy and flexible payments online and in stores.<br><br>Tabby generates over $10 billion in annual transaction volume for its partner brands and is the highest-rated, most-reviewed, largest, and fastest-growing FinTech in the GCC region.<br>Tabby launched in 2019 and has since raised +$1 billion in equity and debt funding from global and regional investors, and is now valued at $4.5 billion.<br><br>We are looking for a <strong>Lead Cyber Security Engineer</strong> to",
+    "source_url": "https://tabby.pinpointhq.com/en/postings/11f47528-b902-4844-b022-2fc173e760f4?utm_source=freehire.me",
+    "original_source": "pinpoint"
+  },
+  {
+    "job_title": "Product & Design Intern (Tabby Imagine)",
+    "company_name": "tabby",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T16:20:24Z",
+    "category": "design",
+    "skills": [
+      "figma",
+      "fintech",
+      "prototyping"
+    ],
+    "job_description": "<div>There is no CV screen for this one. The only way in is <strong>Tabby Imagine</strong>, an open design and product challenge for Saudi Arabia. Three places are awarded, first, second and third, and each winner takes this role.<br><br></div><ul><li>Come up with a product idea for Tabby: something new, or a change to what is already there.</li><li>Send it in whatever form shows it best: a written page, a Figma file, a clickable prototype, working code, or a short video. One of them is enough, and there is no required format. Everything reaches us as a link. The entry form requires one and there is no file upload, so a written entry is sent as a link to the written page. Every link has to open for anyone holding it. Our design system is public at .</li><li>Entries are read blind. Your name is hidden while the panel scores.</li><li>The strongest entrants present their work live at the final, in front of an audience. That session replaces the interview for this role. Naming you",
+    "source_url": "https://tabby.pinpointhq.com/en/postings/a2ba67df-d612-4588-8d02-c9cc4eb9f060?utm_source=freehire.me",
+    "original_source": "pinpoint"
+  },
+  {
+    "job_title": "Product & Design Intern (Tabby Image)",
+    "company_name": "tabby",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T16:20:24Z",
+    "category": "design",
+    "skills": [
+      "figma",
+      "fintech",
+      "prototyping"
+    ],
+    "job_description": "<h2>How you get this role</h2><div><br>There is no CV screen for this one. The only way in is <strong>Tabby Imagine</strong>, an open design and product challenge for Saudi Arabia. Three places are awarded, first, second and third, and each winner takes this role.<br><br></div><ul><li>Come up with a product idea for Tabby: something new, or a change to what is already there.</li><li>Send it in whatever form shows it best: a written page, a Figma file, a clickable prototype, working code, or a short video. One of them is enough, and there is no required format. Everything reaches us as a link. The entry form requires one and there is no file upload, so a written entry is sent as a link to the written page. Every link has to open for anyone holding it. Our design system is public at .</li><li>Entries are read blind. Your name is hidden while the panel scores.</li><li>The strongest entrants present their work live at the final, in front of an audience. That session replaces the interview",
+    "source_url": "https://tabby.pinpointhq.com/en/postings/ed3fd640-2960-4a4c-b078-8751fa0df872?utm_source=freehire.me",
+    "original_source": "pinpoint"
+  },
+  {
+    "job_title": "Forward Deployed Engineer, GCC",
+    "company_name": "Telnyx",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T15:57:54Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "ai",
+      "api",
+      "ci-cd",
+      "cloud",
+      "cloud-native",
+      "conversational-ai",
+      "devops",
+      "docker",
+      "etl",
+      "event-driven-architecture",
+      "fine-tuning",
+      "iam",
+      "kubernetes",
+      "llm",
+      "mistral",
+      "mysql",
+      "nodejs",
+      "observability",
+      "ollama",
+      "openai",
+      "opentelemetry",
+      "oracle",
+      "postgresql",
+      "python",
+      "saas",
+      "secrets-management",
+      "sql",
+      "vllm"
+    ],
+    "job_description": "<div><p><strong>About Telnyx</strong></p>\n<p><em><span>Telnyx is an industry leader that&#39;s not just imagining the future of global connectivity—we&#39;re building it. From architecting and amplifying the reach of a </span></em><em><span>private, global, multi-cloud IP network</span></em><em><span>, to bringing </span></em><em><span>hyperlocal edge</span></em><em><span> technology right to your fingertips through intuitive APIs, we&#39;re shaping a new era of seamless interconnection between people, devices, and applications.</span></em></p>\n<p><em><span>We&#39;re driven by a desire to transform and modernize what&#39;s antiquated, automate the manual, and solve real-world problems through innovative connectivity solutions. As a testament to our success, we&#39;re proud to stand as a financially stable and profitable company. Our robust profitability allows us not only to invest in pioneering technologies but also to foster an environment of continuous learning and growth for our",
+    "source_url": "https://job-boards.greenhouse.io/telnyx54/jobs/7826744003?utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Data Analyst Engineer: AI-Driven Power BI Insights",
+    "company_name": "Nexttec Technology Outsourcing",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T14:33:17Z",
+    "category": "data_analytics",
+    "skills": [
+      "ai",
+      "analytics",
+      "data-governance",
+      "powerbi",
+      "sql"
+    ],
+    "job_description": "<p>Nexttec Technology Outsourcing is seeking an IT Data Analyst to analyze complex datasets and deliver actionable insights. You will build Power BI dashboards and reports across Finance, Procurement, Supply Chain, and Sales, ensuring data governance and standardized visuals.</p><p>Ideal candidates have 3–7 years in data analysis, strong SQL and BI skills, and familiarity with AI-enabled analytics in tools like Power BI.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10729750__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Data Analyst Engineer Saudi National",
+    "company_name": "Nexttec Technology Outsourcing",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T14:33:17Z",
+    "category": "data_analytics",
+    "skills": [
+      "ai",
+      "analytics",
+      "automation",
+      "data-analytics",
+      "data-governance",
+      "data-modeling",
+      "data-pipelines",
+      "data-quality",
+      "data-science",
+      "data-visualization",
+      "data-warehousing",
+      "etl",
+      "lakehouse",
+      "looker",
+      "microsoft-fabric",
+      "mysql",
+      "oracle",
+      "power-query",
+      "powerbi",
+      "python",
+      "sql",
+      "statistics",
+      "tableau"
+    ],
+    "job_description": "<p><p>, permanent position</p><p>Position: Data Analyst Engineer</p><p>Company Overview:</p><p>Nexttec Technology Outsourcing is a leading technology outsourcing company that specializes in providing innovative and cost-effective IT solutions to businesses of all sizes. We pride ourselves on our commitment to delivering exceptional services and solutions to our clients, and we are looking for a highly skilled IT Data Analyst to join our team.</p><p>Position Overview:</p><p>As an IT Data Analyst at Nexttec Technology Outsourcing, you will be responsible for analyzing and interpreting complex data sets to identify trends, patterns, and insights that will drive business decisions and strategies. You will work closely with our clients to understand their data needs and provide them with actionable insights to improve their business performance.</p><h3>Key Job Duties of an IT Data Analyst</h3><ul><li>Work with business stakeholders to understand their data needs and analytical",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730814__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Cloud Data Engineer: Azure & Databricks Pipelines",
+    "company_name": "DS DeepSource",
+    "location": "Saudi Arabia",
+    "cities": [
+      "Makkah"
+    ],
+    "posted_date": "2026-09-10T14:33:17Z",
+    "category": "data_engineering",
+    "skills": [
+      "analytics",
+      "azure",
+      "azure-data-factory",
+      "cloud",
+      "cloud-native",
+      "data-pipelines",
+      "data-quality",
+      "databricks",
+      "pyspark",
+      "sql"
+    ],
+    "job_description": "<p>DS DeepSource is seeking an L1 Data Engineer to design, build, and maintain scalable data pipelines and data infrastructure in a cloud-native environment. You will work hands-on with Azure Data Factory, Databricks, PySpark, and SQL to support BI and analytics across the organization.</p><p>The role emphasizes data quality, governance, and scalable architectures, with opportunities to contribute to data platform enhancements in a collaborative, fast-paced team.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730960__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Presales Engineer – Hyperscale Data Centre",
+    "company_name": "Mannai Corporation QPSC",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T14:33:17Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "autocad",
+      "pre-sales",
+      "technical-discovery",
+      "transformers",
+      "visio"
+    ],
+    "job_description": "<p><p>The <b>Presales Engineer – Hyperscale Data Centre</b> will lead the technical development of secure, resilient, scalable, and commercially competitive data centre solutions from opportunity qualification through contract award and handover.</p>\n<p>The role will translate customer requirements for capacity, availability, sustainability, compliance, programme, and future growth into integrated solution architectures, basis-of-design documents, technical proposals, BOQs/BOMs, and cost models.</p>\n<h3><b>Minimum Requirements – Mandatory</b></h3>\n<p><b>Candidates must meet the following requirements to be considered for this role:</b></p>\n<ul>\n<li><b>Hands-on involvement in Data Centre facilities with an IT load of 10 MW or above.</b></li>\n<li><b>Strong MEP infrastructure experience covering power, cooling, and mission-critical systems.</b></li>\n</ul>\n<h3>Key Responsibilities</h3>\n<ul>\n<li>Lead technical qualification of hyperscale data centre opportunities by reviewing RFPs,",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10729892__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Hyperscale Data Centre Presales Engineer",
+    "company_name": "Mannai Corporation QPSC",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T14:33:17Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "pre-sales"
+    ],
+    "job_description": "<p>Mannai Corporation QPSC seeks a Presales Engineer – Hyperscale Data Centre to drive technical development from opportunity qualification to award and handover. You will translate customer needs into integrated architectures, cost models, and tender materials, working with OEM partners to ensure compliance and optimal TCO.</p><p>Requirements include 5–10 years in data centre presales or design, strong MEP knowledge, and regional GCC/KSA exposure.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730449__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Data Engineer",
+    "company_name": "Telgani | Rent a car",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:16Z",
+    "category": "data_engineering",
+    "skills": [
+      "analytics",
+      "automation",
+      "aws",
+      "azure",
+      "cloud",
+      "data-pipelines",
+      "data-quality",
+      "elt",
+      "etl",
+      "gcp",
+      "python",
+      "sql"
+    ],
+    "job_description": "<p><ul><li>Build and maintain ETL/ELT data pipelines</li><li>Develop and optimize databases and data workflows</li><li>Ensure data quality, accuracy, and reliability</li><li>Integrate data from multiple systems and sources</li><li>Support analytics, reporting, and BI requirements</li><li>Collaborate with engineering and business teams</li></ul><p><b>Requirements:</b></p><ul><li>Strong knowledge of SQL and relational databases</li><li>Experience with Python for data processing and automation</li><li>Familiarity with data warehouses and ETL/ELT tools</li><li>Experience with cloud platforms such as AWS, Azure, or Google Cloud</li><li>Strong problem-solving and analytical skills</li></ul></p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730613__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Data Engineer: Build Scalable Data Pipelines & Warehouses",
+    "company_name": "Telgani | Rent a car",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:16Z",
     "category": "data_engineering",
     "skills": [
       "analytics",
       "data-governance",
-      "data-lineage",
+      "data-pipelines",
       "data-quality",
-      "fintech",
-      "iso-27001",
-      "metadata-management",
-      "pci-dss",
-      "powerbi",
-      "sql",
-      "stakeholder-management",
-      "tableau"
+      "elt",
+      "etl"
     ],
-    "job_description": "<p><strong>About Us</strong></p>\n<p>Tamara is a leading fintech platform in Saudi Arabia and the GCC region with a mission to help people own their dreams built on being simple, trusted, and everywhere our customers need us. Today, more than 25 million customers and over 130,000 partner merchants depend on Tamara every day for reliable financial solutions across retail, travel, education, healthcare, and beyond. Tamara is backed by Sanabil Investments, a wholly owned company of the Public Investment Fund (PIF), and SNB Capital, among others.</p>\n<h4>Your Role</h4>\n<p>The Data Governance Lead will be responsible for leading the implementation, operation, and continuous improvement of Tamara’s data governance framework, ensuring that data is managed as a trusted, secure, well-controlled, and valuable organizational asset.</p>\n<p>You will work closely with business, data, engineering, security, privacy, compliance, risk, and product teams to establish clear data ownership, strengthen",
-    "source_url": "https://job-boards.eu.greenhouse.io/tamara/jobs/4954552101?utm_source=freehire.me",
-    "original_source": "greenhouse"
+    "job_description": "<p>Telgani | Rent a car in Riyadh is seeking a Data Engineer to build and maintain ETL/ELT data pipelines, develop and optimize databases, and ensure data quality across systems. The role focuses on scalable data workflows and robust data governance to support trusted analytics.</p><p>You will integrate data from multiple sources to support analytics, reporting, and BI, and collaborate with engineering and business teams to deliver reliable data solutions.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10732073__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Sales Engineer",
-    "company_name": "Sika Group",
-    "location": "Riyadh, Riyadh Province, sa",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T08:12:49Z",
-    "category": "solutions_engineering",
-    "skills": [],
-    "job_description": "<p>The Sales Engineer role is a critical position within our organisation, responsible for driving sales performance and fostering long-term customer relationships. The successful candidate will be entrusted with the following key responsibilities:</p><ul><li>Develop and execute strategic plans to establish and maintain account relationships, with the objective of meeting or exceeding personal sales targets for each assigned account. This involves conducting thorough analyses of existing and prospective customers&#39; needs through professional consultations and site visits.</li><li>Assume full accountability for regional/country sales performance and target achievement. Active participation in all sales activities within the designated territory and region is imperative.</li><li>Collaborate closely with segment managers and distribution managers to develop and optimize sales channels, ensuring alignment with the company&#39;s growth strategies.</li><li>Provide expert guidance to",
-    "source_url": "https://jobs.smartrecruiters.com/SikaAG/744000148164949-sales-engineer?utm_source=freehire.me",
-    "original_source": "smartrecruiters"
-  },
-  {
-    "job_title": "Junior Interior Designer \"Tamheer\"",
-    "company_name": "Flow",
-    "location": "Riyadh",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T07:32:54Z",
-    "category": "design",
-    "skills": [
-      "autocad",
-      "revit"
-    ],
-    "job_description": "<div>\n<p><strong>About the Company: </strong></p>\n<p>At Flow, we’re reimagining what it means to live, work, and connect. More than just a real estate company, Flow is a brand, a technology platform, and an operations ecosystem spanning condominiums, hotels, multifamily residences, and office spaces. We’re building a new kind of living experience: one that’s flexible, connected, and designed to create genuine community and real value for the people who call Flow home.</p>\n</div><h3>About the Role</h3><div>\n<p>This role is offered through the Tamheer Program and is ideal for a fresh graduate or early-career designer who is creative, detail-oriented, and eager to gain hands-on experience across residential and hospitality projects. As a Junior Interior Designer within Flow’s Design &amp; Development team in Riyadh, you’ll support the team from concept through construction, working closely with architects, consultants, and vendors on live projects.</p>\n</div><h3>Key",
-    "source_url": "https://jobs.lever.co/flowlife/76322e7c-fcf9-4aa7-bbaf-a8fcbb210067?utm_source=freehire.me",
-    "original_source": "lever"
-  },
-  {
-    "job_title": "Video Editor",
-    "company_name": "jobgether",
-    "location": "Saudi Arabia",
-    "cities": [],
-    "posted_date": "2026-09-08T07:28:36Z",
-    "category": "creative",
-    "skills": [
-      "ai",
-      "final-cut-pro",
-      "gdpr",
-      "motion-graphics",
-      "premiere-pro",
-      "video-editing"
-    ],
-    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Video Editor based in Saudi Arabia.</strong></p>\n<p>This role is responsible for transforming raw footage into polished, engaging visual content that supports marketing initiatives and client projects. You will shape video narratives through thoughtful editing, pacing, motion graphics, sound, and visual effects. The position offers the opportunity to create content for a range of digital platforms, from YouTube and LinkedIn to Instagram and other social channels. You will collaborate closely with marketing and project teams to translate creative briefs into compelling, on-brand videos. Working across multiple projects, you will balance creativity with organization, quality, and timely delivery. The role is well suited to a detail-oriented creative professional who enjoys working independently while contributing to a collaborative",
-    "source_url": "https://jobs.lever.co/jobgether/09b0a424-d225-4ec5-b925-d66c5fa4199b?utm_source=freehire.me",
-    "original_source": "lever"
-  },
-  {
-    "job_title": "Cyber Defense Engineer: Incident Response & Data Protection",
-    "company_name": "Tibah Airports Operation Co.",
+    "job_title": "Senior Python Backend Engineer (Django) – iGaming Scale",
+    "company_name": "JobCubby",
     "location": "Saudi Arabia",
     "cities": [
       "Saudi Arabia"
     ],
-    "posted_date": "2026-09-08T05:54:32Z",
-    "category": "security",
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "backend",
     "skills": [
-      "cybersecurity",
-      "dlp",
-      "iam",
-      "mdm"
+      "django",
+      "python"
     ],
-    "job_description": "<p>Turah Airports Operation Co. seeks a Cybersecurity Engineer to design, implement, and operate security controls protecting data, systems, and networks. The role emphasizes incident detection, response, and regulatory alignment in a demanding environment.</p><p>The engineer will configure DLP, MDM, and IAM solutions, support ECC/compliance assessments, and routinely monitor security technologies to prevent breaches.</p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10725831__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "job_description": "<p>JobCubby, in partnership with a Saudi-based client, seeks a Middle to Senior Python Developer to build high-performance backend systems within an iGaming technology environment. You will work with Python and Django, owning production reliability and architectural decisions, and contribute to integrations with payment methods and data providers.</p><p>You will collaborate with an international team, drive initiative and quality, and take ownership from development through delivery while supporting</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10729792__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
     "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Senior Specialist, Data Science & Artificial Intelligence",
-    "company_name": "Saudi Arabian Mining Company (Maaden)",
+    "job_title": "Senior .NET Core Backend Engineer: Scalable APIs",
+    "company_name": "Uzaif",
     "location": "Riyadh, Saudi Arabia",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "data_science",
-    "skills": [
-      "ai",
-      "ai-enablement",
-      "analytics",
-      "api",
-      "automation",
-      "cybersecurity",
-      "data-science",
-      "deep-learning",
-      "feature-engineering",
-      "fine-tuning",
-      "generative-ai",
-      "llm",
-      "llmops",
-      "machine-learning",
-      "mlops",
-      "prompt-engineering",
-      "python",
-      "pytorch",
-      "rag",
-      "scikit-learn",
-      "sql",
-      "tensorflow"
-    ],
-    "job_description": "<div>\n Why This Role Matters \n <div>\n  The Senior Specialist, Data Science &amp; Artificial Intelligence II accelerates business value creation through the application of advanced analytics, machine learning, and Generative AI solutions. The role transforms data into actionable intelligence that improves decision-making, operational performance, automation, innovation, and business outcomes across the enterprise.\n </div>\n <div>\n  The role enables Ma’aden to harness the power of AI by developing scalable, reliable, and responsible solutions that address complex business challenges. Through the deployment of machine learning models and GenAI applications, the role improves efficiency, enhances user experiences, and unlocks new opportunities for digital transformation.\n </div>\n <div>\n  By combining technical expertise with governance, security, and ethical AI practices, the role ensures that AI solutions deliver measurable value while maintaining trust, compliance, and sustainable",
-    "source_url": "https://fa-epod-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/9067?utm_source=freehire.me",
-    "original_source": "oracle"
-  },
-  {
-    "job_title": "Senior Architect (Saudi National)",
-    "company_name": "Parsons",
-    "location": "SA - Riyadh",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "architecture",
-    "skills": [
-      "cad"
-    ],
-    "job_description": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!<p><span> </span></p>At Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what’s possible.<p><span> </span></p><p><u><b>Job Description:</b></u></p><div><span><span>Parsons is looking for an amazingly talented <b>Senior Architect</b> to join our team! In this role you will get to lead architectural design development, multidisciplinary coordination, stakeholder engagement, and technical delivery for major infrastructure projects.</span></span></div><div><b><span><span>What You&#39;ll Be Doing:</span></span></b></div><ul><li><span><span>Lead architectural conceptualization, design development, detailing, and coordination",
-    "source_url": "https://parsons.wd5.myworkdayjobs.com/Search/job/SA---Riyadh/Senior-Architect--Saudi-National-_R185667-1?utm_source=freehire.me",
-    "original_source": "workday"
-  },
-  {
-    "job_title": "QA/QC Manager (Metro/Rail Exp)",
-    "company_name": "Parsons",
-    "location": "SA - Riyadh",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "qa",
-    "skills": [],
-    "job_description": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!<p><span> </span></p>At Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what’s possible.<p><span> </span></p><p><u><b>Job Description:</b></u></p><p>Parsons is looking for an amazingly talented <b>QA/QC Manager</b> to join our team. In this role, you will provide leadership and management direction for the quality function on a major iconic metro station project, ensuring that all products and services are delivered in accordance with customer and Parsons Quality requirements.</p><p><b>What You’ll Be Doing</b></p><ul><li><p>Provide management direction for the practice of quality on a major metro station project.</p></li><li><p>Lead the development",
-    "source_url": "https://parsons.wd5.myworkdayjobs.com/Search/job/SA---Riyadh/QA-QC-Manager--Metro-Rail-Exp-_R185697?utm_source=freehire.me",
-    "original_source": "workday"
-  },
-  {
-    "job_title": "EHS & Security Intern",
-    "company_name": "richemont",
-    "location": "RIYADH",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "security",
-    "skills": [],
-    "job_description": "<p></p><p>Richemont, one of the world leaders in the luxury sector, has various Houses specializing in jewelry, watches and high-end accessories.<span> </span>Each Maison proudly embodies a tradition of style, quality and craftsmanship and Richemont strives to preserve the heritage and identity specific to each of them.<span> </span>At the same time, we are committed to innovating and designing new products in line with the values ​​of our Houses, through a process of permanent creativity.</p><p></p><p><b>YOUR MISSION:</b><br/>Learning a particular skill / job under the tutelage of skilled professionals. Definition of apprenticeship may vary according to country, may include a rotational program, and is generally paid.<br/><br/><b>HOW WILL YOU MAKE AN IMPACT?</b><br/><br/>- Define and implement the IT Security strategy within the assigned scope, ensuring alignment with the Group Security strategy and long-term business objectives of the organizational unit(s).<br/>- Lead the",
-    "source_url": "https://richemont.wd3.myworkdayjobs.com/richemont/job/RIYADH/EHS---Security-Intern_JR133471?utm_source=freehire.me",
-    "original_source": "workday"
-  },
-  {
-    "job_title": "Visual Designer - KSA",
-    "company_name": "moomoo",
-    "location": "Riyadh, Riyadh Province, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "design",
-    "skills": [
-      "ai",
-      "blender",
-      "cinema-4d",
-      "figma",
-      "illustrator",
-      "motion-design",
-      "photoshop",
-      "typography"
-    ],
-    "job_description": "<h3><strong>About the Role</strong></h3><p>We are looking for a <strong>Visual Designer</strong> to support our user acquisition, growth marketing, and localization initiatives in Saudi Arabia and the broader Arab market.</p><p>You will connect our global product capabilities with culturally relevant visual storytelling, transforming financial and investment concepts into clear, engaging creative assets for local audiences. This role requires strong visual design skills, an understanding of performance marketing, and deep familiarity with Arabic language, culture, and consumer preferences.<br></p><h3><strong>Responsibilities</strong></h3><ul><li>Support visual design for user acquisition and growth initiatives in the Arab market, including but not limited to campaign posters, banners, in-feed advertisements, and landing-page visuals.</li><li>Ensure all visual assets comply with Arabic typography and right-to-left (RTL) layout standards. Carefully consider religious sensitivities,",
-    "source_url": "https://apply.workable.com/j/DE0058761F?utm_source=freehire.me",
-    "original_source": "workable"
-  },
-  {
-    "job_title": "KSA National - Senior Project Manager",
-    "company_name": "Horizontal Digital",
-    "location": "Riyadh, Riyadh Province, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "project_management",
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "backend",
     "skills": [
       "agile",
-      "confluence",
-      "jira",
-      "salesforce",
-      "scrum"
+      "api",
+      "csharp",
+      "dotnet",
+      "git",
+      "postgresql",
+      "rest",
+      "sql",
+      "sql-server"
     ],
-    "job_description": "<p>At Horizontal Digital, we hold ourselves to one key belief: You’re only as good as your worst customer experience. This mantra is what drives our digital consultancy to think beyond the easy answers and instead create websites, apps, portals, and other experiences that solve customer needs for Fortune 500 companies in intuitive and empathetic ways. And we make this lofty standard a reality by fusing strategy, data, design, and technology together to arrive at solutions that set the bar higher for everyone. </p><p><strong>We use these values to fuel superior results: </strong></p><p><strong>Lock arms </strong></p><p>We forge relationships that make our impact 1,000x stronger. This means working across departments and engaging both our clients and our communities to deliver the greatest good. </p><p><strong>Show hustle </strong></p><p>We’re not ones to sit on our hands and wait. Instead, we anticipate opportunities, collectively roll up our sleeves and find ways to execute the",
-    "source_url": "https://apply.workable.com/j/69FC51C240?utm_source=freehire.me",
-    "original_source": "workable"
+    "job_description": "<p>Uzaif is seeking a Senior Backend Developer in Riyadh to design and implement scalable .NET Core solutions. You will build secure RESTful APIs, manage data access with EF Core, and collaborate with product teams to deliver high-quality software.</p><p>Ideal candidates have 4+ years of .NET Core experience, strong C#, and experience with SQL Server or PostgreSQL, plus familiarity with frontend basics and Git in an Agile environment.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10729886__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Mobile Crane Trainer- SMP Opportunity with Saudi Aramco",
-    "company_name": "Saeed Raddad Group",
-    "location": "Saudi Arabia",
-    "cities": [],
-    "posted_date": "2026-09-08T00:00:00Z",
-    "category": "mobile",
-    "skills": [],
-    "job_description": "<p><strong>Who We Are</strong></p><p>Based in Dammam, Saudi Arabia, Saeed Raddad Group is an Investment Holding Group. Under its spectrum, there are diverse leading companies operating in various sectors: Energy, Manufacturing, Engineering, Facilities Management, Human Resources, Medical and Pharmaceutical Industries, Travel and Tourism, Real Estate, and Information and Communication Technology.</p><p><strong>SMP Opportunity with Saudi Aramco</strong></p><p>Job Title:  Mobile Crane Trainer</p><p>Selection criteria:  Mobile crane operation and Heavy Equipment operation</p><p>Possess strong competencies in testing and training trainees in terms of mobile crane operation</p><p> </p><p>Work Schedule: Full time </p><p>Work Location: Dhahran</p><p>Benefits Offered:</p><ul><li>Competitive Basic Salary + Overbase</li><li>Adequate Health Insurance</li><li>Annual Leave &amp; Public Holidays</li><li>Annual Flight Tickets for Expats</li></ul><p><br>Application Window:<br>Start Date:",
-    "source_url": "https://ecau.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25004950?utm_source=freehire.me",
-    "original_source": "oracle"
+    "job_title": "Senior Backend Developer (.NET Core)",
+    "company_name": "Uzaif",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "backend",
+    "skills": [
+      "agile",
+      "angular",
+      "api",
+      "azure",
+      "azure-devops",
+      "ci-cd",
+      "containerization",
+      "csharp",
+      "css",
+      "devops",
+      "docker",
+      "dotnet",
+      "git",
+      "html",
+      "javascript",
+      "microservices",
+      "postgresql",
+      "react",
+      "rest",
+      "sql",
+      "sql-server",
+      "version-control"
+    ],
+    "job_description": "<p><h3>About the Role</h3>\n<p>We are looking for a highly skilled Senior Backend Developer with strong expertise in .NET Core to join our growing engineering team. You will be responsible for building scalable, high-performance backend systems and delivering clean, maintainable code in collaboration with cross-functional product teams.</p>\n<h3>Key Responsibilities</h3>\n<ul>\n<li><p>Design, develop, and maintain scalable backend systems using .NET Core and ASP.NET Core.</p></li>\n<li><p>Build secure and high-performance RESTful APIs.</p></li>\n<li><p>Develop and manage data access using Entity Framework Core.</p></li>\n<li><p>Collaborate with cross-functional teams to deliver high-quality software solutions.</p></li>\n<li><p>Write clean, maintainable, and testable code following industry best practices.</p></li>\n<li><p>Participate in code reviews and contribute to continuous improvement of development standards.</p></li>\n<li><p>Troubleshoot, debug, and optimize application",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730751__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "EL1 Senior DevOps Engineer - Aged Care Quality and Safety Commission",
-    "company_name": "Polluxa, Inc.",
+    "job_title": "Backend Engineer II — Go/RoR/Python/Java | Relocation",
+    "company_name": "HungerStation | هنقرستيشن",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "backend",
+    "skills": [
+      "go",
+      "java",
+      "kubernetes",
+      "microservices",
+      "python"
+    ],
+    "job_description": "<p>HungerStation is seeking a Software Engineer II - Backend to join our Riyadh team. You will collaborate with the product team to translate requirements into scalable backend solutions and ensure high-quality software delivery across services.</p><p>The ideal candidate has 4-5 years in backend development with GoLang, RoR, Java, or Python, plus knowledge of microservices, DDD, and Kubernetes. Relocation support is available for permanent roles.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730902__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "GCP Cloud Infra & DevOps Engineer — CI/CD & Security",
+    "company_name": "1Pass",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "devops",
+    "skills": [
+      "ci-cd",
+      "cloud",
+      "devops",
+      "gcp",
+      "terraform"
+    ],
+    "job_description": "<p>1Pass is seeking a hands-on DevOps/Platform Engineer to own the day-to-day health of our Google Cloud environment, build and maintain CI/CD pipelines, and act as the first line of defence on infrastructure security.</p><p>You will define environments with Terraform, manage backups and disaster recovery, implement monitoring, logging and cost accounting, and ensure compliance with PDPL while keeping systems scalable.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731448__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "DevOps Architect: CI/CD, Kubernetes & Cloud Automation",
+    "company_name": "Saudi Azm عزم السعودية",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "devops",
+    "skills": [
+      "automation",
+      "ci-cd",
+      "cloud",
+      "devops",
+      "docker",
+      "infrastructure-as-code",
+      "kubernetes",
+      "linux",
+      "networking"
+    ],
+    "job_description": "<p>Saudi Azm عزم السعودية is seeking a DevOps/Cloud Engineer to design and manage CI/CD pipelines, automate IaC, and operate across cloud and on‑prem environments. The role emphasizes Docker, Kubernetes, security, and incident response within a collaborative team.</p><p>The ideal candidate has strong Linux networking skills, hands‑on experience with major clouds, and proficiency in CI/CD tooling, IaC, and monitoring. A Bachelor’s degree is required, with a focus on reliability and automation.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731734__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Senior Cloud Architect: Enterprise Migrations & DevOps",
+    "company_name": "Olayancareer",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "devops",
+    "skills": [
+      "azure",
+      "cloud",
+      "devops",
+      "gcp",
+      "iam"
+    ],
+    "job_description": "<p>Olayancareer is seeking a Senior Cloud Architect to design, govern, and deliver secure, scalable cloud solutions across GCP, Azure, and OCI. You will lead migration and modernization initiatives, establish landing zones, and enable DevOps practices to ensure reliable, automated service delivery aligned with business goals.</p><p>Responsibilities include governance, IAM, security controls, and collaboration with Cloud Engineering, Infrastructure, Security, and DevOps teams to drive enterprise cloud</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731773__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "DevOps Engineer",
+    "company_name": "Saudi Azm عزم السعودية",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
+    "category": "devops",
+    "skills": [
+      "ansible",
+      "automation",
+      "aws",
+      "azure",
+      "azure-devops",
+      "bash",
+      "ci-cd",
+      "cloud",
+      "cloud-security",
+      "cloudformation",
+      "datadog",
+      "devops",
+      "distributed-systems",
+      "docker",
+      "elk",
+      "flux",
+      "gcp",
+      "github",
+      "github-actions",
+      "gitlab",
+      "gitops",
+      "grafana",
+      "infrastructure-as-code",
+      "jenkins",
+      "kubernetes",
+      "linux",
+      "microservices",
+      "networking",
+      "observability",
+      "powershell",
+      "prometheus",
+      "pulumi",
+      "puppet",
+      "python",
+      "secrets-management",
+      "serverless",
+      "splunk",
+      "terraform"
+    ],
+    "job_description": "<p><h3>Job Description</h3><h3>Key Responsibilities</h3><ul><li>Design, implement, and manage CI/CD pipelines.</li><li>Automate infrastructure provisioning using Infrastructure as Code (IaC).</li><li>Deploy and maintain applications across cloud and on-premises environments.</li><li>Manage containerized workloads using Docker and Kubernetes.</li><li>Monitor system availability, performance, security, and capacity.</li><li>Identify and resolve infrastructure, application, and deployment issues.</li><li>Implement logging, alerting, backup, and disaster-recovery solutions.</li><li>Apply security best practices throughout the software development lifecycle.</li><li>Manage source-control strategies, release processes, and environment configurations.</li><li>Improve platform reliability, scalability, and deployment frequency.</li><li>Develop scripts and tools to reduce manual operational tasks.</li><li>Maintain technical documentation, runbooks, and architecture",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10732310__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Purple Teaming Engineer - Embedded Security ",
+    "company_name": "Lucid Motors",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-11T19:40:06Z",
+    "category": "security",
+    "skills": [
+      "accessibility",
+      "android",
+      "anomaly-detection",
+      "automation",
+      "burp-suite",
+      "cloud",
+      "cloud-security",
+      "cybersecurity",
+      "elk",
+      "embedded-linux",
+      "embedded-systems",
+      "firmware",
+      "linux",
+      "mqtt",
+      "network-security",
+      "python",
+      "rtos",
+      "siem",
+      "splunk",
+      "technical-writing",
+      "threat-hunting"
+    ],
+    "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/4975699007?utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Sr. Test Engineer (Inverter)",
+    "company_name": "Lucid Motors",
     "location": "Saudi Arabia",
     "cities": [
       "Saudi Arabia"
     ],
-    "posted_date": "2026-09-07T23:53:53Z",
-    "category": "devops",
+    "posted_date": "2026-09-11T19:40:06Z",
+    "category": "qa",
     "skills": [
-      "azure",
-      "dbt",
-      "devops",
-      "snowflake",
-      "terraform"
+      "accessibility",
+      "analytics",
+      "assembly",
+      "autocad",
+      "automation",
+      "data-visualization",
+      "ethernet",
+      "labview",
+      "matlab",
+      "oscilloscope",
+      "python"
     ],
-    "job_description": "<p><p><b> EL1 Senior DevOps Engineer </b> at <b> Aged Care Quality and Safety Commission </b> . </p><p> Key technologies: Azure, Terraform, Dbt, Snowflake. </p><p><b> Key Responsibilities </b></p><ul><li> Design and implement technical solutions to meet business requirements </li><li> Collaborate with cross-functional teams throughout the software development lifecycle </li><li> Contribute to code quality through reviews, testing and documentation </li><li> Identify and resolve technical issues and performance bottlenecks </li></ul><p><b> Requirements </b></p><ul><li>5+ years of relevant experience in devops engineer </li><li> Strong analytical and problem-solving skills </li><li> Excellent communication and teamwork skills </li></ul>#J-18808-Ljbffr <p></p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10726242__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
+    "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5177759007?utm_source=freehire.me",
+    "original_source": "greenhouse"
   },
   {
-    "job_title": "Data Science & Analytics Manager",
-    "company_name": "Jobs for Humanity",
-    "location": "Riyadh, sa",
+    "job_title": "Security Coordinator",
+    "company_name": "Lucid Motors",
+    "location": "Saudi Arabia",
+    "cities": [
+      "Saudi Arabia"
+    ],
+    "posted_date": "2026-09-11T19:40:06Z",
+    "category": "security",
+    "skills": [
+      "accessibility",
+      "vendor-management"
+    ],
+    "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5099785007?utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Sr. Staff Project Manager, Retail Development",
+    "company_name": "Lucid Motors",
+    "location": "Riyadh, Saudi Arabia",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-07T23:36:59Z",
-    "category": "data_science",
+    "posted_date": "2026-09-11T19:40:06Z",
+    "category": "project_management",
     "skills": [
-      "ab-testing",
-      "analytics",
-      "data-science",
-      "data-visualization",
-      "machine-learning",
-      "mlops",
-      "model-deployment",
-      "python",
-      "spark",
-      "sql",
-      "stakeholder-management",
-      "statistics"
+      "accessibility",
+      "pmp",
+      "primavera-p6"
     ],
-    "job_description": "Develop and deploy data-driven models and insights to improve business decisions, optimize performance, and drive measurable growth.\n\nKey Performance Indicators:\n• Build accurate predictive models\n• Deliver actionable insights to stakeholders\n• Automate analytics and reporting workflows\n• Improve model performance and reliability\n• Monitor pipelines and maintain production ML\n\nQualifications:\n• Bachelor’s or Master’s in Data Science, CS, Statistics, or related field\n• 2+ years experience with machine learning/data science\n• Strong mathematics, statistics, and experimental design\n• Proficiency with Python and data wrangling\n• Experience deploying ML models to production\n    <div>\n      Required Qualifications\n      <ul><li>Bachelor’s or Master’s in Data Science, CS, Statistics, or related field</li><li>2+ years experience with machine learning/data science</li><li>Strong mathematics, statistics, and experimental design</li><li>Proficiency with Python and data",
-    "source_url": "https://jobs.smartrecruiters.com/JobsForHumanity/744000147991644-data-science-analytics-manager?utm_source=freehire.me",
-    "original_source": "smartrecruiters"
+    "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5198264007?utm_source=freehire.me",
+    "original_source": "greenhouse"
   },
   {
-    "job_title": "Assoc. Security Specialist, SOC",
+    "job_title": "QMS & GRC Engineer",
     "company_name": "Lucid Motors",
-    "location": "King Abdullah Economic City, 02",
+    "location": "Saudi Arabia",
     "cities": [
-      "King Abdullah Economic City"
+      "Saudi Arabia"
     ],
-    "posted_date": "2026-09-07T20:40:43Z",
+    "posted_date": "2026-09-11T19:40:06Z",
     "category": "security",
-    "skills": [],
+    "skills": [
+      "accessibility",
+      "iso-9001",
+      "performance-management"
+    ],
     "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
-    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5207699007?utm_source=freehire.me",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5207660007?utm_source=freehire.me",
     "original_source": "greenhouse"
   },
   {
@@ -736,7 +1099,7 @@
     "cities": [
       "King Abdullah Economic City"
     ],
-    "posted_date": "2026-09-07T20:30:47Z",
+    "posted_date": "2026-09-11T19:40:06Z",
     "category": "security",
     "skills": [],
     "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
@@ -744,482 +1107,738 @@
     "original_source": "greenhouse"
   },
   {
-    "job_title": "Professional Services Architect",
-    "company_name": "SentinelOne",
-    "location": "Saudi Arabia",
+    "job_title": "Assoc. Security Specialist, SOC",
+    "company_name": "Lucid Motors",
+    "location": "King Abdullah Economic City, 02",
     "cities": [
-      "Saudi Arabia"
+      "King Abdullah Economic City"
     ],
-    "posted_date": "2026-09-07T18:52:18Z",
-    "category": "architecture",
-    "skills": [
-      "agentic-ai",
-      "ai",
-      "ai-enablement",
-      "analytics",
-      "automation",
-      "cloud",
-      "cloud-security",
-      "containerization",
-      "cybersecurity",
-      "docker",
-      "edr",
-      "kubernetes",
-      "linux",
-      "macos",
-      "mdm",
-      "pre-sales",
-      "siem",
-      "solution-design",
-      "technical-discovery",
-      "xdr"
-    ],
-    "job_description": "<div><h3>Our Purpose<strong><br></strong></h3>\n<p>At SentinelOne, we are driven by a clear purpose: to give the advantage to those who secure our future. As AI reshapes how organizations build, operate, and innovate, the responsibility to protect them becomes more critical than ever. When you join SentinelOne, your work helps protect global enterprises, critical infrastructure, and the technologies shaping tomorrow. If you are motivated by meaningful challenges and want your impact to be real, measurable, and global, you will find purpose here.</p>\n<h3>About Us<strong><br></strong></h3>\n<p>SentinelOne is a company at the intersection of AI and security, pioneering a new operating model for cybersecurity. Our AI-native platform unifies protection across endpoint, cloud, identity, data, and AI systems to deliver autonomous detection and response with clarity and speed. By combining real-time analytics, intelligent automation, and a unified data foundation, we reduce noise, simplify",
-    "source_url": "https://www.sentinelone.com/jobs/?gh_jid=7979361003&utm_source=freehire.me",
+    "posted_date": "2026-09-11T19:40:06Z",
+    "category": "security",
+    "skills": [],
+    "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5207699007?utm_source=freehire.me",
     "original_source": "greenhouse"
   },
   {
-    "job_title": "Project Manager (KSA)",
-    "company_name": "vFairs",
-    "location": "Riyadh, Saudi Arabia",
+    "job_title": "Sr. Hardware Technician, PWT",
+    "company_name": "Lucid Motors",
+    "location": "King Abdullah Economic City, 02",
     "cities": [
-      "Riyadh"
+      "King Abdullah Economic City"
     ],
-    "posted_date": "2026-09-07T14:52:02Z",
-    "category": "project_management",
-    "skills": [
-      "pre-sales"
-    ],
-    "job_description": "<span><p><span><span><span><b><span><span>ABOUT THE ROLE</span></span></b></span></span><br/></span></p><p><span><span><span><span><span>We are looking for a Project Manager with 2-3 years of experience. As we&#39;re growing in scale, we have a rising number of clients in the region that are reaching out to us for customizing, enhancing and deploying these events for them. This growth has created a need for a seasoned, experienced leader to step up and liaise between clients and our development hubs, organize our project activities, set client expectations, prioritize operations and ensure quality delivery.</span></span></span></span><br/></span></p><p><span><span><span><b><span><span>RESPONSIBILITIES</span></span></b></span></span><br/></span></p><ul><li><p><span><span><span><span><span>Manage a portfolio of events at any given point of time and plan event delivery schedules</span></span></span></span><br/></span></p></li><li><p><span><span><span><span><span>Full event life cycle",
-    "source_url": "https://vfairs.zohorecruit.com/jobs/Careers/619320000002173005?utm_source=freehire.me",
-    "original_source": "zohorecruit"
+    "posted_date": "2026-09-11T19:40:06Z",
+    "category": "hardware",
+    "skills": [],
+    "job_description": "<div><p><span><span>About Lucid</span></span></p>\n<p><span>At Lucid, we are creating exceptional mobility experiences through innovation to drive the world forward. Built on Lucid’s proprietary technology and software-defined vehicle architecture, our award-winning vehicles bring our “Compromise Nothing™” approach to the global automotive market. That means refusing to choose between performance and sustainability, design and engineering, ambition and integrity. In Lucid Air and Lucid Gravity, we have designed and built vehicles that have redefined their segments, combining exceptional range, performance, design, and expansive space in a single experience.</span><span> </span></p>\n<p><span>We achieve this through deep vertical integration, with design, engineering, and production happening in-house across our global offices and manufacturing facilities. Our teams come from industries around the world, united by a shared commitment to excellence. By refusing to settle, you can help",
+    "source_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5213608007?utm_source=freehire.me",
+    "original_source": "greenhouse"
   },
   {
-    "job_title": "Product Manager",
-    "company_name": "Sarj.ai",
-    "location": "Riyadh, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-07T13:32:56Z",
-    "category": "product",
+    "job_title": "Senior Sales Engineer - KSA",
+    "company_name": "Zscaler",
+    "location": "Remote - Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T16:59:15Z",
+    "category": "solutions_engineering",
     "skills": [
-      "agentic-ai",
-      "ai",
-      "saas",
-      "user-research"
-    ],
-    "job_description": "<h2><strong>About Us</strong></h2><p>Built with 💜 in KSA and leveraging Silicon Valley expertise, we’re creating innovative solutions in the realm of Voice AI and AI agents. As we continue our rapid growth trajectory in an exciting and dynamic market, we’re looking for A-players to join our team.<br/><br/></p><h2><strong>Role Overview</strong></h2><p>As a <strong>Product Manager</strong>, you will own key areas of Sarj’s product portfolio. You’ll work closely with Engineering, Product, and Operations teams to understand customer needs, define what we build and why, and drive products from concept to launch.<br/><br/></p><h2><strong>What You’ll Do</strong></h2><ul><li><p>Own and drive the product roadmap for key areas of the platform.</p></li><li><p>Translate customer needs and business goals into clear product requirements and priorities.</p></li><li><p>Work closely with Engineering and Product Design to scope, prioritize, and ship features.</p></li><li><p>Define success metrics and",
-    "source_url": "https://jobs.ashbyhq.com/sarjai/5407efea-4282-4053-b442-bd5e3ac7e8bb?utm_source=freehire.me",
-    "original_source": "ashby"
-  },
-  {
-    "job_title": "Machine Learning (ML) AI Task Auditor - Freelance AI Trainer Project",
-    "company_name": "jobgether",
-    "location": "Italy",
-    "cities": [
-      "Italy",
-      "Mexico City"
-    ],
-    "posted_date": "2026-09-07T13:22:15Z",
-    "category": "ml_ai",
-    "skills": [
-      "ai",
-      "data-pipelines",
-      "gdpr",
-      "machine-learning",
-      "pytorch",
-      "tensorflow"
-    ],
-    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Machine Learning (ML) AI Task Auditor - Freelance AI Trainer Project based in Italy.</strong></p>\n<p>This freelance opportunity is designed for experienced Machine Learning professionals who want to apply their technical expertise to the development and evaluation of advanced AI systems.<br>You will audit machine learning tasks used to train and evaluate AI models, ensuring they are technically accurate, realistic, reproducible, and practical.<br>The role involves reviewing model development workflows, data preprocessing pipelines, algorithms, and testing approaches against rigorous technical standards.<br>You will identify data pipeline flaws, model training inefficiencies, algorithmic logic errors, and other issues that could affect task quality.<br>Your feedback will help improve the reliability and technical integrity of AI training and",
-    "source_url": "https://jobs.lever.co/jobgether/11eaeb70-f536-4943-a7d8-487bab8fce48?utm_source=freehire.me",
-    "original_source": "lever"
-  },
-  {
-    "job_title": "QA Engineer — Shopify Platform (Weekday Rotation)",
-    "company_name": "jobgether",
-    "location": "Spain",
-    "cities": [
-      "Mexico City",
-      "Spain"
-    ],
-    "posted_date": "2026-09-07T11:16:25Z",
-    "category": "qa",
-    "skills": [
+      "agile",
       "ai",
       "analytics",
-      "css",
-      "cypress",
-      "ecommerce",
-      "gdpr",
-      "github",
-      "google-analytics",
-      "html",
-      "javascript",
-      "playwright",
-      "selenium",
-      "shopify",
-      "test-automation"
-    ],
-    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a QA Engineer — Shopify Platform (Weekday Rotation) based in Spain.</strong></p>\n<p>This role is responsible for maintaining the quality, stability, and performance of a high-volume Shopify commerce platform during weekday evening or overnight hours.<br>You will provide continuous QA coverage across storefront, checkout, subscriptions, payments, themes, and third-party integrations.<br>The position combines real-time production monitoring with structured manual and automated testing of new releases and platform changes.<br>You will play a critical role in identifying customer-facing and revenue-impacting issues before they affect the wider business.<br>Working closely with developers, you will document defects, validate fixes, participate in release reviews, and escalate urgent issues when required.<br>Because the role operates outside",
-    "source_url": "https://jobs.lever.co/jobgether/015e0b9c-0331-4132-82f8-68cc2863267e?utm_source=freehire.me",
-    "original_source": "lever"
-  },
-  {
-    "job_title": "CRM / Helpdesk",
-    "company_name": "Egis Group",
-    "location": "Riyadh, Riyadh Province, sa",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-07T10:20:40Z",
-    "category": "support",
-    "skills": [
-      "agile",
-      "asana",
-      "crm",
-      "hubspot",
-      "itil",
-      "jira",
-      "microsoft-dynamics",
-      "monday-com",
-      "salesforce",
-      "servicenow",
-      "stakeholder-management",
-      "vendor-management",
-      "zendesk"
-    ],
-    "job_description": "<p>We are seeking a skilled CRM / Helpdesk PMO professional to join our dynamic team in Riyadh, Saudi Arabia. This role combines project management expertise with deep knowledge of customer relationship management systems and helpdesk operations to drive organizational efficiency and enhance customer service delivery.</p><ul><li>Oversee and manage CRM implementation, optimization, and enhancement projects from initiation to completion</li><li>Lead helpdesk transformation initiatives to improve service delivery and customer satisfaction</li><li>Develop and maintain project schedules, budgets, and resource allocation plans for CRM and helpdesk initiatives</li><li>Coordinate cross-functional teams including IT, customer service, and business stakeholders</li><li>Analyze current CRM and helpdesk processes to identify improvement opportunities and efficiency gains</li><li>Establish and monitor key performance indicators (KPIs) for CRM and helpdesk operations</li><li>Manage vendor",
-    "source_url": "https://jobs.smartrecruiters.com/EgisGroup/744000147899229-crm-helpdesk-?utm_source=freehire.me",
-    "original_source": "smartrecruiters"
-  },
-  {
-    "job_title": "Senior Android Engineer (Saudi National)",
-    "company_name": "Delivery Hero",
-    "location": "Riyadh, sa",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-07T09:41:39Z",
-    "category": "mobile",
-    "skills": [
-      "agile",
-      "ai",
-      "android",
-      "api",
-      "automation",
-      "ci-cd",
-      "design-patterns",
-      "firebase",
-      "flutter",
-      "git",
-      "ios",
-      "java",
-      "kanban",
-      "kotlin",
+      "cissp",
+      "cloud",
+      "cloud-security",
+      "go-to-market",
       "machine-learning",
-      "scrum",
-      "version-control"
+      "pre-sales",
+      "proof-of-concept",
+      "sales-engineering",
+      "sase",
+      "zero-trust"
     ],
-    "job_description": "<p>We are looking for a highly talented <strong>Senior Android Engineer </strong>to join the team in <strong>Riyadh</strong>. If you are looking for a place where you can gain hands-on experience and create a direct impact, then this may be the place for you! An ideal candidate will have a track record as a significant individual contributor as well as a strong team player.</p><p> </p><p><strong>You will be working on:</strong></p><ul><li>Keep abreast of the latest software development methodologies in order to be able to provide best-in-class software solutions</li><li>Analyze product requirements in order to understand engineering requirements, evaluate the technical feasibility, estimate efforts, and provide the required solutions in collaboration with the Product Team</li><li>Assist in building development components and managing the programming of the different solution components in order to transform the requirements into actual working software accurately</li><li>Document all",
-    "source_url": "https://jobs.smartrecruiters.com/DeliveryHero/744000147889859-senior-android-engineer-saudi-national-?utm_source=freehire.me",
-    "original_source": "smartrecruiters"
+    "job_description": "<div><p>Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Zscaler Zero Trust Exchange™️ platform protects thousands of customers from cyberattacks and data loss by securely connecting users, devices, and applications in any location. Distributed across 160+ public exchanges globally and thousands of private exchanges at the edge, the SASE-based Zero Trust Exchange is the world’s largest in-line cloud security platform.</p>\n<p>We believe the future of work is Human + AI and are building an AI-native enterprise where human potential is amplified by machine intelligence to solve the world’s hardest security challenges. Driven by deep customer obsession, we are committed to the mission, outcome, and to each other. We bring these commitments to life through three core behaviors: ownership and collaboration, trust through outcomes and impact, and a challenge culture with ongoing feedback. Ready to make an impact at",
+    "source_url": "https://job-boards.greenhouse.io/zscaler/jobs/5232096007?utm_source=freehire.me",
+    "original_source": "greenhouse"
   },
   {
-    "job_title": "Cybersecurity Threat Monitoring and Response Analyst",
+    "job_title": "Frontend and Backend Web Application Developer",
     "company_name": "Jobs for Humanity",
     "location": "Riyadh, sa",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-07T07:22:27Z",
-    "category": "security",
-    "skills": [
-      "automation",
-      "linux",
-      "siem",
-      "splunk"
-    ],
-    "job_description": "\n                        <div>\n                            <p>Join our Security Operations team to help protect organizational systems by monitoring for cyber threats, triaging alerts, and responding to incidents. You’ll partner with engineering and risk teams to harden systems and continuously improve our detection and reporting capabilities.</p>\n                            Job Purpose\n                            <p>The purpose of this role is to detect, analyze, and respond to cyber threats in near real time while maintaining security controls, strengthening incident readiness, and delivering accurate vulnerability and risk reporting through continuous monitoring, tuning, and automation.</p>\n                            Job Duties and Responsibilities\n                            <ul>\n                                <li>SIEM/SOC tooling (Splunk/QRadar)</li><li>Threat detection engineering and log analysis</li><li>Incident response (triage, containment, eradication)</li><li>Security",
-    "source_url": "https://jobs.smartrecruiters.com/JobsForHumanity/744000147853269-cybersecurity-threat-monitoring-and-response-analyst?utm_source=freehire.me",
-    "original_source": "smartrecruiters"
-  },
-  {
-    "job_title": "Senior Solution Architect, Digital",
-    "company_name": "Beyond Bank",
-    "location": "Adelaide, SA, au",
-    "cities": [
-      "Adelaide",
-      "Melbourne",
-      "Perth",
-      "Sydney",
-      "Vic"
-    ],
-    "posted_date": "2026-09-07T06:37:19Z",
-    "category": "architecture",
+    "posted_date": "2026-09-11T15:47:12Z",
+    "category": "backend",
     "skills": [
       "accessibility",
+      "angular",
       "api",
-      "authentication",
-      "azure",
-      "cloud",
-      "cloud-native",
-      "event-driven-architecture",
-      "microservices",
+      "css",
+      "git",
+      "html",
+      "javascript",
+      "nodejs",
       "react",
-      "react-native",
-      "regulatory-compliance",
-      "solution-design"
+      "rest",
+      "scss",
+      "vue",
+      "wcag"
     ],
-    "job_description": "<p><strong>The role</strong></p><p>The <strong>Senior Solution Architect</strong> is a senior design authority within Beyond Bank&#39;s architecture practice. This role is assigned to the <strong>Digital</strong> domain, where it owns the target-state architecture across mobile banking, internet banking, digital origination, public web platforms, and the identity, content, integration and personalisation capabilities that support them. Working closely with Product, Digital, Technology, and business stakeholders, this role governs end-to-end digital solutions that deliver exceptional member experiences while ensuring security, resilience, scalability, regulatory compliance, and alignment with Beyond Bank’s strategic objectives. Drawing on deep expertise in digital architecture, the role provides leadership from concept through to delivery, establishing standards, guiding architectural decisions, and driving the evolution of the Bank’s digital channels and capabilities.</p><p><strong>In",
-    "source_url": "https://jobs.smartrecruiters.com/BeyondBankAustralia/6000000001381690-senior-solution-architect-digital?utm_source=freehire.me",
+    "job_description": "\n                        <div>\n                            <p>We’re seeking a Frontend/Full-Stack Web Developer to design, build, and maintain responsive, high-performance web applications. You’ll translate product requirements into intuitive user interfaces and reliable backend integrations while collaborating to ensure quality through testing, reviews, and performance best practices.</p>\n                            Job Purpose\n                            <p>Build and maintain modern web experiences by creating reusable UI components, optimizing performance and accessibility, and integrating RESTful APIs and backend services reliably.</p>\n                            Job Duties and Responsibilities\n                            <ul>\n                                <li>HTML</li><li>CSS/SCSS</li><li>JavaScript</li><li>Responsive UI across browsers</li><li>React or Angular or Vue</li><li>Reusable components and layouts</li><li>Web performance optimization</li><li>Accessibility",
+    "source_url": "https://jobs.smartrecruiters.com/JobsForHumanity/744000149058539-frontend-and-backend-web-application-developer?utm_source=freehire.me",
     "original_source": "smartrecruiters"
   },
   {
-    "job_title": "Senior DevOps Engineer",
-    "company_name": "Ananinja",
-    "location": "Riyadh, Saudi Arabia",
+    "job_title": "QA Engineer | Workshop | Saudi Arabia",
+    "company_name": "Hudson IT and Manpower",
+    "location": "Al Jubail, Eastern Province, Saudi Arabia",
+    "cities": [
+      "Al Jubayl"
+    ],
+    "posted_date": "2026-09-11T13:51:26Z",
+    "category": "qa",
+    "skills": [
+      "api",
+      "aws"
+    ],
+    "job_description": "<p>Lead QA/QC inspections for pressure vessels, tanks, and heat exchangers in Oil &amp; Gas or petrochemical projects, ensuring compliance with ASME, API, and Aramco standards; possess 10+ years industrial experience with 6 years in QA/QC and 4 years in Oil &amp; Gas;</p><p>certified CWI or CSWIP with ASNT Level II in NDT (UT, PT, MT, RT, VT); proficient in ASME, API, AWS, and relevant fabrication/inspection codes; review and approve WPS, PQRs, and welder qualifications; monitor NDT activities and personnel; </p><p>manage outsourced fabrication/inspection, coordinate with vendors and third-party inspectors; prepare ITPs, inspection reports, and final quality dossiers; </p><p>interface with clients for hold/witness points, DCL submissions, and testing;</p><p> handle NCRs, corrective actions, technical clarifications, and drive quality improvements.</p><p><strong>Experience</strong>: Min. 10 Years</p><p><strong>Specialization</strong>: Manufacturing of pressure vessels, tanks, heat",
+    "source_url": "https://hudsonmanpower.recruitee.com/o/qa-engineer-workshop-saudi-arabia-1?utm_source=freehire.me",
+    "original_source": "recruitee"
+  },
+  {
+    "job_title": "Sales Engineer | KSA",
+    "company_name": "Hudson IT and Manpower",
+    "location": "Al Jubail, Eastern Province, Saudi Arabia",
+    "cities": [
+      "Al Jubayl"
+    ],
+    "posted_date": "2026-09-11T12:23:22Z",
+    "category": "solutions_engineering",
+    "skills": [],
+    "job_description": "<p>We currently have an urgent requirement for the position of * <strong>Sales Engineer</strong>* for reputed Oil &amp; Gas Company for their Workshop Requirement in *<strong>Saudi Arabia*</strong></p><p> <strong>Specialization</strong> : Manufacturing of pressure vessels, tanks, heat exchangers, Pipings</p><p> Experience in industrial fabrication, Oil &amp; Gas, pressure vessels, heat exchangers, structural steel, and related engineering projects, preferably with Saudi Aramco, SABIC, and EPC clients. Responsible for identifying business opportunities, developing client relationships, understanding project requirements, reviewing RFQs, drawings, specifications, and MTOs, and coordinating with engineering, procurement, QA/QC, and fabrication teams to prepare competitive technical and commercial offers. Responsible for preparing quotations, scope reviews, technical clarifications, cost estimates, follow-ups, negotiations, and order execution coordination. Should have good knowledge of",
+    "source_url": "https://hudsonmanpower.recruitee.com/o/sales-engineer-ksa?utm_source=freehire.me",
+    "original_source": "recruitee"
+  },
+  {
+    "job_title": "Sr Principal Professional Services Project Manager",
+    "company_name": "AspenTech",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-11T00:00:00Z",
+    "category": "project_management",
+    "skills": [],
+    "job_description": "<p>The driving force behind our success has always been the people of AspenTech. What drives us, is our aspiration, our desire and ambition to keep pushing the envelope, overcoming any hurdle, challenging the status quo to continually find a better way. You will experience these qualities of passion, pride and aspiration in many ways — from a rich set of career development programs to support of community service projects to social events that foster fun and relationship building across our global community.</p><p></p><p></p><h2><b>The Role</b></h2>Aspen Technology is seeking an experienced Project Manager to join the Professional Services Project Management Office supporting the Middle East region. The successful candidate will lead the delivery of cutting-edge technology projects for market-leading organizations, ensuring successful execution from initiation through completion. This is a highly visible role offering significant influence with both internal stakeholders and clients,",
+    "source_url": "https://aspentech.wd5.myworkdayjobs.com/AspenTech/job/Saudi-Arabia/Sr-Principal-Professional-Services-Project-Manager_R9436?utm_source=freehire.me",
+    "original_source": "workday"
+  },
+  {
+    "job_title": "Senior Specialist QA & PMS",
+    "company_name": "Stryker",
+    "location": "Riyadh, Riyadh Offices Zone",
     "cities": [
       "Riyadh"
     ],
-    "posted_date": "2026-09-07T05:59:14Z",
+    "posted_date": "2026-09-11T00:00:00Z",
+    "category": "qa",
+    "skills": [
+      "iso-13485",
+      "regulatory-compliance"
+    ],
+    "job_description": "Work Flexibility: Hybrid or Onsite<p></p><p></p><div><p>We are looking for a QA &amp; PMS Specialist to support the implementation and maintenance of Quality Assurance and Post Market Surveillance activities across our MENA organization.</p><p></p><p><u><b>What you will do:</b></u></p><ul><li><p>Executing Quality Assurance (QA) and Post Market Surveillance (PMS) activities in line with local, regional, and corporate procedures and requirements.</p></li><li><p>Supporting the implementation and maintenance of the local Quality Management System (QMS) to ensure ongoing regulatory compliance.</p></li><li><p>Coordinating product safety reporting activities and supporting communications with relevant stakeholders, including healthcare professionals, distributors, and regulatory authorities.</p></li><li><p>Supporting the management of quality events, including non-conformances (NCs), corrective and preventive actions (CAPAs), and follow-up activities.</p></li><li><p>Assisting in the",
+    "source_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Riyadh-Riyadh-Offices-Zone/Senior-Specialist-QA---PMS_R563967?utm_source=freehire.me",
+    "original_source": "workday"
+  },
+  {
+    "job_title": "Cloud Infrastructure & DevOps Engineer (GCP)",
+    "company_name": "1Pass",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T14:33:14Z",
     "category": "devops",
     "skills": [
       "automation",
       "aws",
       "azure",
-      "bash",
-      "ci-cd",
-      "circleci",
-      "cloud",
-      "cloudformation",
-      "containerization",
-      "devops",
-      "docker",
-      "elasticsearch",
-      "elk",
-      "gcp",
-      "github",
-      "github-actions",
-      "grafana",
-      "infrastructure-as-code",
-      "kafka",
-      "kubernetes",
-      "linux",
-      "networking",
-      "prometheus",
-      "python",
-      "rabbitmq",
-      "redis",
-      "ruby",
-      "terraform",
-      "windows-server"
-    ],
-    "job_description": "<p><p>Welcome to Ninja, where we believe that we are shaping the future. Ninja is the future of the dark stores in the MENA region.</p>\n<p>At Ninja, we strive for excellence and innovation in everything we do. As a Senior DevOps Engineer, you will play a crucial role in designing and implementing the infrastructure and tools needed to ensure the smooth operation and scalability of our systems.</p>\n<h3>Responsibilities</h3>\n<ul>\n<li>Design, build, and maintain our infrastructure and automation tools using industry best practices</li>\n<li>Implement and manage CI/CD pipelines to enable rapid and reliable software delivery</li>\n<li>Optimize systems for high availability, scalability, security, and performance</li>\n<li>Collaborate with cross-functional teams to define and implement infrastructure requirements</li>\n<li>Monitor and troubleshoot system issues to ensure optimal performance</li>\n<li>Implement and maintain cloud-based services and architectures on AWS/GCP/Azure</li>\n<li>Create",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10721894__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior Software Developer",
-    "company_name": "Logitera",
-    "location": "Dammam, Saudi Arabia",
-    "cities": [
-      "Dammam"
-    ],
-    "posted_date": "2026-09-07T05:59:14Z",
-    "category": "software_engineering",
-    "skills": [
-      "api",
-      "cloud",
-      "crm",
-      "erp",
-      "solution-design",
-      "sql",
-      "vue"
-    ],
-    "job_description": "<p><h3>BASIC FUNCTION:</h3><p>Lead the technical development of <b>ERP System</b>, a multi-tenant ERP platform encompassing <b>Procurement, Accounting, Human Resources (HRM), Customer Relationship Management (CRM), Service Operations</b>, and <b>third-party API integrations</b>. The role is responsible for the full software development lifecycle, from database architecture and backend development to frontend implementation, ensuring high standards of technical quality, performance, scalability, and functional accuracy. It carries end-to-end ownership of feature delivery, including solution design, development, testing, documentation, and release preparation. Production deployments are performed by the Managing Director; the post-holder is responsible for preparing deployment packages, maintaining technical documentation, and conducting a structured handover for each release.</p><h3>DUTIES AND RESPONSIBILITIES:</h3><ul><li>Design and build complete features across the stack: database",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10724649__7118?geoID=17353&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior DevOps Engineer - Cloud, CI/CD & Automation",
-    "company_name": "Ananinja",
-    "location": "Riyadh, Saudi Arabia",
-    "cities": [
-      "Riyadh"
-    ],
-    "posted_date": "2026-09-07T05:59:14Z",
-    "category": "devops",
-    "skills": [
-      "automation",
-      "aws",
-      "azure",
-      "ci-cd",
-      "cloud",
-      "devops",
-      "docker",
-      "gcp",
-      "kubernetes",
-      "terraform"
-    ],
-    "job_description": "<p>Ninja is seeking a Senior DevOps Engineer to design and implement scalable infrastructure and automation. You will build robust CI/CD pipelines, optimize cloud and on-premise systems, and collaborate with cross-functional teams to define requirements.</p><p>You will manage deployments on AWS/GCP/Azure, ensure security and high availability, and document infrastructure practices for the team. The role emphasizes hands-on work with Terraform, Docker, Kubernetes, and modern monitoring stacks, while</p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10722253__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior GCP DevOps Engineer – CI/CD & IaC Specialist",
-    "company_name": "Halian | Managed Services, Recruitment and Contract Staffing Agency",
-    "location": "Saudi Arabia",
-    "cities": [
-      "Saudi Arabia"
-    ],
-    "posted_date": "2026-09-07T05:59:14Z",
-    "category": "devops",
-    "skills": [
-      "ci-cd",
-      "cloud",
-      "devops",
-      "gcp",
-      "infrastructure-as-code"
-    ],
-    "job_description": "<p>Halian is seeking an experienced Cloud DevOps Engineer to join our client&#39;s team in Saudi Arabia. You will design and maintain robust CI/CD pipelines, manage infrastructure as code, and architect scalable solutions on Google Cloud Platform.</p><p>You will collaborate with development, security, and operations to deliver reliable cloud services. This role emphasizes integrating cloud services with enterprise systems, building self-service provisioning tools, automating deployment processes, and</p>",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10724212__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
-    "original_source": "whatjobs-sa"
-  },
-  {
-    "job_title": "Senior Devops Engineer - GCP",
-    "company_name": "Halian | Managed Services, Recruitment and Contract Staffing Agency",
-    "location": "Saudi Arabia",
-    "cities": [
-      "Saudi Arabia"
-    ],
-    "posted_date": "2026-09-07T05:59:14Z",
-    "category": "devops",
-    "skills": [
-      "api",
-      "automation",
       "bash",
       "ci-cd",
       "cloud",
       "cloud-security",
-      "cmdb",
+      "cybersecurity",
       "devops",
       "dns",
+      "docker",
+      "firewall",
       "gcp",
+      "github",
+      "github-actions",
       "gitlab",
+      "iam",
       "infrastructure-as-code",
-      "jenkins",
+      "kubernetes",
+      "linux",
+      "networking",
       "python",
-      "sql",
       "terraform",
-      "vpc"
+      "test-automation",
+      "tls",
+      "vpc",
+      "waf"
     ],
-    "job_description": "<p><p>We are looking for an experienced Cloud DevOps Engineer to join our clients team, you will be responsible for designing and maintaining robust CI/CD pipelines, managing infrastructure as code, and architecting scalable solutions on Google Cloud Platform. You will play a key role in integrating cloud services with enterprise systems, building self-service provisioning tools, and ensuring best practices in cloud security and configuration management.</p>\n<p>Competitive Salary + Residence Visa + Medical Insurance + Relocation Flight Tickets covered</p>\n<p>Skills Required:</p>\n<ul>\n<li>Minimum of 3-5 years of experience in a DevOps or Cloud Engineering role, with a focus on GCP.</li>\n<li>CI/CD Pipeline Expertise: Proven experience designing, building, and maintaining robust CI/CD pipelines using relevant tools (e.g., Cloud Build, Jenkins, GitLab CI/CD). Demonstrated ability to automate build, test, and deployment processes.</li>\n<li>Infrastructure as Code (IaC): Extensive experience",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10724767__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "job_description": "<p><h3>Company Description</h3></br><p>1Pass is a leading Saudi fitness and wellness platform that provides flexible access to hundreds of gyms, studios, padel courts, spas, and recovery experiences across major cities in the Kingdom. Through a single subscription, users can tailor their wellness journey by choosing activities that fit their goals, schedule, and lifestyle. In addition to its consumer offering, 1Pass delivers comprehensive Corporate Wellness Programs designed to improve employee wellbeing, morale, and productivity while reducing absenteeism. These programs offer data-driven insights, diverse activity options, and flexible activation plans customized to each organization’s needs. 1Pass is focused on building a dynamic, health-centered ecosystem powered by technology and user experience.</p></br><h3>The Role</h3></br><p>We are looking for a hands‑on engineer to own the day‑to‑day health of our Google Cloud environment, build and maintain our CI/CD pipelines, and act as",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10732483__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
     "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Senior Full Stack Programmer",
-    "company_name": "Client of Rawaj Company for Recruitment",
+    "job_title": "Software Engineer - Industrial Systems",
+    "company_name": "مصنع الملابس والتجهيزات العسكرية",
+    "location": "Saudi Arabia",
+    "cities": [
+      "Al-Kharj"
+    ],
+    "posted_date": "2026-09-10T14:33:13Z",
+    "category": "software_engineering",
+    "skills": [
+      "api",
+      "automation",
+      "cybersecurity",
+      "git",
+      "hmi",
+      "networking",
+      "sap",
+      "scada",
+      "sql",
+      "stakeholder-management",
+      "version-control"
+    ],
+    "job_description": "<p><h3>Company Description</h3>\n<p>MUAF – Military Uniforms &amp; Accessories Factory is a prominent manufacturer based in Al-Kharj , specializing in the production of high-quality uniforms, military gear, and civilian apparel. Our commitment to quality, innovation, and customer satisfaction has made us a trusted partner to a range of sectors, including defense, law enforcement, and private enterprises. We pride ourselves on delivering durable, comfortable, and reliable solutions to our clients.</p>\n<h3>Job Purpose</h3>\n<p>Responsible for the development, maintenance, support, troubleshooting, and continuous improvement of software applications and industrial machine systems within the manufacturing environment.</p>\n<p>The role combines <b>Software Engineering</b> and <b>Industrial Software Engineering</b>, with responsibility for software applications, databases, system integration, Industrial PCs, machine-related software, HMI/SCADA systems, and IT/OT connectivity.</p>\n<p>The",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10732274__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Director of Hardware Engineering",
+    "company_name": "think",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:13Z",
+    "category": "hardware",
+    "skills": [
+      "ai",
+      "firmware",
+      "hpc",
+      "solidworks"
+    ],
+    "job_description": "<p><h3>Open roles</h3></br><p>Director of Hardware Engineering</p></br><p>Own the think AI Node line end to end: thermal, electrical, mechanical, manufacturing and supply chain. The hardware is half the argument. Density is what lets one node do the work of a rack, and you own the envelope that makes it possible.</p></br><p>Type Full time</p></br><p>Team Hardware</p></br><p>Location Riyadh</p></br><p>Own the think AI Node line end to end: thermal, electrical, mechanical, manufacturing and supply chain. The hardware is half the argument. Density is what lets one node do the work of a rack, and you own the envelope that makes it possible.</p></br><h3>What you will do</h3></br><ul></br><li>Own the hardware roadmap across the Node line, from desk-side to rack scale.</li></br><li>Own thermal architecture: the sealed loop, the heat exchange path, flow distribution and the pressure monitoring that lets density stop being a thermal problem.</li></br><li>Set the engineering bar. Design review,",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731711__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Embedded Firmware Engineer (Software Engineer)",
+    "company_name": "Atwad",
+    "location": "Dammam, Saudi Arabia",
+    "cities": [
+      "Dammam"
+    ],
+    "posted_date": "2026-09-10T14:33:12Z",
+    "category": "embedded",
+    "skills": [
+      "automation",
+      "cpp",
+      "embedded-linux",
+      "embedded-systems",
+      "ethernet",
+      "firmware",
+      "git",
+      "i2c",
+      "jtag",
+      "linux",
+      "oscilloscope",
+      "ros2",
+      "rtos",
+      "uart"
+    ],
+    "job_description": "<p><p><b>Location</b>:2 nd Industrial City, Dammam, Kingdom of Saudi Arabia</p>\n<p><b>Employment</b> <b>Type</b>: Full-Time/ On-site</p>\n<p><b>Application</b> <b>Period</b>: 06 September 2026 - 30 September 2026</p>\n<h3>About Atwad</h3>\n<p><b>Atwad</b> is dedicated to driving innovation in autonomous systems and engineering excellence across the region. Our technologies empower customers to meet complex operational challenges with confidence and precision. We are expanding our footprint, forging partnerships, and continuously pushing the boundaries of what autonomous systems can achieve.</p>\n<h3>About the Role</h3>\n<p><b>We are looking for an Embedded Firmware Engineer</b> with strong experience in <b>STM32</b> series <b>MCUs</b>, <b>ARM</b> processors, and embedded system programming. The role also involves working with higher-end processor platforms such as <b>Jetson</b>, <b>MediaTek</b>, <b>Snapdragon</b>, or similar <b>ARM</b>-based <b>SoCs</b>, depending on project",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10729957__7118?geoID=17353&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Industrial Software Engineer: IT/OT, HMI & SCADA Expert",
+    "company_name": "مصنع الملابس والتجهيزات العسكرية",
     "location": "Saudi Arabia",
     "cities": [
       "Saudi Arabia"
     ],
-    "posted_date": "2026-09-07T05:59:14Z",
-    "category": "fullstack",
+    "posted_date": "2026-09-10T14:33:12Z",
+    "category": "software_engineering",
     "skills": [
-      "angular",
-      "api",
-      "api-documentation",
-      "authentication",
-      "ci-cd",
-      "cloud",
-      "csharp",
-      "css",
-      "cybersecurity",
-      "design-patterns",
-      "docker",
-      "dotnet",
-      "html",
-      "javascript",
-      "kubernetes",
-      "mongodb",
-      "networking",
-      "postgresql",
-      "rest",
-      "secure-coding",
-      "sql",
-      "sql-server"
+      "hmi",
+      "sap",
+      "scada"
     ],
-    "job_description": "<p><p>Join a leading Saudi technology and systems integration company specializing in delivering innovative enterprise IT infrastructure cybersecurity cloud networking and digital transformation solutions to government enterprise and commercial customers across the Kingdom The Senior Full Stack Programmer will be responsible for designing developing implementing maintaining and supporting enterprise web applications across front-end and back-end environments The role requires a highly experienced software professional capable of developing scalable applications troubleshooting complex technical issues integrating enterprise systems supporting production environments and providing technical guidance in a fast-paced technology solutions environment</p><h3>Key Accountabilities</h3><ul><li>Design develop implement and maintain high-performance enterprise web applications across front-end and back-end environments</li><li>Develop modern and responsive front-end applications using HTML5",
-    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10724144__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "job_description": "<p>MUAF – Military Uniforms &amp; Accessories Factory in Saudi Arabia seeks a Software &amp; Industrial Systems Engineer to advance IT/OT integration and factory software across HMI/SCADA, SAP/MES interfaces, and production lines. You&#39;ll collaborate with IT, Production, Maintenance, and Engineering to ensure reliable, secure, and well-integrated software and machine systems powering manufacturing operations.</p><p>Experience with industrial PCs, SCADA, OPC UA, and database programming is preferred.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730247__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
     "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Freelance Graphic Designer",
-    "company_name": "Mindrift",
-    "location": "United Kingdom",
-    "cities": [
-      "United Kingdom"
-    ],
-    "posted_date": "2026-09-07T02:43:29Z",
-    "category": "design",
-    "skills": [
-      "ai",
-      "figma",
-      "illustrator",
-      "indesign",
-      "photoshop",
-      "typography"
-    ],
-    "job_description": "<p>Mindrift is looking for a versatile, highly skilled Graphic Designer to join the Tendem project (**) andcreate high-quality visual assets for real-world use cases. In this role, you&#39;ll apply your expertise in visual communication, layout design, and branding to transform ideas into professional, polished creative assets. This part-time remote opportunity is ideal for creative professionals with hands-on experience in visual communications, layout design, and creating diverse marketing materials.</p><h3>What We Do </h3><p>The Mindrift platform connects specialists with innovative technology projects. Our mission is to help develop high-quality AI technologies by combining real-world expertise from professionals across the globe with advanced AI development efforts.</p><h3>About the Role</h3><p>This is a freelance role for a Tendem project. As a Graphic Designer, your focus will be on layouts, infographics, social media templates, and overall visual polish. We need a versatile,",
-    "source_url": "https://himalayas.app/companies/mindrift/jobs/freelance-graphic-designer-468586278?utm_source=freehire.me",
-    "original_source": "himalayas"
-  },
-  {
-    "job_title": "Store Solution Applications System Analyst (2023676)",
-    "company_name": "Nahdi Medical Co.",
-    "location": "Jeddah, Makkah Region, Saudi Arabia",
+    "job_title": "After-Sales Computer & Mobile Technician",
+    "company_name": "eXtra (United Electronics Co.)",
+    "location": "Jeddah, Saudi Arabia",
     "cities": [
       "Jeddah"
     ],
-    "posted_date": "2026-09-07T00:00:00Z",
-    "category": "business_analysis",
-    "skills": [
-      "ai",
-      "crm",
-      "dotnet",
-      "erp",
-      "java",
-      "linux",
-      "mysql",
-      "oracle",
-      "powerbi",
-      "python",
-      "regulatory-compliance",
-      "salesforce",
-      "sap",
-      "sdlc",
-      "sql",
-      "sql-server",
-      "tableau"
-    ],
-    "job_description": "<p><span><span>Implement and deploy applications software, providing staff support and training, ensuring regulatory compliance and data security, analyzing data for operational insights, monitoring application performance, safeguarding patient privacy, to support aligning IT solutions with clinical needs and improve healthcare delivery.</span></span></p><p><span><span>Accountabilities</span></span></p><ul><li><p><span>Support in developing new applications or customizing existing ones to meet the unique needs of the retail industry, for assigned applications.</span></p></li><li><p><span>Act as level 2 support for assigned applications with end users making sure any bugs or errors are resolved within agreed SLAs to meet internal customer needs. </span></p></li><li><p><span>Analyzing the specific requirements of end users and support in designing solutions that meet their needs and streamline required processes, improve patient care, and enhance operational efficiency.",
-    "source_url": "https://efan.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/2598?utm_source=freehire.me",
-    "original_source": "oracle"
+    "posted_date": "2026-09-10T14:33:12Z",
+    "category": "mobile",
+    "skills": [],
+    "job_description": "<p>eXtra (United Electronics Co.) in Jeddah is seeking a Computer Technician to join the After-Sales Service team. The role focuses on hands-on maintenance, OS installation, software activation, data transfer, and printer configuration, with a strong emphasis on customer satisfaction and timely problem resolution.</p><p>You will work in a fast-paced retail environment, handling service requests, troubleshooting hardware and software issues, and ensuring devices are functional for customers.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10730411__7118?geoID=18992&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
   },
   {
-    "job_title": "Safety and Security Manager (Pre-opening) - Hilton Dammam Airport",
-    "company_name": "Hilton",
-    "location": "Dammam, Eastern Province, Saudi Arabia",
+    "job_title": "ROS/ROS2 Robotics Software Engineer — On-site in Saudi Arabia",
+    "company_name": "Atwad",
+    "location": "Dammam, Saudi Arabia",
     "cities": [
       "Dammam"
     ],
-    "posted_date": "2026-09-07T00:00:00Z",
-    "category": "security",
+    "posted_date": "2026-09-10T14:33:12Z",
+    "category": "software_engineering",
+    "skills": [
+      "firmware",
+      "ros2"
+    ],
+    "job_description": "<p>Atwad is hiring a ROS/ROS2 Developer to build software for robotics, autonomous systems, and connected platforms in Dammam, Saudi Arabia. You will develop ROS/ROS2 packages, integrate sensors and actuators, and ensure seamless system integration across embedded and edge computing environments.</p><p>The role emphasizes real-time problem solving, collaboration with firmware and hardware teams, and active participation in testing, simulation, and documentation efforts.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731692__7118?geoID=17353&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Head of Hardware Engineering for AI Systems",
+    "company_name": "think",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:33:12Z",
+    "category": "hardware",
+    "skills": [
+      "firmware"
+    ],
+    "job_description": "<p>think is seeking a Director of Hardware Engineering in Riyadh to own the Node line end-to-end, spanning thermal, electrical, mechanical, manufacturing and supply chain. The role emphasizes density-driven design and envelope ownership to enable rack-scale solutions.</p><p>You will lead multidisciplinary teams across thermal, electrical, mechanical, firmware and validation, setting engineering standards and collaborating with software on telemetry interfaces.</p>",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731823__7118?geoID=12&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Middle to Senior Python Developer",
+    "company_name": "JobCubby",
+    "location": "Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-10T14:33:10Z",
+    "category": "software_engineering",
+    "skills": [
+      "ai",
+      "design-patterns",
+      "django",
+      "gdpr",
+      "mongodb",
+      "nosql",
+      "postgresql",
+      "python",
+      "rabbitmq",
+      "redis",
+      "sql"
+    ],
+    "job_description": "<p><p>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Middle to Senior Python Developer based in Saudi Arabia.</p><p>This role offers the opportunity to build and evolve high-performance backend systems within a fast-paced iGaming technology environment. You will work across a modern Python-based technology stack to deliver new product capabilities and scalable services. The position combines hands‑on development with architectural decision‑making and responsibility for production reliability. You will contribute to integrations involving payment methods and data providers, as well as automated communication and risk management systems. Working alongside an international and supportive team, you will have meaningful ownership over technical solutions and delivered outcomes. The environment encourages initiative, continuous improvement, and professional growth as the business continues to",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10729884__7118?utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "ROS / ROS2 Developer (Software Engineer)",
+    "company_name": "Atwad",
+    "location": "Dammam, Saudi Arabia",
+    "cities": [
+      "Dammam"
+    ],
+    "posted_date": "2026-09-10T14:33:10Z",
+    "category": "software_engineering",
+    "skills": [
+      "cpp",
+      "embedded-linux",
+      "ethernet",
+      "firmware",
+      "git",
+      "lidar",
+      "linux",
+      "python",
+      "ros2",
+      "sensor-fusion"
+    ],
+    "job_description": "<p><p><b>Location</b>:2 nd Industrial City, Dammam, Kingdom of Saudi Arabia</p>\n<p><b>Employment</b> <b>Type</b>: Full-Time/ On-site</p>\n<p><b>Application</b> <b>Period</b>: 06 September 2026 – 30 September 2026</p>\n<h3>About Atwad</h3>\n<p>Atwad is dedicated to driving innovation in autonomous systems and engineering excellence across the region. Our technologies empower customers to meet complex operational challenges with confidence and precision. We are expanding our footprint, forging partnerships, and continuously pushing the boundaries of what autonomous systems can achieve.</p>\n<h3>About the Role</h3>\n<p>We are hiring a ROS/ROS2 Developer to build software for robotics, autonomous systems, and connected platforms. The role involves developing nodes, integrating TVsensors and actuators, and working with embedded and edge-computer systems.</p>\n<h3>Responsibilities</h3>\n<ul>\n<li>Develop and maintain ROS/ROS2 packages, nodes, and applications.</li>\n<li>Integrate sensors, actuators,",
+    "source_url": "https://en-sa.whatjobs.com/pub_api__cpl__10731156__7118?geoID=17353&utm_campaign=publisher&utm_medium=api&utm_source=freehire.me",
+    "original_source": "whatjobs-sa"
+  },
+  {
+    "job_title": "Solution Engineer",
+    "company_name": "AvePoint",
+    "location": "Dubai, Dubai, United Arab Emirates; Riyadh, Riyadh, Saudi Arabia",
+    "cities": [
+      "Dubai",
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T14:25:30Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "active-directory",
+      "aws",
+      "azure",
+      "cloud",
+      "dhcp",
+      "dns",
+      "entra-id",
+      "gcp",
+      "networking",
+      "pre-sales",
+      "proof-of-concept",
+      "sharepoint",
+      "tcp-ip",
+      "technical-discovery"
+    ],
+    "job_description": "<p><strong><span><span>About the role:</span></span></strong><span> </span></p>\n<p><span>As a Pre-Sales Solutions Engineer, you will act as the technical lead throughout the sales cycle, partnering closely with Account Managers to support new business and growth opportunities.</span><span> </span></p>\n<p><span>You will take a consultative approach, helping customers understand how AvePoint solutions can address their technical and business needs. This role combines strong technical expertise with customer-facing engagement and commercial awareness.</span><span> </span></p>\n<p><span>This is an excellent opportunity for someone looking to develop their career in pre-sales within a fast-paced and innovative technology environment.</span><span> </span></p>\n<p><span> </span></p>\n<p><strong><span><span>Key responsibilities:</span></span></strong><span> </span></p>\n<ul>\n<li><span>Deliver tailored product demonstrations aligned to customer use cases, both remotely and in person</span><span>",
+    "source_url": "https://www.avepoint.com/careers/job-detail?gh_jid=8121241&utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Data Analyst II (Saudi National)",
+    "company_name": "Delivery Hero",
+    "location": "Riyadh, sa",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T13:58:21Z",
+    "category": "data_analytics",
+    "skills": [
+      "analytics",
+      "bigquery",
+      "cloud",
+      "data-analytics",
+      "looker",
+      "looker-studio",
+      "postgresql",
+      "python",
+      "redshift",
+      "sql",
+      "statistics",
+      "tableau"
+    ],
+    "job_description": "<p>As a Data Analyst II at HungerStation, you will support the product development lifecycle by analyzing data, understanding user needs, and providing actionable insights that help optimize product performance.</p><p>You will work closely with Product, Technology, Marketing, Commercial, Logistics/Operations, and Growth teams to turn data into meaningful insights and support data-driven decision-making.</p><p>In this role, you will:</p><ul><li><p>Analyze product and business data to understand growth drivers and identify opportunities for improvement.</p></li><li><p>Develop analyses, reports, and interactive dashboards to support business teams and stakeholders.</p></li><li><p>Use quantitative analysis to uncover insights and help Product Managers, Designers, and Engineers understand what to build and why.</p></li><li><p>Work with structured and semi-structured data from multiple sources, including BigQuery, Redshift, and PostgreSQL.</p></li><li><p>Use SQL (BigQuery) and Python or R",
+    "source_url": "https://jobs.smartrecruiters.com/DeliveryHero/744000148789347-data-analyst-ii-saudi-national-?utm_source=freehire.me",
+    "original_source": "smartrecruiters"
+  },
+  {
+    "job_title": "Developer Advocate",
+    "company_name": "jobgether",
+    "location": "France",
+    "cities": [
+      "France",
+      "Luxembourg",
+      "Mexico City"
+    ],
+    "posted_date": "2026-09-10T13:55:02Z",
+    "category": "developer_relations",
+    "skills": [
+      "agentic-ai",
+      "ai",
+      "api",
+      "developer-advocacy",
+      "gdpr",
+      "llm",
+      "python"
+    ],
+    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Developer Advocate based in France.</strong></p>\n<p>The Developer Advocate will connect with developers through technical expertise, community engagement, and practical education. This role combines hands-on knowledge of web technologies and APIs with public speaking, content creation, and relationship building. You will represent developer needs across conferences, meetups, webinars, podcasts, online communities, and industry events. You will create tutorials, demos, videos, code samples, and technical articles that make complex data and developer workflows easier to understand and adopt. You will also explore emerging technologies, including LLM-powered applications and AI agents, and demonstrate how reliable web data can support them. Working closely with product, engineering, and marketing teams, you will turn developer feedback into",
+    "source_url": "https://jobs.lever.co/jobgether/03b95c59-3c8b-48b9-aa94-87194f7ba28e?utm_source=freehire.me",
+    "original_source": "lever"
+  },
+  {
+    "job_title": "Senior designer",
+    "company_name": "AECOM",
+    "location": "Duba, TABUK, sa",
+    "cities": [
+      "Duba",
+      "Tabuk"
+    ],
+    "posted_date": "2026-09-10T12:36:18Z",
+    "category": "design",
+    "skills": [
+      "cad",
+      "regulatory-compliance"
+    ],
+    "job_description": "<p>Senior Designer with strong engineering background responsible for developing comprehensive design and construction document drawings through completion for assigned projects in conformance with applicable codes, design criteria, and engineering standards established by the project&#39;s discipline leaders.</p><p>Key Responsibilities:</p><p>• Lead the design development process by applying engineering principles, technical analysis, and calculations to create detailed construction documents that meet all project requirements and applicable building codes.</p><p>• Execute design assignments of moderate to high complexity with demonstrated proficiency in engineering methodologies and technical problem-solving.</p><p>• Apply comprehensive knowledge of codes, permits, and industry-standard software applications relevant to the engineering discipline to ensure design accuracy and compliance.</p><p>• Prepare designs and drawings utilizing project specifications, engineering standards,",
+    "source_url": "https://jobs.smartrecruiters.com/AECOM2/744000148764309-senior-designer?utm_source=freehire.me",
+    "original_source": "smartrecruiters"
+  },
+  {
+    "job_title": "Project Manager",
+    "company_name": "AECOM",
+    "location": "Duba, TABUK, sa",
+    "cities": [
+      "Duba",
+      "Tabuk"
+    ],
+    "posted_date": "2026-09-10T12:31:43Z",
+    "category": "project_management",
+    "skills": [
+      "agile",
+      "erp",
+      "financial-modeling",
+      "pmp",
+      "process-improvement",
+      "program-management",
+      "stakeholder-management"
+    ],
+    "job_description": "<ul><li>Manages portfolio of clients with multiple projects.</li><li>Responsible for delivering revenues assigned from specific clients as a result of repeat business caused by flawless execution of projects.</li><li>Consistently delivers profit margins planned.</li><li>Consistently completes projects without write-downs or multiplier erosion.</li><li>Typically manages projects involving RTF (Risk Triggering Factors).</li><li>Manages more complex clients and projects.</li><li>Has decision-making authority and directs other Project Managers in recognizing risk and uncertainty with plans to mitigate and eliminate such.</li><li>Directs staff to operate and minimize exposure to claims.</li><li>Supervises and directs Project Managers with multiple projects or program of projects.</li><li>Manages project budgets, resource allocation, and financial forecasting to ensure optimal utilization and cost control.</li><li>Develops and maintains strategic relationships with key stakeholders,",
+    "source_url": "https://jobs.smartrecruiters.com/AECOM2/744000148763239-project-manager?utm_source=freehire.me",
+    "original_source": "smartrecruiters"
+  },
+  {
+    "job_title": "QA/QC Lead/Specialist",
+    "company_name": "AECOM",
+    "location": "Duba, TABUK, sa",
+    "cities": [
+      "Duba",
+      "Tabuk"
+    ],
+    "posted_date": "2026-09-10T12:29:07Z",
+    "category": "qa",
+    "skills": [
+      "automation",
+      "test-automation"
+    ],
+    "job_description": "<p>**Responsibilities:**</p><ul><li>Develops and executes comprehensive quality assurance and quality control procedures using established testing methodologies and industry standards.</li><li>Conducts technical validation and verification activities, including test planning, test case development, and defect identification using both manual and automated testing approaches.</li><li>Gathers, analyzes, and correlates quality engineering data and test results using well-defined procedures and technical documentation.</li><li>Identifies and documents discrepancies, defects, and non-conformances, providing detailed analysis and recommendations for resolution.</li><li>Proposes innovative approaches to solve quality challenges by adapting standard testing procedures and methodologies developed from previous projects and industry best practices.</li><li>Provides technical guidance and mentoring to entry-level QA engineers and quality assurance team members.</li><li>Ensures compliance with",
+    "source_url": "https://jobs.smartrecruiters.com/AECOM2/744000148762449-qa-qc-lead-specialist?utm_source=freehire.me",
+    "original_source": "smartrecruiters"
+  },
+  {
+    "job_title": "Technology Architect",
+    "company_name": "CoorB",
+    "location": "Jeddah, Saudi Arabia",
+    "cities": [
+      "Jeddah"
+    ],
+    "posted_date": "2026-09-10T12:17:37Z",
+    "category": "architecture",
+    "skills": [
+      "analytics",
+      "automation",
+      "cloud",
+      "data-analytics",
+      "stakeholder-management"
+    ],
+    "job_description": "<span><div><p><span><span><span><span><span>ABOUT<span> </span></span></span></span><b><span><span><span>CoorB</span></span></span></b><br/></span></span></p></div><div><p><span><span><span><span><span>We build full-fledged innovative solutions with a focus on process automation, user experience enhancement, and advanced data analytics. With our extensive industry<span> </span>expertise, we help achieve operational excellence, future-proof your IT investments, and ensure a competitive edge in the ever-evolving finance industry.</span></span></span></span></span><br/></p><p><span><span><span><span><span>OUR OPPORTUN</span><span>ITY</span></span></span><br/></span></span></p></div><div><p><span><span><span><span><span>We are<span> </span></span><span>seeking</span><span><span> </span>a highly experienced Technology Architect to define and govern the organization&#39;s Technology Architecture and target technology landscape. The role<span> </span></span><span>is responsible",
+    "source_url": "https://coorb.zohorecruit.com/jobs/Careers/788027000007103544?utm_source=freehire.me",
+    "original_source": "zohorecruit"
+  },
+  {
+    "job_title": "QA/QC Engineer - Data Center",
+    "company_name": "Decima International",
+    "location": "Riyadh, Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T11:37:10Z",
+    "category": "qa",
+    "skills": [
+      "iso-9001",
+      "statistics",
+      "transformers"
+    ],
+    "job_description": "<div><p>Decima International is a professional services company, providing project management and controls services to clients in the United States and the Middle East. Our mission is to become the premier professional services provider across all industry sectors we are engaged in. To accomplish this, Decima International’s founders established a simple yet powerful formula:</p>\n<p>Approach each client engagement as a <strong>partnership</strong>, create an environment that attracts the <strong>most talented professionals</strong> and allows them to flourish, and regulate <strong>growth</strong> to maintain <strong>excellence</strong> in our service standards.</p></div><p></p>\n<h1>QA/QC Electrical Engineer – Data Centers</h1>\n<h2>Role Overview</h2>\n<p>We are seeking a driven and detail-oriented <strong>QA/QC Electrical Engineer</strong> to support electrical quality assurance and quality control activities for major mission-critical and data center projects in KSA.</p>\n<p>The role",
+    "source_url": "https://job-boards.greenhouse.io/decimainternational/jobs/4709457006?utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "Senior Sales Engineer (Saudi Arabia)",
+    "company_name": "Commvault",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T10:46:56Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "ai",
+      "cloud",
+      "networking",
+      "pre-sales",
+      "proof-of-concept",
+      "saas"
+    ],
+    "job_description": "<div><p><strong>Recruitment Fraud Alert</strong></p>\n<p>We’ve learned that scammers are impersonating Commvault team members—including HR and leadership—via email or text. These bad actors may conduct fake interviews and ask for personal information, such as your social security number.  </p>\n<p><strong>What to know:</strong></p>\n<ul>\n<li>Commvault does <em>not</em> conduct interviews by email or text.</li>\n<li>We will never ask you to submit sensitive documents (including banking information, SSN, etc) before your first day.</li>\n</ul>\n<p>If you suspect a recruiting scam, please contact us at <u>wwrecruitingteam@commvault.com </u></p>\n<p> </p>\n<p><strong>About Commvault</strong> </p>\n<p>Commvault (NASDAQ: CVLT) is the gold standard in cyber resilience. The company empowers customers to uncover, take action, and rapidly recover from cyberattacks – keeping data safe and businesses resilient. The company’s unique AI-powered platform combines best-in-class data protection, exceptional",
+    "source_url": "https://job-boards.greenhouse.io/commvault/jobs/5300918008?utm_source=freehire.me",
+    "original_source": "greenhouse"
+  },
+  {
+    "job_title": "UI/UX Director",
+    "company_name": "jobgether",
+    "location": "Switzerland",
+    "cities": [
+      "Mexico City",
+      "Switzerland"
+    ],
+    "posted_date": "2026-09-10T09:04:01Z",
+    "category": "design",
+    "skills": [
+      "accessibility",
+      "ai",
+      "css",
+      "ecommerce",
+      "figma",
+      "gdpr",
+      "html",
+      "information-architecture",
+      "javascript",
+      "prototyping",
+      "react",
+      "shopify",
+      "user-research",
+      "wcag"
+    ],
+    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a UI/UX Director based in Switzerland.</strong></p>\n<p>This is an executive-level, hands-on design leadership role focused on elevating UI/UX quality across sophisticated web and e-commerce experiences. You will lead a multidisciplinary team while serving as the bridge between creative vision, user experience, and front-end technical execution. The role combines design systems, accessibility, responsive and mobile-first thinking, data-informed decision-making, and emerging AI capabilities. You will also play a visible role in client strategy, executive conversations, proposals, and new business pitches. Strong operational ownership is essential, including capacity planning, estimation, forecasting, and budget management. You’ll work with major brands and experienced specialists across strategy, design, technology, data, and e-commerce in a",
+    "source_url": "https://jobs.lever.co/jobgether/0121c742-5af6-4071-8930-fb28c04ac38c?utm_source=freehire.me",
+    "original_source": "lever"
+  },
+  {
+    "job_title": "Senior Graphic Designer (Static Ads)",
+    "company_name": "jobgether",
+    "location": "US",
+    "cities": [
+      "Mexico City"
+    ],
+    "posted_date": "2026-09-10T08:54:57Z",
+    "category": "design",
+    "skills": [
+      "ai",
+      "ecommerce",
+      "figma",
+      "gdpr",
+      "paid-social",
+      "photoshop",
+      "slack",
+      "typography"
+    ],
+    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Senior Graphic Designer (Static Ads) based in United States.</strong></p>\n<p>This is a senior-level creative role focused on producing high-performing static advertising for fast-growing e-commerce brands.<br>You’ll turn concise briefs and brand guidelines into scroll-stopping concepts that communicate clearly and capture attention quickly.<br>The role combines strong visual craft with a performance mindset, where great design is measured by both quality and its ability to drive results.<br>You’ll work primarily independently while collaborating with an experienced design team through focused feedback and creative reviews.<br>Speed and consistency are essential, with an expectation of producing approximately 9–10 polished composites each day.<br>You’ll also use AI extensively to accelerate ideation, explore creative directions, and develop",
+    "source_url": "https://jobs.lever.co/jobgether/002c42d2-0de8-4826-a1e2-8f3cb2b1bea6?utm_source=freehire.me",
+    "original_source": "lever"
+  },
+  {
+    "job_title": "Technical Project Manager (CCTV & Networking)",
+    "company_name": "jobgether",
+    "location": "Switzerland",
+    "cities": [
+      "Mexico City"
+    ],
+    "posted_date": "2026-09-10T06:13:36Z",
+    "category": "project_management",
+    "skills": [
+      "ai",
+      "asana",
+      "gdpr",
+      "jira",
+      "monday-com",
+      "networking",
+      "voip",
+      "wan"
+    ],
+    "job_description": "<div>\n<p><strong>This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Technical Project Manager (CCTV &amp; Networking) based in Switzerland.</strong></p>\n<p>As a Technical Project Manager, you’ll lead the delivery of CCTV and physical security technology projects from initial design and estimation through deployment and ongoing support. You’ll combine hands-on technical expertise with strong project management skills to ensure systems are designed, quoted, and implemented accurately. Your responsibilities will span CCTV layouts, network integration, hardware selection, project scheduling, resource coordination, and stakeholder communication. You’ll work with clients, technicians, vendors, and internal teams to keep complex deployments on track. Strong knowledge of networking fundamentals will be essential for configuring and troubleshooting reliable security systems. This is a fully remote, autonomous role",
+    "source_url": "https://jobs.lever.co/jobgether/02aa8fe7-58af-4345-8fd0-82c0add23360?utm_source=freehire.me",
+    "original_source": "lever"
+  },
+  {
+    "job_title": "PROJECT MANAGER - BANKING - DATA & AI",
+    "company_name": "Duncan & Ross",
+    "location": "Riyadh, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T06:06:20Z",
+    "category": "project_management",
+    "skills": [
+      "agile",
+      "ai",
+      "aws",
+      "azure",
+      "certified-scrummaster",
+      "cloud",
+      "confluence",
+      "data-engineering",
+      "data-governance",
+      "data-lake",
+      "data-pipelines",
+      "data-quality",
+      "data-science",
+      "databricks",
+      "elt",
+      "etl",
+      "gcp",
+      "jira",
+      "lakehouse",
+      "machine-learning",
+      "model-deployment",
+      "pmp",
+      "program-management",
+      "recommendation-systems",
+      "regulatory-compliance",
+      "safe-agile",
+      "snowflake",
+      "stakeholder-management"
+    ],
+    "job_description": "<p><strong>Job Purpose</strong></p>\n<p>The Project Manager will lead the end-to-end delivery of a large-scale <strong>Data Lake Modernization</strong> program for a banking client, encompassing both the technical migration/modernization of the data platform and the implementation of downstream <strong>AI use cases</strong> — specifically <strong>hyper-personalization of banking products</strong> and <strong>Next Best Offer (NBO)</strong> capabilities. </p><p>The role requires strong command of both traditional data/infrastructure delivery and AI/ML-enabled business transformation, bridging technical teams, business stakeholders, and senior banking client sponsors.</p>\n<p><strong>Key Responsibilities</strong></p>\n<ul>\n<li>Own end-to-end project planning, governance, and delivery of the data lake modernization program, including scope, timeline, budget, resourcing, and risk/issue management.</li>\n<li>Lead delivery of the AI/ML use case workstream for hyper-personalization and Next Best",
+    "source_url": "https://www.careers-page.com/duncan-ross-management-consultancies/job/8X5R4XWR?utm_source=freehire.me",
+    "original_source": "manatal"
+  },
+  {
+    "job_title": "Senior Design Manager - Planning and Design - MAS 4008",
+    "company_name": "Qiddiya Investment Company",
+    "location": "Riyadh, Riyadh Province, Saudi Arabia",
+    "cities": [
+      "Riyadh"
+    ],
+    "posted_date": "2026-09-10T00:00:00Z",
+    "category": "design",
     "skills": [],
-    "job_description": "<p><strong>Exceptional Hospitality Starts with You</strong></p><p>Picture yourself brightening someone’s day. When you join our Hotels team, that’s exactly what you’ll do every time you come to work! As a <strong>Safety and Security Manager</strong>, and facility safety – you’re spreading the light and warmth of hospitality by delivering memorable experiences that make the stay for every guest.</p><p>Here&#39;s what you&#39;ll do during a typical day:</p><ul><li><b>Lead and develop the team:</b>  Recruit, train, supervise, and mentor security team members; conduct performance evaluations, provide professional development opportunities, and recognize achievements to build a motivated and high-performing team </li><li><b>Manage security operations:</b>  Implement security protocols to protect guests, employees, and property whilst ensuring compliance with local regulations and company brand standards.</li><li><b>Supervise property safety:</b>  Oversee security patrols, identify",
-    "source_url": "https://efet.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/221605?utm_source=freehire.me",
-    "original_source": "oracle"
+    "job_description": "<p></p><p></p><p>Senior Manager – Planning and Design</p><p></p><p></p><p> </p><p></p><p>Key Responsibilities </p><ul><li>Develop and ensure implementation of design guidelines for all development projects in coordination with the Design Director.</li></ul><ul><li>Ensure development and successful implementation of design plan in order to ensure successful achievement of design goals for all assigned projects.</li><li>Advise leadership team on the most suitable design consultant candidates through initial outreach, RFP development, contract execution and contract administration in coordination with the Design Director.</li><li>Provide support to development project teams in the development of design strategies in order to ensure efficient completion of project as and when needed. </li><li>Provide support to the design, development and construction teams regarding the development schedules, budgets and plans.</li><li>Ensure periodic internal design reviews in order to ensure alignment",
+    "source_url": "https://apply.workable.com/j/AF669757D7?utm_source=freehire.me",
+    "original_source": "workable"
+  },
+  {
+    "job_title": "Onsite Project Manager",
+    "company_name": "KION Group",
+    "location": "Riyadh City, Saudi Arabia",
+    "cities": [],
+    "posted_date": "2026-09-10T00:00:00Z",
+    "category": "project_management",
+    "skills": [
+      "acceptance-criteria"
+    ],
+    "job_description": "The Onsite Project Manager is responsible for the coordination of all activities associated with a project, from receipt of a customer order via the sales team to the completion and hand-over of the project to the client and the service group. <br><br>Success is measured in terms of economic results and overall customer satisfaction, as well as in ensuring that the project is delivered on time, within the agreed budget and to the agreed functionality.<br><br>The Project Manager is responsible for ensuring that the project is carried out in line with Dematic’s standard practices and procedures.<p></p><h1><b>We offer:</b></h1><p><b>We offer:</b><br/> </p><ul><li>Career Development</li><li>Located in Saudi Arabia</li><li>Competitive Compensation and Benefits</li><li>Global Opportunities</li></ul><p></p><p>Learn More Here: https://www.dematic.com/en-us/about/careers/what-we-offer/</p><p></p><h1><b>Tasks and Qualifications:</b></h1><p><b>Tasks and",
+    "source_url": "https://kiongroup.wd3.myworkdayjobs.com/KIONGroup/job/Riyadh-City-Saudi-Arabia/Onsite-Project-Manager_JR-0095330-1?utm_source=freehire.me",
+    "original_source": "workday"
+  },
+  {
+    "job_title": "Senior Sales Engineer (P&W)",
+    "company_name": "yokogawa",
+    "location": "Al-Khobar",
+    "cities": [
+      "Khobar"
+    ],
+    "posted_date": "2026-09-10T00:00:00Z",
+    "category": "solutions_engineering",
+    "skills": [
+      "automation",
+      "cybersecurity"
+    ],
+    "job_description": "<p><span><b>Not just a job, but a career</b></span></p><p>Yokogawa, award winner for ‘Best Asset Monitoring Technology’ and ‘Best Digital Twin Technology’ at the HP Awards, is a leading provider of industrial automation, test and measurement, information systems and industrial services in several industries. </p><p></p><p>Our aim is to shape a better future for our planet through supporting the energy transition, (bio)technology, artificial intelligence, industrial cybersecurity, etc. We are committed to the United Nations sustainable development goals by utilizing our ability to measure and connect.</p><p></p><p><span><b>About the Team</b></span><br/><span>Our 18,000 employees work in over 60 countries with one corporate mission, to &#34;co-innovate tomorrow&#34;.</span> We are looking for dynamic colleagues who share our passion for technology and care for our planet. In return, we offer you great career opportunities to grow yourself in a truly global culture where respect, value",
+    "source_url": "https://wd3.myworkdaysite.com/recruiting/yokogawa/yokogawa-career-site/job/Al-Khobar/Sr-Sales-Engineer--Saudi-Aramco-Account-_R-12675?utm_source=freehire.me",
+    "original_source": "workday"
   }
 ]
