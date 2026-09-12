@@ -1,12 +1,4 @@
 .env
-__pycache__/
 .venv/
-
-data/raw/*_cache.json
-data/raw/extracted_links_cache.json
-data/raw/freehire_extracted_links.json
-data/raw/seen_job_urls.json
-
-!data/raw/*_tech.json
-!data/raw/saudi_technical_jobs.json
-!data/raw/linkedin-saudi-jobs.xlsx
+__pycache__/
+data/raw/Extracted links/
